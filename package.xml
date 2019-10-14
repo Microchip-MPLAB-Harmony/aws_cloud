@@ -5,7 +5,5 @@
         <Dependency name="core" version="v3.3.0"/>
         <Dependency name="bsp" version="v3.3.0"/>
         <Dependency name="net" version="v3.3.0"/>
-        <Dependency name="amazon-freertos" version="v1.4.7"/>
-        <Dependency name="cryptoauthlib" version="20190304"/>
     </Dependencies>
 </Package>
