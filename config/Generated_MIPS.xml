@@ -1,0 +1,729 @@
+<structure>
+<dir name="amazon-freertos">
+  <dir name="demos">
+    <dir name="defender">
+      <file name="aws_iot_demo_defender.c" />
+    </dir>
+      <dir name="demo_runner">
+      <file name="aws_demo.c" />
+      <file name="aws_demo_network_addr.c" />
+      <file name="aws_demo_version.c" />
+      <file name="iot_demo_freertos.c" />
+      <file name="iot_demo_runner.c" />
+    </dir>
+      <dir name="dev_mode_key_provisioning">
+      <dir name="include">
+        <file name="aws_dev_mode_key_provisioning.h" />
+      </dir>
+        <dir name="src">
+        <file name="aws_dev_mode_key_provisioning.c" />
+      </dir>
+      </dir>
+      <dir name="greengrass_connectivity">
+      <file name="aws_greengrass_discovery_demo.c" />
+      <file name="README.md" />
+    </dir>
+      <dir name="https">
+      <file name="iot_demo_https_common.c" />
+      <file name="iot_demo_https_common.h" />
+      <file name="iot_demo_https_s3_download_async.c" />
+      <file name="iot_demo_https_s3_download_sync.c" />
+      <file name="presigned_urls_gen.py" />
+      <file name="README.md" />
+    </dir>
+      <dir name="include">
+      <file name="aws_application_version.h" />
+      <file name="aws_ble_gatt_server_demo.h" />
+      <file name="aws_clientcredential.h" />
+      <file name="aws_clientcredential_keys.h" />
+      <file name="aws_demo.h" />
+      <file name="aws_iot_demo_network.h" />
+      <file name="aws_ota_codesigner_certificate.h" />
+      <file name="aws_wifi_connect_task.h" />
+      <file name="iot_ble_numericComparison.h" />
+      <file name="iot_config_common.h" />
+      <file name="iot_demo_logging.h" />
+      <file name="iot_demo_runner.h" />
+    </dir>
+      <dir name="mqtt">
+      <file name="iot_demo_mqtt.c" />
+    </dir>
+      <dir name="network_manager">
+      <file name="aws_iot_demo_network.c" />
+      <file name="aws_iot_network_manager.c" />
+      <file name="iot_network_manager_private.h" />
+    </dir>
+      <dir name="ota">
+      <file name="aws_iot_ota_update_demo.c" />
+    </dir>
+      <file name="README.md" />
+    <dir name="shadow">
+      <file name="aws_iot_demo_shadow.c" />
+    </dir>
+      <dir name="tcp">
+      <file name="aws_tcp_echo_client_single_task.c" />
+      <file name="aws_tcp_echo_client_single_tasks.h" />
+    </dir>
+    </dir>
+    <dir name="freertos_kernel">
+    <file name="event_groups.c" />
+    <dir name="include">
+      <file name="atomic.h" />
+      <file name="deprecated_definitions.h" />
+      <file name="event_groups.h" />
+      <file name="FreeRTOS.h" />
+      <file name="list.h" />
+      <file name="message_buffer.h" />
+      <file name="mpu_prototypes.h" />
+      <file name="mpu_wrappers.h" />
+      <file name="portable.h" />
+      <file name="projdefs.h" />
+      <file name="queue.h" />
+      <file name="semphr.h" />
+      <file name="stack_macros.h" />
+      <file name="stream_buffer.h" />
+      <file name="task.h" />
+      <file name="timers.h" />
+    </dir>
+      <file name="list.c" />
+    <dir name="portable">
+      <dir name="MemMang">
+        <file name="heap_4.c" />
+      </dir>
+        <dir name="MPLAB">
+        <dir name="PIC32MZ">
+          <file name="ISR_Support.h" />
+          <file name="port.c" />
+          <file name="portmacro.h" />
+          <file name="port_asm.S" />
+        </dir>
+        </dir>
+      </dir>
+      <file name="queue.c" />
+    <file name="stream_buffer.c" />
+    <file name="tasks.c" />
+    <file name="timers.c" />
+  </dir>
+    <dir name="libraries">
+    <dir name="3rdparty">
+      <dir name="http-parser">
+        <file name="http_parser.c" />
+        <file name="http_parser.h" />
+        <file name="LICENSE-MIT" />
+      </dir>
+        <dir name="jsmn">
+        <file name="jsmn.c" />
+        <file name="jsmn.h" />
+      </dir>
+        <dir name="mbedtls">
+        <dir name="include">
+          <dir name="mbedtls">
+            <file name="aes.h" />
+            <file name="aesni.h" />
+            <file name="arc4.h" />
+            <file name="asn1.h" />
+            <file name="asn1write.h" />
+            <file name="base64.h" />
+            <file name="bignum.h" />
+            <file name="blowfish.h" />
+            <file name="bn_mul.h" />
+            <file name="camellia.h" />
+            <file name="ccm.h" />
+            <file name="certs.h" />
+            <file name="check_config.h" />
+            <file name="cipher.h" />
+            <file name="cipher_internal.h" />
+            <file name="cmac.h" />
+            <file name="compat-1.3.h" />
+            <file name="config.h" />
+            <file name="ctr_drbg.h" />
+            <file name="debug.h" />
+            <file name="des.h" />
+            <file name="dhm.h" />
+            <file name="ecdh.h" />
+            <file name="ecdsa.h" />
+            <file name="ecjpake.h" />
+            <file name="ecp.h" />
+            <file name="ecp_internal.h" />
+            <file name="entropy.h" />
+            <file name="entropy_poll.h" />
+            <file name="error.h" />
+            <file name="gcm.h" />
+            <file name="havege.h" />
+            <file name="hmac_drbg.h" />
+            <file name="md.h" />
+            <file name="md2.h" />
+            <file name="md4.h" />
+            <file name="md5.h" />
+            <file name="md_internal.h" />
+            <file name="memory_buffer_alloc.h" />
+            <file name="net.h" />
+            <file name="net_sockets.h" />
+            <file name="oid.h" />
+            <file name="padlock.h" />
+            <file name="pem.h" />
+            <file name="pk.h" />
+            <file name="pkcs12.h" />
+            <file name="pkcs5.h" />
+            <file name="pk_internal.h" />
+            <file name="platform.h" />
+            <file name="platform_time.h" />
+            <file name="platform_util.h" />
+            <file name="ripemd160.h" />
+            <file name="rsa.h" />
+            <file name="rsa_internal.h" />
+            <file name="sha1.h" />
+            <file name="sha256.h" />
+            <file name="sha512.h" />
+            <file name="ssl.h" />
+            <file name="ssl_cache.h" />
+            <file name="ssl_ciphersuites.h" />
+            <file name="ssl_cookie.h" />
+            <file name="ssl_internal.h" />
+            <file name="ssl_ticket.h" />
+            <file name="threading.h" />
+            <file name="timing.h" />
+            <file name="version.h" />
+            <file name="x509.h" />
+            <file name="x509_crl.h" />
+            <file name="x509_crt.h" />
+            <file name="x509_csr.h" />
+            <file name="xtea.h" />
+          </dir>
+          </dir>
+          <dir name="library">
+          <file name="aes.c" />
+          <file name="aesni.c" />
+          <file name="arc4.c" />
+          <file name="asn1parse.c" />
+          <file name="asn1write.c" />
+          <file name="base64.c" />
+          <file name="bignum.c" />
+          <file name="blowfish.c" />
+          <file name="camellia.c" />
+          <file name="ccm.c" />
+          <file name="certs.c" />
+          <file name="cipher.c" />
+          <file name="cipher_wrap.c" />
+          <file name="cmac.c" />
+          <file name="ctr_drbg.c" />
+          <file name="debug.c" />
+          <file name="des.c" />
+          <file name="dhm.c" />
+          <file name="ecdh.c" />
+          <file name="ecdsa.c" />
+          <file name="ecjpake.c" />
+          <file name="ecp.c" />
+          <file name="ecp_curves.c" />
+          <file name="entropy.c" />
+          <file name="entropy_poll.c" />
+          <file name="error.c" />
+          <file name="gcm.c" />
+          <file name="havege.c" />
+          <file name="hmac_drbg.c" />
+          <file name="md.c" />
+          <file name="md2.c" />
+          <file name="md4.c" />
+          <file name="md5.c" />
+          <file name="md_wrap.c" />
+          <file name="memory_buffer_alloc.c" />
+          <file name="net_sockets.c" />
+          <file name="oid.c" />
+          <file name="padlock.c" />
+          <file name="pem.c" />
+          <file name="pk.c" />
+          <file name="pkcs12.c" />
+          <file name="pkcs5.c" />
+          <file name="pkparse.c" />
+          <file name="pkwrite.c" />
+          <file name="pk_wrap.c" />
+          <file name="platform.c" />
+          <file name="platform_util.c" />
+          <file name="ripemd160.c" />
+          <file name="rsa.c" />
+          <file name="rsa_internal.c" />
+          <file name="sha1.c" />
+          <file name="sha256.c" />
+          <file name="sha512.c" />
+          <file name="ssl_cache.c" />
+          <file name="ssl_ciphersuites.c" />
+          <file name="ssl_cli.c" />
+          <file name="ssl_cookie.c" />
+          <file name="ssl_srv.c" />
+          <file name="ssl_ticket.c" />
+          <file name="ssl_tls.c" />
+          <file name="threading.c" />
+          <file name="timing.c" />
+          <file name="version.c" />
+          <file name="version_features.c" />
+          <file name="x509.c" />
+          <file name="x509write_crt.c" />
+          <file name="x509write_csr.c" />
+          <file name="x509_create.c" />
+          <file name="x509_crl.c" />
+          <file name="x509_crt.c" />
+          <file name="x509_csr.c" />
+          <file name="xtea.c" />
+        </dir>
+          <file name="LICENSE" />
+        <dir name="utils">
+          <file name="mbedtls_utils.c" />
+        </dir>
+        </dir>
+        <dir name="pkcs11">
+        <file name="pkcs11.h" />
+        <file name="pkcs11f.h" />
+        <file name="pkcs11t.h" />
+      </dir>
+        <dir name="tinycbor">
+        <file name="cbor.h" />
+        <file name="cborencoder.c" />
+        <file name="cborencoder_close_container_checked.c" />
+        <file name="cborerrorstrings.c" />
+        <file name="cborinternal_p.h" />
+        <file name="cborparser.c" />
+        <file name="cborparser_dup_string.c" />
+        <file name="cborpretty.c" />
+        <file name="cborpretty_stdio.c" />
+        <file name="cborvalidation.c" />
+        <file name="compilersupport_p.h" />
+        <file name="LICENSE" />
+        <file name="README.md" />
+        <file name="tinycbor-version.h" />
+        <file name="utf8_p.h" />
+      </dir>
+        <dir name="tinycrypt">
+        <dir name="asn1">
+          <file name="asn1.h" />
+        </dir>
+          <dir name="lib">
+          <dir name="include">
+            <dir name="tinycrypt">
+              <file name="aes.h" />
+              <file name="cbc_mode.h" />
+              <file name="ccm_mode.h" />
+              <file name="cmac_mode.h" />
+              <file name="constants.h" />
+              <file name="ctr_mode.h" />
+              <file name="ctr_prng.h" />
+              <file name="ecc.h" />
+              <file name="ecc_dh.h" />
+              <file name="ecc_dsa.h" />
+              <file name="ecc_platform_specific.h" />
+              <file name="hmac.h" />
+              <file name="hmac_prng.h" />
+              <file name="sha256.h" />
+              <file name="utils.h" />
+            </dir>
+            </dir>
+            <dir name="source">
+            <file name="aes_decrypt.c" />
+            <file name="aes_encrypt.c" />
+            <file name="cbc_mode.c" />
+            <file name="ccm_mode.c" />
+            <file name="cmac_mode.c" />
+            <file name="ctr_mode.c" />
+            <file name="ctr_prng.c" />
+            <file name="ecc.c" />
+            <file name="ecc_dh.c" />
+            <file name="ecc_dsa.c" />
+            <file name="ecc_platform_specific.c" />
+            <file name="hmac.c" />
+            <file name="hmac_prng.c" />
+            <file name="sha256.c" />
+            <file name="utils.c" />
+          </dir>
+          </dir>
+        </dir>
+      </dir>
+      <dir name="abstractions">
+      <dir name="pkcs11">
+        <dir name="include">
+          <file name="iot_pkcs11_pal.h" />
+        </dir>
+          <dir name="mbedtls">
+          <file name="iot_pkcs11_mbedtls.c" />
+          <file name="threading_alt.h" />
+        </dir>
+        </dir>
+        <dir name="platform">
+        <dir name="freertos">
+          <dir name="include">
+            <dir name="platform">
+              <file name="iot_network_ble.h" />
+              <file name="iot_network_freertos.h" />
+              <file name="iot_platform_types_freertos.h" />
+            </dir>
+            </dir>
+            <file name="iot_clock_freertos.c" />
+          <file name="iot_metrics.c" />
+          <file name="iot_network_freertos.c" />
+          <file name="iot_threads_freertos.c" />
+        </dir>
+          <dir name="include">
+          <dir name="platform">
+            <file name="iot_clock.h" />
+            <file name="iot_metrics.h" />
+            <file name="iot_network.h" />
+            <file name="iot_threads.h" />
+          </dir>
+            <dir name="types">
+            <file name="iot_platform_types.h" />
+          </dir>
+          </dir>
+        </dir>
+        <dir name="secure_sockets">
+        <dir name="freertos_plus_tcp">
+          <file name="iot_secure_sockets.c" />
+        </dir>
+          <dir name="include">
+          <file name="iot_secure_sockets.h" />
+          <file name="iot_secure_sockets_config_defaults.h" />
+          <file name="iot_secure_sockets_wrapper_metrics.h" />
+        </dir>
+        </dir>
+      </dir>
+      <dir name="c_sdk">
+      <dir name="aws">
+        <dir name="defender">
+          <dir name="include">
+            <file name="aws_defender.h" />
+            <file name="aws_iot_defender.h" />
+          </dir>
+            <dir name="src">
+            <file name="aws_iot_defender_api.c" />
+            <file name="aws_iot_defender_collector.c" />
+            <file name="aws_iot_defender_mqtt.c" />
+            <file name="aws_iot_defender_v1.c" />
+            <dir name="private">
+              <file name="aws_iot_defender_internal.h" />
+            </dir>
+            </dir>
+          </dir>
+          <dir name="shadow">
+          <dir name="include">
+            <file name="aws_iot_shadow.h" />
+            <file name="aws_shadow.h" />
+            <dir name="types">
+              <file name="aws_iot_shadow_types.h" />
+            </dir>
+            </dir>
+            <dir name="src">
+            <file name="aws_iot_shadow_api.c" />
+            <file name="aws_iot_shadow_operation.c" />
+            <file name="aws_iot_shadow_parser.c" />
+            <file name="aws_iot_shadow_static_memory.c" />
+            <file name="aws_iot_shadow_subscription.c" />
+            <file name="aws_shadow.c" />
+            <file name="aws_shadow_config_defaults.h" />
+            <dir name="private">
+              <file name="aws_iot_shadow_internal.h" />
+            </dir>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="standard">
+        <dir name="common">
+          <dir name="include">
+            <file name="iot_appversion32.h" />
+            <file name="iot_atomic.h" />
+            <file name="iot_init.h" />
+            <file name="iot_linear_containers.h" />
+            <file name="iot_logging_setup.h" />
+            <file name="iot_logging_task.h" />
+            <file name="iot_taskpool.h" />
+            <dir name="private">
+              <file name="iot_default_root_certificates.h" />
+              <file name="iot_doubly_linked_list.h" />
+              <file name="iot_error.h" />
+              <file name="iot_lib_init.h" />
+              <file name="iot_logging.h" />
+              <file name="iot_static_memory.h" />
+              <file name="iot_taskpool_internal.h" />
+            </dir>
+              <dir name="types">
+              <file name="iot_network_types.h" />
+              <file name="iot_taskpool_types.h" />
+            </dir>
+            </dir>
+            <file name="iot_device_metrics.c" />
+          <file name="iot_init.c" />
+          <file name="iot_static_memory_common.c" />
+          <dir name="logging">
+            <file name="iot_logging.c" />
+            <file name="iot_logging_task_dynamic_buffers.c" />
+          </dir>
+            <dir name="taskpool">
+            <file name="iot_taskpool.c" />
+            <file name="iot_taskpool_static_memory.c" />
+          </dir>
+          </dir>
+          <dir name="https">
+          <dir name="include">
+            <file name="iot_https_client.h" />
+            <file name="iot_https_utils.h" />
+            <dir name="types">
+              <file name="iot_https_types.h" />
+            </dir>
+            </dir>
+            <dir name="src">
+            <file name="iot_https_client.c" />
+            <file name="iot_https_utils.c" />
+            <dir name="private">
+              <file name="iot_https_internal.h" />
+            </dir>
+            </dir>
+          </dir>
+          <dir name="mqtt">
+          <dir name="include">
+            <file name="iot_mqtt.h" />
+            <file name="iot_mqtt_agent.h" />
+            <file name="iot_mqtt_agent_config_defaults.h" />
+            <file name="iot_mqtt_config_defaults.h" />
+            <file name="iot_mqtt_lib.h" />
+            <dir name="types">
+              <file name="iot_mqtt_types.h" />
+            </dir>
+            </dir>
+            <dir name="src">
+            <file name="iot_mqtt_agent.c" />
+            <file name="iot_mqtt_api.c" />
+            <file name="iot_mqtt_network.c" />
+            <file name="iot_mqtt_operation.c" />
+            <file name="iot_mqtt_serialize.c" />
+            <file name="iot_mqtt_static_memory.c" />
+            <file name="iot_mqtt_subscription.c" />
+            <file name="iot_mqtt_validate.c" />
+            <dir name="private">
+              <file name="iot_mqtt_internal.h" />
+            </dir>
+            </dir>
+          </dir>
+          <dir name="serializer">
+          <dir name="include">
+            <file name="iot_json_utils.h" />
+            <file name="iot_serializer.h" />
+          </dir>
+            <dir name="src">
+            <dir name="cbor">
+              <file name="iot_serializer_tinycbor_decoder.c" />
+              <file name="iot_serializer_tinycbor_encoder.c" />
+            </dir>
+              <file name="iot_json_utils.c" />
+            <file name="iot_serializer_static_memory.c" />
+            <dir name="json">
+              <file name="iot_serializer_json_decoder.c" />
+              <file name="iot_serializer_json_encoder.c" />
+            </dir>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+      <dir name="freertos_plus">
+      <dir name="aws">
+        <dir name="greengrass">
+          <dir name="include">
+            <file name="aws_ggd_config_defaults.h" />
+            <file name="aws_greengrass_discovery.h" />
+          </dir>
+            <dir name="src">
+            <file name="aws_greengrass_discovery.c" />
+            <file name="aws_helper_secure_connect.c" />
+            <file name="aws_helper_secure_connect.h" />
+          </dir>
+          </dir>
+          <dir name="ota">
+          <dir name="include">
+            <file name="aws_iot_ota_agent.h" />
+            <file name="aws_ota_agent.h" />
+            <file name="aws_ota_types.h" />
+          </dir>
+            <dir name="src">
+            <file name="aws_iot_ota_agent.c" />
+            <file name="aws_ota_agent_internal.h" />
+            <file name="aws_ota_cbor.c" />
+            <file name="aws_ota_cbor.h" />
+            <file name="aws_ota_cbor_internal.h" />
+            <file name="aws_ota_pal.h" />
+          </dir>
+          </dir>
+        </dir>
+        <dir name="standard">
+        <dir name="crypto">
+          <dir name="include">
+            <file name="iot_crypto.h" />
+          </dir>
+            <dir name="src">
+            <file name="iot_crypto.c" />
+          </dir>
+          </dir>
+          <dir name="freertos_plus_tcp">
+          <dir name="include">
+            <file name="FreeRTOSIPConfigDefaults.h" />
+            <file name="FreeRTOS_ARP.h" />
+            <file name="FreeRTOS_DHCP.h" />
+            <file name="FreeRTOS_DNS.h" />
+            <file name="FreeRTOS_errno_TCP.h" />
+            <file name="FreeRTOS_IP.h" />
+            <file name="FreeRTOS_IP_Private.h" />
+            <file name="FreeRTOS_Sockets.h" />
+            <file name="FreeRTOS_Stream_Buffer.h" />
+            <file name="FreeRTOS_TCP_IP.h" />
+            <file name="FreeRTOS_TCP_WIN.h" />
+            <file name="FreeRTOS_UDP_IP.h" />
+            <file name="IPTraceMacroDefaults.h" />
+            <file name="NetworkBufferManagement.h" />
+            <file name="NetworkInterface.h" />
+          </dir>
+            <dir name="source">
+            <file name="FreeRTOS_ARP.c" />
+            <file name="FreeRTOS_DHCP.c" />
+            <file name="FreeRTOS_DNS.c" />
+            <file name="FreeRTOS_IP.c" />
+            <file name="FreeRTOS_Sockets.c" />
+            <file name="FreeRTOS_Stream_Buffer.c" />
+            <file name="FreeRTOS_TCP_IP.c" />
+            <file name="FreeRTOS_TCP_WIN.c" />
+            <file name="FreeRTOS_UDP_IP.c" />
+            <dir name="portable">
+              <dir name="Compiler">
+                <dir name="GCC">
+                  <file name="pack_struct_end.h" />
+                  <file name="pack_struct_start.h" />
+                </dir>
+                </dir>
+                <dir name="NetworkInterface">
+                <dir name="pic32mzef_h3">
+                  <file name="BufferAllocation_2.c" />
+                  <file name="NetworkInterface_eth.c" />
+                </dir>
+                </dir>
+              </dir>
+            </dir>
+          </dir>
+          <dir name="pkcs11">
+          <dir name="include">
+            <file name="iot_pkcs11.h" />
+          </dir>
+            <dir name="src">
+            <file name="iot_pkcs11.c" />
+          </dir>
+          </dir>
+          <dir name="tls">
+          <dir name="include">
+            <file name="iot_tls.h" />
+          </dir>
+            <dir name="src">
+            <file name="iot_tls.c" />
+          </dir>
+          </dir>
+          <dir name="utils">
+          <dir name="include">
+            <file name="iot_pki_utils.h" />
+            <file name="iot_system_init.h" />
+          </dir>
+            <dir name="src">
+            <file name="iot_pki_utils.c" />
+            <file name="iot_system_init.c" />
+          </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+    <file name="LICENSE" />
+  <file name="README.md" />
+  <dir name="vendors">
+    <file name="directories.txt" />
+    <dir name="microchip">
+      <dir name="boards">
+        <dir name="curiosity2_pic32mzef">
+          <dir name="aws_demos">
+            <dir name="config_files">
+              <file name="aws_bufferpool_config.h" />
+              <file name="aws_demo_config.h" />
+              <file name="aws_ggd_config.h" />
+              <file name="aws_iot_network_config.h" />
+              <file name="aws_mqtt_config.h" />
+              <file name="aws_ota_agent_config.h" />
+              <file name="aws_secure_sockets_config.h" />
+              <file name="aws_shadow_config.h" />
+              <file name="aws_wifi_config.h" />
+              <file name="FreeRTOSConfig.h" />
+              <file name="FreeRTOSIPConfig.h" />
+              <file name="iot_config.h" />
+              <file name="iot_mqtt_agent_config.h" />
+              <file name="iot_pkcs11_config.h" />
+              <file name="NetworkConfig.h" />
+            </dir>
+            </dir>
+            <dir name="ports">
+            <dir name="ota">
+              <file name="aws_ota_pal.c" />
+            </dir>
+              <dir name="pkcs11">
+              <file name="iot_pkcs11_pal.c" />
+              <file name="pkcs11_nvm.c" />
+              <file name="pkcs11_nvm.h" />
+            </dir>
+              <dir name="posix">
+              <file name="FreeRTOS_POSIX_portable.h" />
+            </dir>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="harmony3">
+        <dir name="afr">
+          <file name="afr.h" />
+          <dir name="system">
+            <file name="sys_time_h2_adapter.c" />
+            <file name="sys_time_h2_adapter.h" />
+          </dir>
+            <file name="system_config.h" />
+          <dir name="tcpip">
+            <file name="ipv4.h" />
+            <file name="ipv6.h" />
+            <file name="lldp.h" />
+            <dir name="src">
+              <dir name="common">
+                <file name="helpers.h" />
+                <file name="sys_fs_wrapper.h" />
+              </dir>
+                <file name="hash_fnv.c" />
+              <file name="hash_fnv.h" />
+              <file name="helpers.c" />
+              <file name="link_list.h" />
+              <file name="lldp_manager.h" />
+              <file name="oahash.c" />
+              <file name="oahash.h" />
+              <file name="tcpip_heap_alloc.c" />
+              <file name="tcpip_heap_alloc.h" />
+              <file name="tcpip_heap_external.c" />
+              <file name="tcpip_heap_internal.c" />
+			  <file name="tcpip_helpers.c" />
+              <file name="tcpip_helper_c32.S" />
+              <file name="tcpip_helpers_private.h" />
+              <file name="tcpip_manager_control.h" />
+              <file name="tcpip_module_manager.h" />
+              <file name="tcpip_notify.c" />
+              <file name="tcpip_notify.h" />
+              <file name="tcpip_packet.c" />
+              <file name="tcpip_packet.h" />
+              <file name="tcpip_private.h" />
+              <file name="tcpip_types.h" />
+            </dir>
+              <file name="tcpip.h" />
+            <file name="tcpip_common_ports.h" />
+            <file name="tcpip_ethernet.h" />
+            <file name="tcpip_heap.h" />
+            <file name="tcpip_helpers.h" />
+            <file name="tcpip_mac.h" />
+            <file name="tcpip_mac_object.h" />
+            <file name="tcpip_manager.h" />
+          </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+
+</structure>
