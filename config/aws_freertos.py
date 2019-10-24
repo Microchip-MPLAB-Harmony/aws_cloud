@@ -208,7 +208,7 @@ def instantiateComponent(aws_cloud):
 ############################################################################
 
     configName = Variables.get("__CONFIGURATION_NAME")
-    AddAWSFile(aws_cloud,"../",  "",Module.getPath()+"config/Generated_"+coreArch+".xml")
+    AddAWSFile(aws_cloud,"",  "",Module.getPath()+"config/Generated_"+coreArch+".xml")
     
     if (coreArch == "MIPS"):
         AddMIPS(aws_cloud,configName)
