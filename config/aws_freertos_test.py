@@ -125,6 +125,8 @@ def deactivateActiveRtos():
             res = Database.deactivateComponents(["FreeRTOS"])
         if (activeComponents[i] == "MicriumOSIII"):
             res = Database.deactivateComponents(["MicriumOSIII"])
+        if (activeComponents[i] == "AmazonFreeRTOS"):
+            res = Database.deactivateComponents(["AmazonFreeRTOS"])
 
 
 def freeRtosIntConfig():
