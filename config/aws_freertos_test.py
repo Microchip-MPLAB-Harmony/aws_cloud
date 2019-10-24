@@ -25,23 +25,92 @@
 import os
 from xml.sax.saxutils import quoteattr as xml_quoteattr
 import xml.etree.ElementTree as ET
-global osalHeaderImpBasicFile
-global osalHeaderFreeRtosFile
-global osalSourceFreeRtosFile
-global osalSelectRTOS
 
 coreArch     = Database.getSymbolValue("core", "CoreArchitecture")
 coreFamily   = ATDF.getNode( "/avr-tools-device-file/devices/device" ).getAttribute( "family" )
 autoConnectTableDebug = [["sys_debug", "sys_debug_SYS_CONSOLE_dependency", "sys_console"]]
 autoConnectTableCmd = [["sys_command", "sys_command_SYS_CONSOLE_dependency", "sys_console","sys_console_0"]]
 
-SAME54_INC_DIR = "..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\crypto\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\tls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\wifi\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\tests\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\same54_xpro\\aws_tests\\config_files;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\freertos\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\secure_sockets\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\utils\\include;..\\..\\..\\..\\..\\..\\..\\demos\\dev_mode_key_provisioning\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\serializer\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\posix\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\curiosity_pic32mzef\\ports\\posix;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_posix\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\src\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\jsmn;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\pkcs11;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycbor;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\asn1;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\lib\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\extras\\fixture\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\http-parser;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr;..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\portable\\GCC\\ARM_CM4F;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\same54_xpro\\ports\\pkcs11;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr\\tcpip\\src\\common;"
-SAME70_INC_DIR = "..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\crypto\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\tls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\wifi\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\tests\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\same70_xult\\aws_tests\\config_files;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\freertos\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\secure_sockets\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\utils\\include;..\\..\\..\\..\\..\\..\\..\\demos\\dev_mode_key_provisioning\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\serializer\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\posix\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\curiosity_pic32mzef\\ports\\posix;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_posix\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\src\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\jsmn;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\pkcs11;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycbor;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\asn1;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\lib\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\extras\\fixture\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\http-parser;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr;..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\portable\\GCC\\ARM_CM7;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\same70_xult\ports\\pkcs11;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr\\tcpip\\src\\common;"
-PIC32_INC_DIR = "..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\crypto\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\tls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\wifi\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\tests\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\curiosity2_pic32mzef\\aws_tests\\config_files;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\common\\include\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\platform\\freertos\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\secure_sockets\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\pkcs11\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\utils\\include;..\\..\\..\\..\\..\\..\\..\\demos\\dev_mode_key_provisioning\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\mqtt\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\serializer\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\shadow\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\test\\access;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\standard\\https\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\test;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\greengrass\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\aws\\ota\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\posix\\include;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\curiosity_pic32mzef\\ports\\posix;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_posix\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\c_sdk\\aws\\defender\\src\\private;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\jsmn;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\pkcs11;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycbor;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\asn1;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\tinycrypt\\lib\\include;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\mbedtls\\include\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\abstractions\\pkcs11\\mbedtls;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\unity\\extras\\fixture\\src;..\\..\\..\\..\\..\\..\\..\\libraries\\3rdparty\\http-parser;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr;..\\..\\..\\..\\..\\..\\..\\freertos_kernel\\portable\\MPLAB\\PIC32MZ;..\\..\\..\\..\\..\\..\\..\\libraries\\freertos_plus\\standard\\freertos_plus_tcp\\source\\portable\\Compiler\\GCC;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\boards\\curiosity2_pic32mzef\\ports\\pkcs11;..\\..\\..\\..\\..\\..\\..\\vendors\\microchip\\harmony3\\afr\\tcpip\\src\\common;"
-#AMAZON_FREERTOS_PATH="../../third_party/"
 AMAZON_FREERTOS_PATH="../../../../../../../../../../"
 
-#AddFile(aws_cloud, "AWS_FREERTOS_QUEUE_C","../amazon-freertos/lib/FreeRTOS/queue.c","queue.c","../../third_party/amazon-freertos/lib/FreeRTOS/","amazon-freertos/lib/FreeRTOS","SOURCE", False)
+
+AFR_COMMON_INC_DIR = ("../../../../../../../freertos_kernel/include;"
+"../../../../../../../libraries/c_sdk/standard/common/include;"
+"../../../../../../../libraries/freertos_plus/standard/crypto/include;"
+"../../../../../../../libraries/freertos_plus/standard/tls/include;"
+"../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/include;"
+"../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;"
+"../../../../../../../libraries/abstractions/pkcs11/include;"
+"../../../../../../../tests/include;"
+"../../../../../../../libraries/c_sdk/standard/common/include/private;"
+"../../../../../../../libraries/abstractions/platform/include;"
+"../../../../../../../libraries/abstractions/platform/freertos/include;"
+"../../../../../../../libraries/abstractions/secure_sockets/include;"
+"../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/test;"
+"../../../../../../../libraries/freertos_plus/standard/pkcs11/include;"
+"../../../../../../../libraries/freertos_plus/aws/ota/test;"
+"../../../../../../../libraries/freertos_plus/standard/utils/include;"
+"../../../../../../../demos/dev_mode_key_provisioning/include;"
+"../../../../../../../libraries/c_sdk/aws/defender/include;"
+"../../../../../../../libraries/c_sdk/standard/mqtt/test/access;"
+"../../../../../../../libraries/c_sdk/standard/mqtt/include;"
+"../../../../../../../libraries/c_sdk/standard/mqtt/src;"
+"../../../../../../../libraries/c_sdk/standard/serializer/include;"
+"../../../../../../../libraries/c_sdk/aws/shadow/include;"
+"../../../../../../../libraries/c_sdk/aws/shadow/src;"
+"../../../../../../../libraries/c_sdk/standard/https/test/access;"
+"../../../../../../../libraries/c_sdk/standard/https/include;"
+"../../../../../../../libraries/c_sdk/standard/https/src;"
+"../../../../../../../libraries/freertos_plus/aws/greengrass/test;"
+"../../../../../../../libraries/freertos_plus/aws/greengrass/include;"
+"../../../../../../../libraries/freertos_plus/aws/greengrass/src;"
+"../../../../../../../libraries/freertos_plus/aws/ota/src;"
+"../../../../../../../libraries/freertos_plus/aws/ota/include;"
+"../../../../../../../libraries/3rdparty/mbedtls/include;"
+"../../../../../../../libraries/abstractions/posix/include;"
+"../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/include;"
+"../../../../../../../libraries/c_sdk/aws/defender/src/private;"
+"../../../../../../../libraries/3rdparty/jsmn;"
+"../../../../../../../libraries/3rdparty/pkcs11;"
+"../../../../../../../libraries/3rdparty/tinycbor;"
+"../../../../../../../libraries/3rdparty/tinycrypt/asn1;"
+"../../../../../../../libraries/3rdparty/tinycrypt/lib/include;"
+"../../../../../../../libraries/3rdparty/mbedtls/include/mbedtls;"
+"../../../../../../../libraries/abstractions/pkcs11/mbedtls;"
+"../../../../../../../libraries/3rdparty/unity/src;"
+"../../../../../../../libraries/3rdparty/unity/extras/fixture/src;"
+"../../../../../../../libraries/3rdparty/http-parser;"
+"../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;")
+
+
+SAME54_PORT_DIR = ("../../../../../../../vendors/microchip/boards/same54_xpro/aws_tests/config_files;"
+"../../../../../../../freertos_kernel/portable/GCC/ARM_CM4F;"
+"../../../../../../../vendors/microchip/harmony3/afr;"
+"../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11;"
+"../../../../../../../vendors/microchip/boards/same54_xpro/ports/posix;"                   
+"../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;")
+
+
+SAME70_PORT_DIR = ("../../../../../../../vendors/microchip/boards/same70_xult/aws_tests/config_files;"
+"../../../../../../../freertos_kernel/portable/GCC/ARM_CM7/r0p1;"
+"../../../../../../../vendors/microchip/harmony3/afr;"
+"../../../../../../../vendors/microchip/boards/same70_xult\ports/pkcs11;"
+"../../../../../../../vendors/microchip/boards/same70_xult/ports/posix;"
+"../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;")
+
+PIC32MZ_PORT_DIR = ("../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/aws_tests/config_files;"
+"../../../../../../../freertos_kernel/portable/MPLAB/PIC32MZ;"
+"../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;"
+"../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;"
+"../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;"
+"../../../../../../../vendors/microchip/harmony3/afr;")
+
+SAME54_INC_DIR = SAME54_PORT_DIR +  AFR_COMMON_INC_DIR
+SAME70_INC_DIR = SAME70_PORT_DIR +  AFR_COMMON_INC_DIR
+PIC32_INC_DIR =  PIC32MZ_PORT_DIR + AFR_COMMON_INC_DIR
+
+
+
 
 # Fetch Core Architecture and Family details
 ###############################################################################
@@ -161,9 +230,9 @@ def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile):
             AddFile(component,strPath + "/" + str(child.attrib["name"]), str(child.attrib["name"]), strRelativeFilePath+ "/" + str(child.attrib["name"]),strRelativeFilePath + "/" + str(child.attrib["name"]))
         
    
-#Instatntiate FreeRTOS Component
+#Instatntiate AmazonFreeRTOS Device Tester Component
 def instantiateComponent(aws_cloud):
-    Log.writeInfoMessage("Running FreeRTOS")
+    Log.writeInfoMessage("Running AmazonFreeRTOS Device Tester")
 
     # Deactivate the active RTOS if any.
     deactivateActiveRtos()
@@ -188,7 +257,6 @@ def instantiateComponent(aws_cloud):
 
     freeRtosIntConfig()
     Database.setSymbolValue("HarmonyCore", "SELECT_RTOS","FreeRTOS")
-    #Database.setSymbolValue("HarmonyCore", "ENABLE_OSAL", True)
 
     #FreeRTOS Configuration Menu
     freeRtosSymMenu = aws_cloud.createMenuSymbol("AWS_FREERTOS_MENU", None)
@@ -208,7 +276,7 @@ def instantiateComponent(aws_cloud):
 ############################################################################
 
     configName = Variables.get("__CONFIGURATION_NAME")
-    AddAWSFile(aws_cloud,"../",  "",Module.getPath()+"config/Test_"+coreArch+".xml")
+    AddAWSFile(aws_cloud,"",  "",Module.getPath()+"config/Test_"+coreArch+".xml")
     
     if (coreArch == "MIPS"):
         AddMIPS(aws_cloud,configName)
@@ -221,7 +289,6 @@ def instantiateComponent(aws_cloud):
     freeRtosIncWarn.setCategory("C32")
     freeRtosIncWarn.setKey("make-warnings-into-errors")
     freeRtosIncWarn.setValue("false")
-    #AddFile(aws_cloud,"../amazon-freertos/lib/FreeRTOS","queue.c","../../third_party/amazon-freertos/lib/FreeRTOS/","amazon-freertos/lib/FreeRTOS","SOURCE", False)
 
 
 def AddMIPS(aws_cloud,configName):

@@ -44,20 +44,16 @@ def deactivateActiveRtos():
 
 #Instatntiate FreeRTOS Component
 def instantiateComponent(thirdPartyFreeRTOS):
-    Log.writeInfoMessage("Running FreeRTOS")
+    Log.writeInfoMessage("Running AmazonFreeRTOS interface")
 
     # Deactivate the active RTOS if any.
     deactivateActiveRtos()
     res = Database.activateComponents(["HarmonyCore"])
 
-    #FreeRTOS Interrupt Handlers configurations
-    #freeRtosIntConfig() //SHAN: #commented
-
     #FreeRTOS Configuration Menu
     freeRtosSymMenu = thirdPartyFreeRTOS.createMenuSymbol("AWS_FREERTOS_MENU", None)
     freeRtosSymMenu.setLabel("AmazonFreeRTOS Configuration")
     freeRtosSymMenu.setDescription("List of AWS Options")
-    #AddFile(thirdPartyFreeRTOS, "AWS_FREERTOS_QUEUE_C","../amazon-freertos/lib/FreeRTOS/queue.c","queue.c","../../third_party/amazon-freertos/lib/FreeRTOS/","amazon-freertos/lib/FreeRTOS","SOURCE", False)
 
 
 
