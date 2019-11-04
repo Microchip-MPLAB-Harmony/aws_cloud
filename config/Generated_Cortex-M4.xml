@@ -53,9 +53,6 @@
       <file name="aws_iot_network_manager.c" />
       <file name="iot_network_manager_private.h" />
     </dir>
-      <dir name="ota">
-      <file name="aws_iot_ota_update_demo.c" />
-    </dir>
       <file name="README.md" />
     <dir name="shadow">
       <file name="aws_iot_demo_shadow.c" />
@@ -530,21 +527,6 @@
             <file name="aws_helper_secure_connect.h" />
           </dir>
           </dir>
-          <dir name="ota">
-          <dir name="include">
-            <file name="aws_iot_ota_agent.h" />
-            <file name="aws_ota_agent.h" />
-            <file name="aws_ota_types.h" />
-          </dir>
-            <dir name="src">
-            <file name="aws_iot_ota_agent.c" />
-            <file name="aws_ota_agent_internal.h" />
-            <file name="aws_ota_cbor.c" />
-            <file name="aws_ota_cbor.h" />
-            <file name="aws_ota_cbor_internal.h" />
-            <file name="aws_ota_pal.h" />
-          </dir>
-          </dir>
         </dir>
         <dir name="standard">
         <dir name="crypto">
@@ -631,7 +613,6 @@
     <file name="LICENSE" />
   <file name="README.md" />
   <dir name="vendors">
-    <file name="directories.txt" />
     <dir name="microchip">
       <dir name="boards">
         <dir name="same54_xpro">
@@ -655,9 +636,6 @@
             </dir>
             </dir>
             <dir name="ports">
-            <dir name="ota">
-              <file name="aws_ota_pal.c" />
-            </dir>
               <dir name="pkcs11">
               <file name="iot_pkcs11_pal.c" />
               <file name="pkcs11_nvm.c" />
