@@ -151,7 +151,7 @@ extern void vLoggingPrint( const char * pcMessage );
     #define configPRINTF( X )          vLoggingPrintf X
 
 /* Map the logging task's printf to the board specific output function. */
-    #define configPRINT_STRING( x )    SYS_CONSOLE_MESSAGE( x );
+    #define configPRINT_STRING( x )    printf (x)
 
 
 /* Sets the length of the buffers into which logging messages are written - so
@@ -262,6 +262,6 @@ extern void vLoggingPrint( const char * pcMessage );
 #endif /* defined(__LANGUAGE_C__) */
 
 /* The platform FreeRTOS is running on. */
-#define configPLATFORM_NAME    "MicrochipPIC32MZEF"
+#define configPLATFORM_NAME    "MicrochipPIC32MZEF2"
 
 #endif /* FREERTOS_CONFIG_H */
