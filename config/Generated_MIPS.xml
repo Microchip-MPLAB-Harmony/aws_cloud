@@ -633,7 +633,6 @@
     <file name="LICENSE" />
   <file name="README.md" />
   <dir name="vendors">
-    <file name="directories.txt" />
     <dir name="microchip">
       <dir name="boards">
         <dir name="curiosity2_pic32mzef">

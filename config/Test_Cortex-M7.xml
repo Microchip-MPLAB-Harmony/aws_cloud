@@ -318,7 +318,6 @@
       </dir>
       <dir name="abstractions">
       <dir name="pkcs11">
-        <file name="CMakeLists.txt" />
         <dir name="include">
           <file name="iot_pkcs11_pal.h" />
         </dir>
@@ -332,7 +331,6 @@
         </dir>
         </dir>
         <dir name="platform">
-        <file name="CMakeLists.txt" />
         <dir name="freertos">
           <dir name="include">
             <dir name="platform">
@@ -363,7 +361,6 @@
         </dir>
         </dir>
         <dir name="posix">
-        <file name="CMakeLists.txt" />
         <dir name="include">
           <dir name="FreeRTOS_POSIX">
             <file name="errno.h" />
@@ -383,7 +380,6 @@
           </dir>
         </dir>
         <dir name="secure_sockets">
-        <file name="CMakeLists.txt" />
         <dir name="freertos_plus_tcp">
           <file name="iot_secure_sockets.c" />
         </dir>
@@ -400,7 +396,6 @@
       <dir name="c_sdk">
       <dir name="aws">
         <dir name="defender">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="aws_defender.h" />
             <file name="aws_iot_defender.h" />
@@ -419,7 +414,6 @@
           </dir>
           </dir>
           <dir name="shadow">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="aws_iot_shadow.h" />
             <file name="aws_shadow.h" />
@@ -453,7 +447,6 @@
         </dir>
         <dir name="standard">
         <dir name="common">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_appversion32.h" />
             <file name="iot_atomic.h" />
@@ -493,7 +486,6 @@
           </dir>
           </dir>
           <dir name="https">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_https_client.h" />
             <file name="iot_https_utils.h" />
@@ -523,7 +515,6 @@
             </dir>
           </dir>
           <dir name="mqtt">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_mqtt.h" />
             <file name="iot_mqtt_agent.h" />
@@ -542,6 +533,7 @@
             <file name="iot_mqtt_static_memory.c" />
             <file name="iot_mqtt_subscription.c" />
             <file name="iot_mqtt_validate.c" />
+	    <file name="iot_mqtt_serialize.c" />
             <dir name="private">
               <file name="iot_mqtt_internal.h" />
             </dir>
@@ -561,7 +553,6 @@
             </dir>
           </dir>
           <dir name="serializer">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_json_utils.h" />
             <file name="iot_serializer.h" />
@@ -589,7 +580,6 @@
       <dir name="freertos_plus">
       <dir name="aws">
         <dir name="greengrass">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="aws_ggd_config_defaults.h" />
             <file name="aws_greengrass_discovery.h" />
@@ -607,7 +597,6 @@
           </dir>
           </dir>
           <dir name="ota">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="aws_iot_ota_agent.h" />
             <file name="aws_ota_agent.h" />
@@ -630,7 +619,6 @@
         </dir>
         <dir name="standard">
         <dir name="crypto">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_crypto.h" />
           </dir>
@@ -642,8 +630,6 @@
           </dir>
           </dir>
           <dir name="freertos_plus_posix">
-          <file name=".gitignore" />
-          <file name="CMakeLists.txt" />
           <dir name="doc">
             <file name="Doxyfile" />
             <file name="DoxygenLayout.xml" />
@@ -680,7 +666,6 @@
           </dir>
           </dir>
           <dir name="freertos_plus_tcp">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="FreeRTOSIPConfigDefaults.h" />
             <file name="FreeRTOS_ARP.h" />
@@ -709,6 +694,12 @@
             <file name="FreeRTOS_TCP_WIN.c" />
             <file name="FreeRTOS_UDP_IP.c" />
             <dir name="portable">
+              <dir name="Compiler">
+                <dir name="GCC">
+                  <file name="pack_struct_end.h" />
+                  <file name="pack_struct_start.h" />
+                </dir>
+                </dir>
               <dir name="NetworkInterface">
                 <dir name="same70">
                   <file name="BufferAllocation_2.c" />
@@ -726,7 +717,6 @@
             <file name="uncrustify.cfg" />
         </dir>
           <dir name="pkcs11">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_pkcs11.h" />
           </dir>
@@ -735,7 +725,6 @@
           </dir>
           </dir>
           <dir name="tls">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_tls.h" />
           </dir>
@@ -748,7 +737,6 @@
           </dir>
           </dir>
           <dir name="utils">
-          <file name="CMakeLists.txt" />
           <dir name="include">
             <file name="iot_pki_utils.h" />
             <file name="iot_system_init.h" />
@@ -813,6 +801,7 @@
             <dir name="ports">
             <dir name="ota">
               <file name="aws_ota_pal.c" />
+			  <file name="aws_flash_config.h" />
             </dir>
               <dir name="pkcs11">
               <file name="iot_pkcs11_pal.c" />

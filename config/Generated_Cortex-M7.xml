@@ -634,7 +634,6 @@
     <file name="LICENSE" />
   <file name="README.md" />
   <dir name="vendors">
-    <file name="directories.txt" />
     <dir name="microchip">
       <dir name="boards">
         <dir name="same70_xult">
@@ -660,6 +659,7 @@
             <dir name="ports">
             <dir name="ota">
               <file name="aws_ota_pal.c" />
+			  <file name="aws_flash_config.h" />
             </dir>
               <dir name="pkcs11">
               <file name="iot_pkcs11_pal.c" />
