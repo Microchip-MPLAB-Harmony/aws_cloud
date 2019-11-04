@@ -26,7 +26,7 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
-
+#include "unity_internals.h"
 
 
 /*-----------------------------------------------------------
@@ -133,7 +133,9 @@
 
 extern void vAssertCalled( const char * pcFile,
                            uint32_t ulLine );
-#define configASSERT( x )    if( ( x ) == 0 ) vAssertCalled( __FILE__, __LINE__ )
+
+#define configASSERT( x ) \
+    if( ( x ) == 0 ) TEST_ABORT()
 
 /* The function that implements FreeRTOS printf style output, and the macro
  * that maps the configPRINTF() macros to that function. */
@@ -147,7 +149,7 @@ extern void vAssertCalled( const char * pcFile,
 
 /* Sets the length of the buffers into which logging messages are written - so
  * also defines the maximum length of each log message. */
-    #define configLOGGING_MAX_MESSAGE_LENGTH            128
+    #define configLOGGING_MAX_MESSAGE_LENGTH            512
 
 /* Set to 1 to prepend each log message with a message number, the task name,
  * and a time stamp. */

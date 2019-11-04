@@ -298,15 +298,16 @@ CK_OBJECT_HANDLE PKCS11_PAL_SaveObject( CK_ATTRIBUTE_PTR pxLabel,
             /* start critical */
             // start critical
             taskENTER_CRITICAL();
-            AWS_FlashRegionProtect(PKCS11_CERTIFICATE_FLASH_MPU_REGION, PKCS11_CERTIFICATE_SECTION_SIZE, P11ConfigFlashPtr, false);
-            AWS_FlashRegionUnlock((uint32_t*)P11ConfigFlashPtr);
+			//Commented, since flash utility had issues running AFQP with protect enabled.
+            //AWS_FlashRegionProtect(PKCS11_CERTIFICATE_FLASH_MPU_REGION, PKCS11_CERTIFICATE_SECTION_SIZE, P11ConfigFlashPtr, false);
+            //AWS_FlashRegionUnlock((uint32_t*)P11ConfigFlashPtr);
             AWS_FlashPagesErase(pFlashDest, PKCS11_CERTIFICATE_FLASH_PAGES);  
 
             // write the pages
             AWS_FlashPagesWrite(pFlashDest, pDataSrc, nPages);
 
-           AWS_FlashRegionLock((uint32_t*)P11ConfigFlashPtr);
-           AWS_FlashRegionProtect(PKCS11_CERTIFICATE_FLASH_MPU_REGION, PKCS11_CERTIFICATE_SECTION_SIZE, P11ConfigFlashPtr, true);
+            //AWS_FlashRegionLock((uint32_t*)P11ConfigFlashPtr);
+            //AWS_FlashRegionProtect(PKCS11_CERTIFICATE_FLASH_MPU_REGION, PKCS11_CERTIFICATE_SECTION_SIZE, P11ConfigFlashPtr, true);
             // done; verify
             
             if( memcmp( pCertFlash, pCertSave, ulDataSize ) != 0 )

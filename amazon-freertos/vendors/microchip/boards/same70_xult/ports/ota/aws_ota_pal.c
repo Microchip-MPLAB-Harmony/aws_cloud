@@ -481,10 +481,7 @@ static OTA_Err_t prvPAL_CheckFileSignature( OTA_FileContext_t *  C )
                 eResult = kOTA_Err_SignatureCheckFailed;
 
                 /* Erase the image as signature verification failed.*/
-                if( AWS_FlashEraseUpdateBank() == ( bool_t ) pdFALSE )
-                {
-                    OTA_LOG_L1( "[%s] Error: Failed to erase the flash !\r\n", OTA_METHOD_NAME );
-                }
+                
             }
             else
             {
