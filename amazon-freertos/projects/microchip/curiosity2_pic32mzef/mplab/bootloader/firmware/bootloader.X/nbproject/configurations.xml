@@ -251,7 +251,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/bootloader/bootloader/include;../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/bootloader/config_files;../../../../../../../libraries/3rdparty/tinycrypt/lib/include;../../../../../../../libraries/3rdparty/tinycrypt/asn1;../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/bootloader/bootloader/flash;../../../../../../../vendors/microchip/boards/curiosity2_pic32mzef/bootloader/common/include;../src;../src/config/pic32mzef_nvm;../src/packs/PIC32MZ2048EFM144_DFP;../src/mips"/>
+                  value="..\..\..\..\..\..\..\vendors\microchip\boards\curiosity2_pic32mzef\bootloader\bootloader\include;..\..\..\..\..\..\..\vendors\microchip\boards\curiosity2_pic32mzef\bootloader\config_files;..\..\..\..\..\..\..\libraries\3rdparty\tinycrypt\lib\include;..\..\..\..\..\..\..\libraries\3rdparty\tinycrypt\asn1;..\..\..\..\..\..\..\vendors\microchip\boards\curiosity2_pic32mzef\bootloader\bootloader\flash;..\..\..\..\..\..\..\vendors\microchip\boards\curiosity2_pic32mzef\bootloader\common\include;../src;../src/config/pic32mzef_nvm;../src/packs/PIC32MZ2048EFM144_DFP;../src/mips"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

@@ -11,9 +11,7 @@
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects>
-                <make-dep-project>../../../bootloader/firmware/bootloader.X</make-dep-project>
-            </make-dep-projects>
+            <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
                 <sourceRootElem>../../../../../../../vendors/microchip/boards/same70_xult/aws_demos/linker_script</sourceRootElem>

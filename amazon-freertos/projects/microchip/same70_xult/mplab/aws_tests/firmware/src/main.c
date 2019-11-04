@@ -43,11 +43,12 @@
 #include "iot_logging_task.h"
 
 /* Sleep on this platform */
-#define Sleep( nMs )  vTaskDelay(pdMS_TO_TICKS(nMs));
+#define Sleep( nMs )    vTaskDelay( pdMS_TO_TICKS( nMs ) );
+
 #define mainDEVICE_NICK_NAME                "Microchip_Demo"
 
 #define mainLOGGING_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 5 )
-#define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 32 )
+#define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 128 )
 
 #define mainTEST_RUNNER_TASK_STACK_SIZE     ( configMINIMAL_STACK_SIZE * 8 )
 /* The default IP and MAC address used by the demo.  The address configuration

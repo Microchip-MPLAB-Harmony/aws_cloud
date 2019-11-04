@@ -164,6 +164,9 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
@@ -247,13 +250,10 @@
             <itemPath>../../../../../../../demos/network_manager/aws_iot_network_manager.c</itemPath>
             <itemPath>../../../../../../../demos/network_manager/iot_network_manager_private.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f9" displayName="ota" projectFiles="true">
-            <itemPath>../../../../../../../demos/ota/aws_iot_ota_update_demo.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f10" displayName="shadow" projectFiles="true">
+          <logicalFolder name="f9" displayName="shadow" projectFiles="true">
             <itemPath>../../../../../../../demos/shadow/aws_iot_demo_shadow.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f11" displayName="tcp" projectFiles="true">
+          <logicalFolder name="f10" displayName="tcp" projectFiles="true">
             <itemPath>../../../../../../../demos/tcp/aws_tcp_echo_client_single_task.c</itemPath>
             <itemPath>../../../../../../../demos/tcp/aws_tcp_echo_client_single_tasks.h</itemPath>
           </logicalFolder>
@@ -724,21 +724,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/aws/greengrass/src/aws_helper_secure_connect.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="ota" projectFiles="true">
-                <logicalFolder name="f1" displayName="include" projectFiles="true">
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/include/aws_iot_ota_agent.h</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/include/aws_ota_agent.h</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/include/aws_ota_types.h</itemPath>
-                </logicalFolder>
-                <logicalFolder name="f2" displayName="src" projectFiles="true">
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_iot_ota_agent.c</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_ota_agent_internal.h</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_ota_cbor.c</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_ota_cbor.h</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_ota_cbor_internal.h</itemPath>
-                  <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/src/aws_ota_pal.h</itemPath>
-                </logicalFolder>
-              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="standard" projectFiles="true">
               <logicalFolder name="f1" displayName="crypto" projectFiles="true">
@@ -846,15 +831,12 @@
                   </logicalFolder>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="ports" projectFiles="true">
-                  <logicalFolder name="f1" displayName="ota" projectFiles="true">
-                    <itemPath>../../../../../../../vendors/microchip/boards/same54_xpro/ports/ota/aws_ota_pal.c</itemPath>
-                  </logicalFolder>
-                  <logicalFolder name="f2" displayName="pkcs11" projectFiles="true">
+                  <logicalFolder name="f1" displayName="pkcs11" projectFiles="true">
                     <itemPath>../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11/iot_pkcs11_pal.c</itemPath>
                     <itemPath>../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11/pkcs11_nvm.c</itemPath>
                     <itemPath>../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11/pkcs11_nvm.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f3" displayName="posix" projectFiles="true">
+                  <logicalFolder name="f2" displayName="posix" projectFiles="true">
                     <itemPath>../../../../../../../vendors/microchip/boards/same54_xpro/ports/posix/FreeRTOS_POSIX_portable.h</itemPath>
                   </logicalFolder>
                 </logicalFolder>
@@ -911,7 +893,6 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../../../../../../../vendors/directories.txt</itemPath>
         </logicalFolder>
         <itemPath>../../../../../../../LICENSE</itemPath>
         <itemPath>../../../../../../../README.md</itemPath>
@@ -1047,21 +1028,6 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../bootloader/firmware/bootloader.X"
-                        CT="1"
-                        CN="same54_xpro"
-                        AC="true"
-                        BL="true"
-                        WD="../../../bootloader/firmware/bootloader.X"
-                        BC="${MAKE}  -f Makefile CONF=same54_xpro"
-                        DBC="${MAKE}  -f Makefile CONF=same54_xpro TYPE_IMAGE=DEBUG_RUN"
-                        CC="rm -rf &quot;build/same54_xpro&quot; &quot;dist/same54_xpro&quot;"
-                        OP="dist/same54_xpro/production/bootloader.X.production.hex"
-                        DOP="dist/same54_xpro/debug/bootloader.X.debug.elf"
-                        FL="dist/same54_xpro/production/bootloader.X.production.hex"
-                        PD="dist/same54_xpro/production/bootloader.X.production.elf"
-                        DD="dist/same54_xpro/debug/bootloader.X.debug.elf">
-          </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
@@ -1111,7 +1077,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../../../../demos/include;../../../../../../../freertos_kernel/include;../../../../../../../libraries/abstractions/platform/freertos/include;../../../../../../../libraries/abstractions/secure_sockets/include;../../../../../../../libraries/abstractions/pkcs11/include;../../../../../../../libraries/c_sdk/aws/defender/include;../../../../../../../libraries/c_sdk/aws/shadow/include;../../../../../../../libraries/c_sdk/standard/common/include;../../../../../../../libraries/c_sdk/standard/https/include;../../../../../../../libraries/c_sdk/standard/mqtt/include;../../../../../../../libraries/c_sdk/standard/serializer/include;../../../../../../../libraries/freertos_plus/aws/greengrass/include;../../../../../../../libraries/freertos_plus/aws/ota/include;../../../../../../../libraries/freertos_plus/standard/crypto/include;../../../../../../../libraries/freertos_plus/standard/utils/include;../../../../../../../libraries/freertos_plus/standard/tls/include;../../../../../../../libraries/freertos_plus/standard/pkcs11/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/include;../../../../../../../libraries/abstractions/platform/include;../../../../../../../libraries/c_sdk/standard/common/include/private;../../../../../../../libraries/c_sdk/standard/common/include/types;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../../../../../../../demos/network_manager;../../../../../../../demos/https;../../../../../../../demos/tcp;../../../../../../../libraries/3rdparty/jsmn;../../../../../../../libraries/3rdparty/mbedtls/include;../../../../../../../libraries/3rdparty/tinycbor;../../../../../../../libraries/3rdparty/pkcs11;../../../../../../../libraries/3rdparty/tinycrypt/asn1;../../../../../../../libraries/3rdparty/tinycrypt/lib/include;../../../../../../../demos/dev_mode_key_provisioning/include;../../../../../../../libraries/abstractions/pkcs11/mbedtls;../../../../../../../libraries/3rdparty/http-parser;../../../../../../../libraries/freertos_plus/aws/ota/src;../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11;../../../../../../../vendors/microchip/harmony3/afr;../../../../../../../vendors/microchip/boards/same54_xpro/aws_demos/config_files;../../../../../../../freertos_kernel/portable/GCC/ARM_CM4F;../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54;../src;../src/config/same54_xpro_nvm;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm"/>
+                  value="../src;../src/config/same54_xpro_nvm;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm;../../../../../../../demos/include;../../../../../../../freertos_kernel/include;../../../../../../../libraries/abstractions/platform/freertos/include;../../../../../../../libraries/abstractions/secure_sockets/include;../../../../../../../libraries/abstractions/pkcs11/include;../../../../../../../libraries/c_sdk/aws/defender/include;../../../../../../../libraries/c_sdk/aws/shadow/include;../../../../../../../libraries/c_sdk/standard/common/include;../../../../../../../libraries/c_sdk/standard/https/include;../../../../../../../libraries/c_sdk/standard/mqtt/include;../../../../../../../libraries/c_sdk/standard/serializer/include;../../../../../../../libraries/freertos_plus/aws/greengrass/include;../../../../../../../libraries/freertos_plus/aws/ota/include;../../../../../../../libraries/freertos_plus/standard/crypto/include;../../../../../../../libraries/freertos_plus/standard/utils/include;../../../../../../../libraries/freertos_plus/standard/tls/include;../../../../../../../libraries/freertos_plus/standard/pkcs11/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/include;../../../../../../../libraries/abstractions/platform/include;../../../../../../../libraries/c_sdk/standard/common/include/private;../../../../../../../libraries/c_sdk/standard/common/include/types;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../../../../../../../demos/network_manager;../../../../../../../demos/https;../../../../../../../demos/tcp;../../../../../../../libraries/3rdparty/jsmn;../../../../../../../libraries/3rdparty/mbedtls/include;../../../../../../../libraries/3rdparty/tinycbor;../../../../../../../libraries/3rdparty/pkcs11;../../../../../../../libraries/3rdparty/tinycrypt/asn1;../../../../../../../libraries/3rdparty/tinycrypt/lib/include;../../../../../../../demos/dev_mode_key_provisioning/include;../../../../../../../libraries/abstractions/pkcs11/mbedtls;../../../../../../../libraries/3rdparty/http-parser;../../../../../../../libraries/freertos_plus/aws/ota/src;../../../../../../../vendors/microchip/boards/same54_xpro/ports/pkcs11;../../../../../../../vendors/microchip/harmony3/afr;../../../../../../../vendors/microchip/boards/same54_xpro/aws_demos/config_files;../../../../../../../freertos_kernel/portable/GCC/ARM_CM4F;../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>

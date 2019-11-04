@@ -1247,18 +1247,20 @@
     </UniqueComponent>
     <UniqueComponent dnOrder="4" id="core_timer">
       <Symbols dnOrder="0">
-        <Boolean dnOrder="0" id="CORE_TIMER_INTERRUPT_MODE">
+        <Float dnOrder="0" id="CORE_TIMER_COMPARE_MS">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </Float>
+        <Boolean dnOrder="1" id="CORE_TIMER_INTERRUPT_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="1" id="CORE_TIMER_PERIODIC_INTERRUPT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-          <Values dnOrder="1">
+        <Boolean dnOrder="2" id="CORE_TIMER_PERIODIC_INTERRUPT">
+          <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="false"/>
           </Values>
         </Boolean>
@@ -1333,58 +1335,37 @@
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="2" id="CONFIGURATION_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="3" id="DRIVER_COMMON">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="4" id="DRIVER_ROOT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Boolean dnOrder="5" id="ENABLE_APP_FILE">
+        <Boolean dnOrder="2" id="ENABLE_APP_FILE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="6" id="ENABLE_DRV_COMMON">
+        <Boolean dnOrder="3" id="ENABLE_DRV_COMMON">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="sys_debug" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="7" id="ENABLE_OSAL">
+        <Boolean dnOrder="4" id="ENABLE_OSAL">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="8" id="ENABLE_SYS_CACHE">
+        <Boolean dnOrder="5" id="ENABLE_SYS_CACHE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="9" id="ENABLE_SYS_COMMON">
+        <Boolean dnOrder="6" id="ENABLE_SYS_COMMON">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="sys_debug" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="10" id="ENABLE_SYS_INT">
+        <Boolean dnOrder="7" id="ENABLE_SYS_INT">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="11" id="GEN_APP_RTOS_TASK_0_DELAY">
+        <Integer dnOrder="8" id="GEN_APP_RTOS_TASK_0_DELAY">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1394,156 +1375,65 @@
             <User dnOrder="0" value="1000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="12" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
+        <Boolean dnOrder="9" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <Menu dnOrder="13" id="GEN_APP_RTOS_TASK_CONF_MENU0">
+        <Menu dnOrder="10" id="GEN_APP_RTOS_TASK_CONF_MENU0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Menu>
-        <File dnOrder="14" id="GEN_APP_TASKS">
+        <File dnOrder="11" id="GEN_APP_TASKS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </File>
-        <Menu dnOrder="15" id="GEN_APP_TASK_MENU">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Menu>
-        <File dnOrder="16" id="GEN_RTOS_APP_TASKS">
+        <File dnOrder="12" id="GEN_RTOS_APP_TASKS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="17" id="GEN_RTOS_APP_TASKS_DEF">
+        <File dnOrder="13" id="GEN_RTOS_APP_TASKS_DEF">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="18" id="INT_DEF">
+        <File dnOrder="14" id="OSAL_FREERTOS_C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="19" id="INT_HEADER">
+        <File dnOrder="15" id="OSAL_FREERTOS_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="20" id="INT_MAPPING">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="21" id="INT_SOURCE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="22" id="OSAL_DEFINITIONS_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="23" id="OSAL_FREERTOS_C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="24" id="OSAL_FREERTOS_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="25" id="OSAL_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="26" id="OSAL_IMPL_BASIC_H">
+        <File dnOrder="16" id="OSAL_IMPL_BASIC_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="27" id="OSAL_SYSDEF_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Combo dnOrder="28" id="SELECT_RTOS">
+        <Combo dnOrder="17" id="SELECT_RTOS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="AmazonFreeRTOS" value="FreeRTOS"/>
           </Values>
         </Combo>
-        <File dnOrder="29" id="SYSTEM_COMMON">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="30" id="SYSTEM_MODULE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="31" id="SYSTEM_ROOT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="32" id="TASKS_C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="33" id="USER_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
       </Symbols>
     </UniqueComponent>
     <UniqueComponent dnOrder="10" id="nvm"/>
@@ -1777,29 +1667,29 @@
     </UniqueComponent>
   </Components>
   <UserData>
-    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="0"/>
-    <ComponentGraph dnOrder="1" id="__ROOTVIEW">
+    <ComponentGraph dnOrder="0" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
-        <ElementPosition dnOrder="0" id="AmazonFreeRTOS" x="30" y="120"/>
-        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="730" y="140"/>
+        <ElementPosition dnOrder="0" id="AmazonFreeRTOS" x="397" y="475"/>
+        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="139" y="385"/>
         <ElementPosition dnOrder="2" id="BSP_PIC32MZ_EF_Curiosity_2.0" x="5" y="84"/>
         <ElementPosition dnOrder="3" id="HarmonyCore" x="439" y="20"/>
         <ElementPosition dnOrder="4" id="core" x="0" y="0"/>
-        <ElementPosition dnOrder="5" id="core_timer" x="950" y="140"/>
-        <ElementPosition dnOrder="6" id="dfp" x="20" y="20"/>
-        <ElementPosition dnOrder="7" id="drvExtPhyLan8740" x="30" y="220"/>
-        <ElementPosition dnOrder="8" id="drvMiim" x="570" y="220"/>
-        <ElementPosition dnOrder="9" id="drvPic32mEthmac" x="990" y="40"/>
-        <ElementPosition dnOrder="10" id="nvm" x="205" y="299"/>
-        <ElementPosition dnOrder="11" id="rng" x="343" y="311"/>
-        <ElementPosition dnOrder="12" id="stdio" x="340" y="20"/>
-        <ElementPosition dnOrder="13" id="sys_command" x="800" y="20"/>
-        <ElementPosition dnOrder="14" id="sys_console" x="410" y="120"/>
-        <ElementPosition dnOrder="15" id="sys_debug" x="620" y="20"/>
-        <ElementPosition dnOrder="16" id="sys_time" x="230" y="160"/>
-        <ElementPosition dnOrder="17" id="uart1" x="250" y="80"/>
-        <ElementPosition dnOrder="18" id="uart4" x="570" y="140"/>
+        <ElementPosition dnOrder="5" id="core_timer" x="483" y="178"/>
+        <ElementPosition dnOrder="6" id="dfp" x="73" y="4"/>
+        <ElementPosition dnOrder="7" id="drvExtPhyLan8740" x="146" y="527"/>
+        <ElementPosition dnOrder="8" id="drvMiim" x="253" y="543"/>
+        <ElementPosition dnOrder="9" id="drvPic32mEthmac" x="30" y="476"/>
+        <ElementPosition dnOrder="10" id="nvm" x="24" y="141"/>
+        <ElementPosition dnOrder="11" id="rng" x="25" y="258"/>
+        <ElementPosition dnOrder="12" id="stdio" x="354" y="165"/>
+        <ElementPosition dnOrder="13" id="sys_command" x="836" y="236"/>
+        <ElementPosition dnOrder="14" id="sys_console" x="665" y="317"/>
+        <ElementPosition dnOrder="15" id="sys_debug" x="841" y="369"/>
+        <ElementPosition dnOrder="16" id="sys_time" x="656" y="132"/>
+        <ElementPosition dnOrder="17" id="uart1" x="198" y="117"/>
+        <ElementPosition dnOrder="18" id="uart4" x="478" y="313"/>
       </ElementPositions>
     </ComponentGraph>
+    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="1"/>
   </UserData>
 </Configuration>

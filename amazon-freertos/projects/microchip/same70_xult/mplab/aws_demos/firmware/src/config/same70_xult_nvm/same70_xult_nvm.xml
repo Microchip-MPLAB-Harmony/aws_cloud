@@ -890,6 +890,9 @@
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
+          <Values dnOrder="1">
+            <User dnOrder="0" value="1000"/>
+          </Values>
         </Integer>
         <Boolean dnOrder="9" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
           <Values dnOrder="0">
@@ -1287,7 +1290,7 @@
       <Symbols dnOrder="0">
         <Integer dnOrder="0" id="BRG_VALUE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="uart4" value="976"/>
+            <Dynamic dnOrder="0" id="uart4" value="81"/>
           </Values>
         </Integer>
         <Comment dnOrder="1" id="UART_CLK_ENABLE_COMMENT">
@@ -1328,25 +1331,18 @@
             <Dynamic dnOrder="0" id="usart1" value="81"/>
           </Values>
         </Integer>
-        <Comment dnOrder="2" id="USART_CLK_ENABLE_COMMENT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Comment>
-        <Integer dnOrder="3" id="USART_CLOCK_FREQ">
+        <Integer dnOrder="2" id="USART_CLOCK_FREQ">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="usart1" value="150000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="4" id="USART_INTERRUPT_MODE">
+        <Boolean dnOrder="3" id="USART_INTERRUPT_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="stdio" value="false"/>
             <User dnOrder="1" value="true"/>
           </Values>
         </Boolean>
-        <Comment dnOrder="5" id="USART_NVIC_ENABLE_COMMENT">
+        <Comment dnOrder="4" id="USART_NVIC_ENABLE_COMMENT">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">false</Value>
@@ -1372,25 +1368,25 @@
     <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="0"/>
     <ComponentGraph dnOrder="1" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
-        <ElementPosition dnOrder="0" id="AmazonFreeRTOS" x="410" y="100"/>
-        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="589" y="309"/>
-        <ElementPosition dnOrder="2" id="HarmonyCore" x="740" y="20"/>
+        <ElementPosition dnOrder="0" id="AmazonFreeRTOS" x="371" y="417"/>
+        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="145" y="399"/>
+        <ElementPosition dnOrder="2" id="HarmonyCore" x="632" y="16"/>
         <ElementPosition dnOrder="3" id="cmsis" x="340" y="20"/>
-        <ElementPosition dnOrder="4" id="core" x="239" y="19"/>
+        <ElementPosition dnOrder="4" id="core" x="239" y="20"/>
         <ElementPosition dnOrder="5" id="dfp" x="20" y="20"/>
-        <ElementPosition dnOrder="6" id="drvExtPhyLan8740" x="450" y="200"/>
-        <ElementPosition dnOrder="7" id="drvGmac" x="350" y="200"/>
-        <ElementPosition dnOrder="8" id="drvMiim" x="570" y="240"/>
+        <ElementPosition dnOrder="6" id="drvExtPhyLan8740" x="117" y="546"/>
+        <ElementPosition dnOrder="7" id="drvGmac" x="34" y="472"/>
+        <ElementPosition dnOrder="8" id="drvMiim" x="220" y="561"/>
         <ElementPosition dnOrder="9" id="efc" x="480" y="20"/>
-        <ElementPosition dnOrder="10" id="stdio" x="640" y="20"/>
-        <ElementPosition dnOrder="11" id="sys_command" x="210" y="60"/>
-        <ElementPosition dnOrder="12" id="sys_console" x="923" y="20"/>
-        <ElementPosition dnOrder="13" id="sys_debug" x="30" y="60"/>
-        <ElementPosition dnOrder="14" id="sys_time" x="30" y="180"/>
-        <ElementPosition dnOrder="15" id="tc0" x="190" y="180"/>
-        <ElementPosition dnOrder="16" id="trng" x="26" y="348"/>
-        <ElementPosition dnOrder="17" id="uart4" x="830" y="200"/>
-        <ElementPosition dnOrder="18" id="usart1" x="191" y="260"/>
+        <ElementPosition dnOrder="10" id="stdio" x="275" y="242"/>
+        <ElementPosition dnOrder="11" id="sys_command" x="775" y="167"/>
+        <ElementPosition dnOrder="12" id="sys_console" x="591" y="145"/>
+        <ElementPosition dnOrder="13" id="sys_debug" x="776" y="294"/>
+        <ElementPosition dnOrder="14" id="sys_time" x="275" y="98"/>
+        <ElementPosition dnOrder="15" id="tc0" x="64" y="122"/>
+        <ElementPosition dnOrder="16" id="trng" x="815" y="20"/>
+        <ElementPosition dnOrder="17" id="uart4" x="438" y="229"/>
+        <ElementPosition dnOrder="18" id="usart1" x="80" y="235"/>
       </ElementPositions>
     </ComponentGraph>
   </UserData>

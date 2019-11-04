@@ -53,6 +53,7 @@
 #include "configuration.h"
 #include "definitions.h"
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: RTOS "Tasks" Routine
@@ -86,7 +87,7 @@ void _APP_Tasks(  void *pvParameters  )
     while(1)
     {
         APP_Tasks();
-        vTaskDelay(50 / portTICK_PERIOD_MS);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
 
@@ -105,10 +106,8 @@ void _APP_Tasks(  void *pvParameters  )
   Remarks:
     See prototype in system/common/sys_module.h.
 */
-
 void SYS_Tasks ( void )
 {
-#if 0
     /* Maintain system services */
         xTaskCreate( _SYS_CMD_Tasks,
         "SYS_CMD_TASKS",
@@ -118,7 +117,7 @@ void SYS_Tasks ( void )
         (TaskHandle_t*)NULL
     );
 
-#endif
+
 
 
     /* Maintain Device Drivers */
@@ -135,7 +134,7 @@ void SYS_Tasks ( void )
 
     /* Maintain Middleware & Other Libraries */
     
-#if 0
+
     /* Maintain the application's state machine. */
         /* Create OS Thread for APP_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_Tasks,
@@ -145,12 +144,11 @@ void SYS_Tasks ( void )
                 1,
                 &xAPP_Tasks);
 
-#endif
+
 
     /* Start RTOS Scheduler. */
     
 }
-
 
 /*******************************************************************************
  End of File

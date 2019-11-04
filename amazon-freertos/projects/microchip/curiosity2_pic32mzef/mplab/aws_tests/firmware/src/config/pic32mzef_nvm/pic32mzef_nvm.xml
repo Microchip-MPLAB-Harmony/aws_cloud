@@ -1079,12 +1079,17 @@
     </UniqueComponent>
     <UniqueComponent dnOrder="3" id="core_timer">
       <Symbols dnOrder="0">
-        <Boolean dnOrder="0" id="CORE_TIMER_INTERRUPT_MODE">
+        <Integer dnOrder="0" id="CORE_TIMER_FREQUENCY">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core_timer" value="100000000"/>
+          </Values>
+        </Integer>
+        <Boolean dnOrder="1" id="CORE_TIMER_INTERRUPT_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="1" id="CORE_TIMER_PERIODIC_INTERRUPT">
+        <Boolean dnOrder="2" id="CORE_TIMER_PERIODIC_INTERRUPT">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1094,6 +1099,16 @@
             <Dynamic dnOrder="0" id="core_timer" value="false"/>
           </Values>
         </Boolean>
+        <Integer dnOrder="3" id="CORE_TIMER_PERIOD_US">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core_timer" value="1000"/>
+          </Values>
+        </Integer>
+        <String dnOrder="4" id="CORE_TIMER_PERIOD_VALUE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core_timer" value="0x186a0"/>
+          </Values>
+        </String>
       </Symbols>
       <Attachments dnOrder="1">
         <DirectCapability dnOrder="0" id="CORE_TIMER_TMR">
@@ -1216,145 +1231,160 @@
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Menu dnOrder="11" id="GEN_APP_RTOS_TASK_CONF_MENU0">
+        <Integer dnOrder="11" id="GEN_APP_RTOS_TASK_0_DELAY">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+          <Values dnOrder="1">
+            <User dnOrder="0" value="1000"/>
+          </Values>
+        </Integer>
+        <Boolean dnOrder="12" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
+          <Values dnOrder="0">
+            <User dnOrder="0" value="true"/>
+          </Values>
+        </Boolean>
+        <Menu dnOrder="13" id="GEN_APP_RTOS_TASK_CONF_MENU0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Menu>
-        <File dnOrder="12" id="GEN_APP_TASKS">
+        <File dnOrder="14" id="GEN_APP_TASKS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </File>
-        <Menu dnOrder="13" id="GEN_APP_TASK_MENU">
+        <Menu dnOrder="15" id="GEN_APP_TASK_MENU">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Menu>
-        <File dnOrder="14" id="GEN_RTOS_APP_TASKS">
+        <File dnOrder="16" id="GEN_RTOS_APP_TASKS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="15" id="GEN_RTOS_APP_TASKS_DEF">
+        <File dnOrder="17" id="GEN_RTOS_APP_TASKS_DEF">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="16" id="INT_DEF">
+        <File dnOrder="18" id="INT_DEF">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="17" id="INT_HEADER">
+        <File dnOrder="19" id="INT_HEADER">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="18" id="INT_MAPPING">
+        <File dnOrder="20" id="INT_MAPPING">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="19" id="INT_SOURCE">
+        <File dnOrder="21" id="INT_SOURCE">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="20" id="OSAL_DEFINITIONS_H">
+        <File dnOrder="22" id="OSAL_DEFINITIONS_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="21" id="OSAL_FREERTOS_C">
+        <File dnOrder="23" id="OSAL_FREERTOS_C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="22" id="OSAL_FREERTOS_H">
+        <File dnOrder="24" id="OSAL_FREERTOS_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="23" id="OSAL_H">
+        <File dnOrder="25" id="OSAL_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="24" id="OSAL_IMPL_BASIC_H">
+        <File dnOrder="26" id="OSAL_IMPL_BASIC_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="25" id="OSAL_SYSDEF_H">
+        <File dnOrder="27" id="OSAL_SYSDEF_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <Combo dnOrder="26" id="SELECT_RTOS">
+        <Combo dnOrder="28" id="SELECT_RTOS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="AmazonDeviceTester" value="FreeRTOS"/>
           </Values>
         </Combo>
-        <File dnOrder="27" id="SYSTEM_COMMON">
+        <File dnOrder="29" id="SYSTEM_COMMON">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="28" id="SYSTEM_MODULE">
+        <File dnOrder="30" id="SYSTEM_MODULE">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="29" id="SYSTEM_ROOT">
+        <File dnOrder="31" id="SYSTEM_ROOT">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="30" id="TASKS_C">
+        <File dnOrder="32" id="TASKS_C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="31" id="USER_H">
+        <File dnOrder="33" id="USER_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
@@ -1594,28 +1624,28 @@
     </UniqueComponent>
   </Components>
   <UserData>
-    <ComponentGraph dnOrder="0" id="__ROOTVIEW">
+    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="0"/>
+    <ComponentGraph dnOrder="1" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
-        <ElementPosition dnOrder="0" id="AmazonDeviceTester" x="379" y="263"/>
-        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="390" y="120"/>
+        <ElementPosition dnOrder="0" id="AmazonDeviceTester" x="340" y="446"/>
+        <ElementPosition dnOrder="1" id="AmazonHWInterface" x="125" y="421"/>
         <ElementPosition dnOrder="2" id="HarmonyCore" x="440" y="20"/>
         <ElementPosition dnOrder="3" id="core" x="240" y="20"/>
-        <ElementPosition dnOrder="4" id="core_timer" x="790" y="40"/>
+        <ElementPosition dnOrder="4" id="core_timer" x="179" y="138"/>
         <ElementPosition dnOrder="5" id="dfp" x="20" y="20"/>
-        <ElementPosition dnOrder="6" id="drvExtPhyLan8740" x="630" y="260"/>
-        <ElementPosition dnOrder="7" id="drvMiim" x="150" y="320"/>
-        <ElementPosition dnOrder="8" id="drvPic32mEthmac" x="30" y="260"/>
-        <ElementPosition dnOrder="9" id="nvm" x="230" y="160"/>
-        <ElementPosition dnOrder="10" id="rng" x="190" y="240"/>
-        <ElementPosition dnOrder="11" id="stdio" x="340" y="20"/>
-        <ElementPosition dnOrder="12" id="sys_command" x="30" y="60"/>
-        <ElementPosition dnOrder="13" id="sys_console" x="770" y="140"/>
-        <ElementPosition dnOrder="14" id="sys_debug" x="620" y="20"/>
-        <ElementPosition dnOrder="15" id="sys_time" x="610" y="140"/>
+        <ElementPosition dnOrder="6" id="drvExtPhyLan8740" x="298" y="550"/>
+        <ElementPosition dnOrder="7" id="drvMiim" x="167" y="556"/>
+        <ElementPosition dnOrder="8" id="drvPic32mEthmac" x="2" y="507"/>
+        <ElementPosition dnOrder="9" id="nvm" x="313" y="18"/>
+        <ElementPosition dnOrder="10" id="rng" x="611" y="17"/>
+        <ElementPosition dnOrder="11" id="stdio" x="176" y="307"/>
+        <ElementPosition dnOrder="12" id="sys_command" x="829" y="240"/>
+        <ElementPosition dnOrder="13" id="sys_console" x="617" y="115"/>
+        <ElementPosition dnOrder="14" id="sys_debug" x="833" y="108"/>
+        <ElementPosition dnOrder="15" id="sys_time" x="323" y="133"/>
         <ElementPosition dnOrder="16" id="uart1" x="30" y="180"/>
-        <ElementPosition dnOrder="17" id="uart4" x="230" y="80"/>
+        <ElementPosition dnOrder="17" id="uart4" x="434" y="273"/>
       </ElementPositions>
     </ComponentGraph>
-    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="1"/>
   </UserData>
 </Configuration>

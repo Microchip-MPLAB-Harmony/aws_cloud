@@ -255,8 +255,8 @@ void SYS_Initialize ( void* data )
     CLK_Initialize();
 	GPIO_Initialize();
     /* Configure Prefetch, Wait States and ECC */
-    PRECONbits.PREFEN = 3;
-    PRECONbits.PFMWS = 2;
+    PRECONbits.PREFEN = 0;
+    PRECONbits.PFMWS = 3;
     CFGCONbits.ECCCON = 3;
 
 

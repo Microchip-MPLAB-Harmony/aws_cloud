@@ -159,6 +159,9 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
@@ -180,7 +183,6 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>../../../../../../../vendors/microchip/boards/same70_xult/aws_tests/linker_script/ATSAME70Q21B.ld</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -516,7 +518,6 @@
               <logicalFolder name="f3" displayName="test" projectFiles="true">
                 <itemPath>../../../../../../../libraries/abstractions/pkcs11/test/iot_test_pkcs11.c</itemPath>
               </logicalFolder>
-              <itemPath>../../../../../../../libraries/abstractions/pkcs11/CMakeLists.txt</itemPath>
               <itemPath>../../../../../../../libraries/abstractions/pkcs11/ReadMe.md</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="platform" projectFiles="true">
@@ -548,7 +549,6 @@
                 <itemPath>../../../../../../../libraries/abstractions/platform/test/iot_test_platform_clock.c</itemPath>
                 <itemPath>../../../../../../../libraries/abstractions/platform/test/iot_test_platform_threads.c</itemPath>
               </logicalFolder>
-              <itemPath>../../../../../../../libraries/abstractions/platform/CMakeLists.txt</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="posix" projectFiles="true">
               <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -568,7 +568,6 @@
                   <itemPath>../../../../../../../libraries/abstractions/posix/include/FreeRTOS_POSIX/utils.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <itemPath>../../../../../../../libraries/abstractions/posix/CMakeLists.txt</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="secure_sockets" projectFiles="true">
               <logicalFolder name="f1" displayName="freertos_plus_tcp" projectFiles="true">
@@ -582,7 +581,6 @@
               <logicalFolder name="f3" displayName="test" projectFiles="true">
                 <itemPath>../../../../../../../libraries/abstractions/secure_sockets/test/iot_test_tcp.c</itemPath>
               </logicalFolder>
-              <itemPath>../../../../../../../libraries/abstractions/secure_sockets/CMakeLists.txt</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f3" displayName="c_sdk" projectFiles="true">
@@ -604,7 +602,6 @@
                 <logicalFolder name="f3" displayName="test" projectFiles="true">
                   <itemPath>../../../../../../../libraries/c_sdk/aws/defender/test/aws_iot_tests_defender_api.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/aws/defender/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="shadow" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -636,7 +633,6 @@
                   </logicalFolder>
                   <itemPath>../../../../../../../libraries/c_sdk/aws/shadow/test/aws_test_shadow.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/aws/shadow/CMakeLists.txt</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="standard" projectFiles="true">
@@ -675,7 +671,6 @@
                   <itemPath>../../../../../../../libraries/c_sdk/standard/common/test/iot_memory_leak.c</itemPath>
                   <itemPath>../../../../../../../libraries/c_sdk/standard/common/test/iot_tests_taskpool.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/standard/common/CMakeLists.txt</itemPath>
                 <itemPath>../../../../../../../libraries/c_sdk/standard/common/iot_device_metrics.c</itemPath>
                 <itemPath>../../../../../../../libraries/c_sdk/standard/common/iot_init.c</itemPath>
                 <itemPath>../../../../../../../libraries/c_sdk/standard/common/iot_static_memory_common.c</itemPath>
@@ -708,7 +703,6 @@
                     <itemPath>../../../../../../../libraries/c_sdk/standard/https/test/unit/iot_tests_https_utils.c</itemPath>
                   </logicalFolder>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/standard/https/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="mqtt" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -732,6 +726,7 @@
                   <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/src/iot_mqtt_static_memory.c</itemPath>
                   <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/src/iot_mqtt_subscription.c</itemPath>
                   <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/src/iot_mqtt_validate.c</itemPath>
+                  <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/src/iot_mqtt_serialize.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f3" displayName="test" projectFiles="true">
                   <logicalFolder name="f1" displayName="system" projectFiles="true">
@@ -746,7 +741,6 @@
                   </logicalFolder>
                   <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/test/iot_test_mqtt_agent.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/standard/mqtt/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f4" displayName="serializer" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -770,7 +764,6 @@
                   <itemPath>../../../../../../../libraries/c_sdk/standard/serializer/test/iot_tests_serializer_cbor.c</itemPath>
                   <itemPath>../../../../../../../libraries/c_sdk/standard/serializer/test/iot_tests_serializer_json.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/c_sdk/standard/serializer/CMakeLists.txt</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -792,7 +785,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/aws/greengrass/test/aws_test_greengrass_discovery.c</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/aws/greengrass/test/aws_test_helper_secure_connect.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/aws/greengrass/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="ota" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -812,7 +804,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/test/aws_test_ota_agent.c</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/test/aws_test_ota_pal.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/CMakeLists.txt</itemPath>
                 <itemPath>../../../../../../../libraries/freertos_plus/aws/ota/README.md</itemPath>
               </logicalFolder>
             </logicalFolder>
@@ -827,7 +818,6 @@
                 <logicalFolder name="f3" displayName="test" projectFiles="true">
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/crypto/test/iot_test_crypto.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/crypto/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f2" displayName="freertos_plus_posix" projectFiles="true">
                 <logicalFolder name="f1" displayName="doc" projectFiles="true">
@@ -864,8 +854,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/test/iot_test_posix_unistd.c</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/test/iot_test_posix_utils.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/.gitignore</itemPath>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f3" displayName="freertos_plus_tcp" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -887,7 +875,13 @@
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="source" projectFiles="true">
                   <logicalFolder name="f1" displayName="portable" projectFiles="true">
-                    <logicalFolder name="f1" displayName="NetworkInterface" projectFiles="true">
+                    <logicalFolder name="f1" displayName="Compiler" projectFiles="true">
+                      <logicalFolder name="f1" displayName="GCC" projectFiles="true">
+                        <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC/pack_struct_end.h</itemPath>
+                        <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC/pack_struct_start.h</itemPath>
+                      </logicalFolder>
+                    </logicalFolder>
+                    <logicalFolder name="f2" displayName="NetworkInterface" projectFiles="true">
                       <logicalFolder name="f1" displayName="same70" projectFiles="true">
                         <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same70/BufferAllocation_2.c</itemPath>
                         <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same70/NetworkInterface_eth.c</itemPath>
@@ -910,7 +904,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/test/iot_freertos_tcp_test_access_tcp_define.h</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/test/iot_test_freertos_tcp.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/CMakeLists.txt</itemPath>
                 <itemPath>../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/uncrustify.cfg</itemPath>
               </logicalFolder>
               <logicalFolder name="f4" displayName="pkcs11" projectFiles="true">
@@ -920,7 +913,6 @@
                 <logicalFolder name="f2" displayName="src" projectFiles="true">
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/pkcs11/src/iot_pkcs11.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/pkcs11/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f5" displayName="tls" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -933,7 +925,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/tls/test/iot_test_tls.c</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/tls/test/iot_test_tls.h</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/tls/CMakeLists.txt</itemPath>
               </logicalFolder>
               <logicalFolder name="f6" displayName="utils" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -944,7 +935,6 @@
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/utils/src/iot_pki_utils.c</itemPath>
                   <itemPath>../../../../../../../libraries/freertos_plus/standard/utils/src/iot_system_init.c</itemPath>
                 </logicalFolder>
-                <itemPath>../../../../../../../libraries/freertos_plus/standard/utils/CMakeLists.txt</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -1001,6 +991,7 @@
                 <logicalFolder name="f2" displayName="ports" projectFiles="true">
                   <logicalFolder name="f1" displayName="ota" projectFiles="true">
                     <itemPath>../../../../../../../vendors/microchip/boards/same70_xult/ports/ota/aws_ota_pal.c</itemPath>
+                    <itemPath>../../../../../../../vendors/microchip/boards/same70_xult/ports/ota/aws_flash_config.h</itemPath>
                   </logicalFolder>
                   <logicalFolder name="f2" displayName="pkcs11" projectFiles="true">
                     <itemPath>../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11/iot_pkcs11_pal.c</itemPath>
@@ -1257,7 +1248,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../../../../../../freertos_kernel/portable/GCC/ARM_CM7/r0p1;../../../../../../../freertos_kernel/include;../../../../../../../libraries/c_sdk/standard/common/include;../../../../../../../libraries/freertos_plus/standard/crypto/include;../../../../../../../libraries/freertos_plus/standard/tls/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../../../../../../../libraries/abstractions/wifi/include;../../../../../../../libraries/abstractions/pkcs11/include;../../../../../../../tests/include;../../../../../../../vendors/microchip/boards/same70_xult/aws_tests/config_files;../../../../../../../libraries/c_sdk/standard/common/include/private;../../../../../../../libraries/abstractions/platform/include;../../../../../../../libraries/abstractions/platform/freertos/include;../../../../../../../libraries/abstractions/secure_sockets/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/test;../../../../../../../libraries/freertos_plus/standard/pkcs11/include;../../../../../../../libraries/freertos_plus/aws/ota/test;../../../../../../../libraries/freertos_plus/standard/utils/include;../../../../../../../demos/dev_mode_key_provisioning/include;../../../../../../../libraries/c_sdk/aws/defender/include;../../../../../../../libraries/c_sdk/standard/mqtt/test/access;../../../../../../../libraries/c_sdk/standard/mqtt/include;../../../../../../../libraries/c_sdk/standard/mqtt/src;../../../../../../../libraries/c_sdk/standard/serializer/include;../../../../../../../libraries/c_sdk/aws/shadow/include;../../../../../../../libraries/c_sdk/aws/shadow/src;../../../../../../../libraries/c_sdk/standard/https/test/access;../../../../../../../libraries/c_sdk/standard/https/include;../../../../../../../libraries/c_sdk/standard/https/src;../../../../../../../libraries/freertos_plus/aws/greengrass/test;../../../../../../../libraries/freertos_plus/aws/greengrass/include;../../../../../../../libraries/freertos_plus/aws/greengrass/src;../../../../../../../libraries/freertos_plus/aws/ota/src;../../../../../../../libraries/freertos_plus/aws/ota/include;../../../../../../../libraries/3rdparty/mbedtls/include;../../../../../../../libraries/abstractions/posix/include;../../../../../../../vendors/microchip/boards/curiosity_pic32mzef/ports/posix;../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/include;../../../../../../../libraries/c_sdk/aws/defender/src/private;../../../../../../../libraries/3rdparty/jsmn;../../../../../../../libraries/3rdparty/pkcs11;../../../../../../../libraries/3rdparty/tinycbor;../../../../../../../libraries/3rdparty/tinycrypt/asn1;../../../../../../../libraries/3rdparty/tinycrypt/lib/include;../../../../../../../libraries/3rdparty/mbedtls/include/mbedtls;../../../../../../../libraries/abstractions/pkcs11/mbedtls;../../../../../../../libraries/3rdparty/unity/src;../../../../../../../libraries/3rdparty/unity/extras/fixture/src;../../../../../../../libraries/3rdparty/http-parser;../../../../../../../vendors/microchip/harmony3/afr;../../../../../../../freertos_kernel/portable/GCC/ARM_CM7;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;..\..\..\..\..\..\..\freertos_kernel\include;..\..\..\..\..\..\..\libraries\c_sdk\standard\common\include;..\..\..\..\..\..\..\libraries\freertos_plus\standard\crypto\include;..\..\..\..\..\..\..\libraries\freertos_plus\standard\tls\include;..\..\..\..\..\..\..\libraries\freertos_plus\standard\freertos_plus_tcp\include;..\..\..\..\..\..\..\libraries\freertos_plus\standard\freertos_plus_tcp\source\portable\Compiler\GCC;..\..\..\..\..\..\..\libraries\abstractions\wifi\include;..\..\..\..\..\..\..\libraries\abstractions\pkcs11\include;..\..\..\..\..\..\..\tests\include;..\..\..\..\..\..\..\vendors\microchip\boards\same70_xult\aws_tests\config_files;..\..\..\..\..\..\..\libraries\c_sdk\standard\common\include\private;..\..\..\..\..\..\..\libraries\abstractions\platform\include;..\..\..\..\..\..\..\libraries\abstractions\platform\freertos\include;..\..\..\..\..\..\..\libraries\abstractions\secure_sockets\include;..\..\..\..\..\..\..\libraries\freertos_plus\standard\freertos_plus_tcp\test;..\..\..\..\..\..\..\libraries\freertos_plus\standard\pkcs11\include;..\..\..\..\..\..\..\libraries\freertos_plus\aws\ota\test;..\..\..\..\..\..\..\libraries\freertos_plus\standard\utils\include;..\..\..\..\..\..\..\demos\dev_mode_key_provisioning\include;..\..\..\..\..\..\..\libraries\c_sdk\aws\defender\include;..\..\..\..\..\..\..\libraries\c_sdk\standard\mqtt\test\access;..\..\..\..\..\..\..\libraries\c_sdk\standard\mqtt\include;..\..\..\..\..\..\..\libraries\c_sdk\standard\mqtt\src;..\..\..\..\..\..\..\libraries\c_sdk\standard\serializer\include;..\..\..\..\..\..\..\libraries\c_sdk\aws\shadow\include;..\..\..\..\..\..\..\libraries\c_sdk\aws\shadow\src;..\..\..\..\..\..\..\libraries\c_sdk\standard\https\test\access;..\..\..\..\..\..\..\libraries\c_sdk\standard\https\include;..\..\..\..\..\..\..\libraries\c_sdk\standard\https\src;..\..\..\..\..\..\..\libraries\freertos_plus\aws\greengrass\test;..\..\..\..\..\..\..\libraries\freertos_plus\aws\greengrass\include;..\..\..\..\..\..\..\libraries\freertos_plus\aws\greengrass\src;..\..\..\..\..\..\..\libraries\freertos_plus\aws\ota\src;..\..\..\..\..\..\..\libraries\freertos_plus\aws\ota\include;..\..\..\..\..\..\..\libraries\3rdparty\mbedtls\include;..\..\..\..\..\..\..\libraries\abstractions\posix\include;..\..\..\..\..\..\..\vendors\microchip\boards\curiosity_pic32mzef\ports\posix;..\..\..\..\..\..\..\libraries\freertos_plus\standard\freertos_plus_posix\include;..\..\..\..\..\..\..\libraries\c_sdk\aws\defender\src\private;..\..\..\..\..\..\..\libraries\3rdparty\jsmn;..\..\..\..\..\..\..\libraries\3rdparty\pkcs11;..\..\..\..\..\..\..\libraries\3rdparty\tinycbor;..\..\..\..\..\..\..\libraries\3rdparty\tinycrypt\asn1;..\..\..\..\..\..\..\libraries\3rdparty\tinycrypt\lib\include;..\..\..\..\..\..\..\libraries\3rdparty\mbedtls\include\mbedtls;..\..\..\..\..\..\..\libraries\abstractions\pkcs11\mbedtls;..\..\..\..\..\..\..\libraries\3rdparty\unity\src;..\..\..\..\..\..\..\libraries\3rdparty\unity\extras\fixture\src;..\..\..\..\..\..\..\libraries\3rdparty\http-parser;..\..\..\..\..\..\..\vendors\microchip\harmony3\afr;..\..\..\..\..\..\..\freertos_kernel\portable\GCC\ARM_CM7;..\..\..\..\..\..\..\vendors\microchip\boards\same70_xult\ports\pkcs11;..\..\..\..\..\..\..\vendors\microchip\harmony3\afr\tcpip\src\common;../src;../src/config/same70_xult_nvm;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm"/>
+                  value="../../../../../../../libraries/abstractions/wifi/include;../../../../../../../vendors/microchip/boards/curiosity_pic32mzef/ports/posix;../../../../../../../freertos_kernel/portable/GCC/ARM_CM7;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../libraries/abstractions/wifi/include;../../../../../../../vendors/microchip/boards/curiosity_pic32mzef/ports/posix;../../../../../../../freertos_kernel/portable/GCC/ARM_CM7;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/aws_tests/config_files;../../../../../../../freertos_kernel/portable/GCC/ARM_CM7/r0p1;../../../../../../../vendors/microchip/harmony3/afr;../../../../../../../vendors/microchip/boards/same70_xult\ports/pkcs11;../../../../../../../vendors/microchip/boards/same70_xult/ports/posix;../../../../../../../vendors/microchip/harmony3/afr/tcpip/src/common;../../../../../../../freertos_kernel/include;../../../../../../../libraries/c_sdk/standard/common/include;../../../../../../../libraries/freertos_plus/standard/crypto/include;../../../../../../../libraries/freertos_plus/standard/tls/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../../../../../../../libraries/abstractions/pkcs11/include;../../../../../../../tests/include;../../../../../../../libraries/c_sdk/standard/common/include/private;../../../../../../../libraries/abstractions/platform/include;../../../../../../../libraries/abstractions/platform/freertos/include;../../../../../../../libraries/abstractions/secure_sockets/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_tcp/test;../../../../../../../libraries/freertos_plus/standard/pkcs11/include;../../../../../../../libraries/freertos_plus/aws/ota/test;../../../../../../../libraries/freertos_plus/standard/utils/include;../../../../../../../demos/dev_mode_key_provisioning/include;../../../../../../../libraries/c_sdk/aws/defender/include;../../../../../../../libraries/c_sdk/standard/mqtt/test/access;../../../../../../../libraries/c_sdk/standard/mqtt/include;../../../../../../../libraries/c_sdk/standard/mqtt/src;../../../../../../../libraries/c_sdk/standard/serializer/include;../../../../../../../libraries/c_sdk/aws/shadow/include;../../../../../../../libraries/c_sdk/aws/shadow/src;../../../../../../../libraries/c_sdk/standard/https/test/access;../../../../../../../libraries/c_sdk/standard/https/include;../../../../../../../libraries/c_sdk/standard/https/src;../../../../../../../libraries/freertos_plus/aws/greengrass/test;../../../../../../../libraries/freertos_plus/aws/greengrass/include;../../../../../../../libraries/freertos_plus/aws/greengrass/src;../../../../../../../libraries/freertos_plus/aws/ota/src;../../../../../../../libraries/freertos_plus/aws/ota/include;../../../../../../../libraries/3rdparty/mbedtls/include;../../../../../../../libraries/abstractions/posix/include;../../../../../../../libraries/freertos_plus/standard/freertos_plus_posix/include;../../../../../../../libraries/c_sdk/aws/defender/src/private;../../../../../../../libraries/3rdparty/jsmn;../../../../../../../libraries/3rdparty/pkcs11;../../../../../../../libraries/3rdparty/tinycbor;../../../../../../../libraries/3rdparty/tinycrypt/asn1;../../../../../../../libraries/3rdparty/tinycrypt/lib/include;../../../../../../../libraries/3rdparty/mbedtls/include/mbedtls;../../../../../../../libraries/abstractions/pkcs11/mbedtls;../../../../../../../libraries/3rdparty/unity/src;../../../../../../../libraries/3rdparty/unity/extras/fixture/src;../../../../../../../libraries/3rdparty/http-parser;../src;../src/config/same70_xult_nvm;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1266,7 +1257,8 @@
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value="PIC32_USE_ETHERNET"/>
+        <property key="preprocessor-macros"
+                  value="PIC32_USE_ETHERNET;UNITY_INCLUDE_CONFIG_H;AMAZON_FREERTOS_ENABLE_UNIT_TESTS;__free_rtos__"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
@@ -1331,12 +1323,13 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros"
+                  value="ROM_ORIGIN=0x410200;ROM_LENGTH=0x1efe00"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
         <property key="serial-origin" value=""/>
-        <property key="stack-size" value=""/>
+        <property key="stack-size" value="10000"/>
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
         <property key="warn-section-align" value="false"/>
@@ -1404,8 +1397,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="F:/AFQP/amazon-freertos/projects/microchip/same70_xult/mplab/aws_tests/firmware/aws_tests.X/debug/same70_xult_nvm/aws_tests_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

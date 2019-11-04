@@ -77,8 +77,6 @@ void static UART4_ISR_RX_Handler( void )
         /* Nothing to process */
         ;
     }
-
-    return;
 }
 
 void static UART4_ISR_TX_Handler( void )
@@ -107,8 +105,6 @@ void static UART4_ISR_TX_Handler( void )
         /* Nothing to process */
         ;
     }
-
-    return;
 }
 
 void UART4_InterruptHandler( void )
@@ -144,8 +140,6 @@ void UART4_InterruptHandler( void )
     {
         UART4_ISR_TX_Handler();
     }
-
-    return;
 }
 
 
@@ -153,7 +147,7 @@ void static UART4_ErrorClear( void )
 {
     uint8_t dummyData = 0u;
 
-    UART4_REGS->UART_CR|= UART_CR_RSTSTA_Msk;
+    UART4_REGS->UART_CR = UART_CR_RSTSTA_Msk;
 
     /* Flush existing error bytes from the RX FIFO */
     while( UART_SR_RXRDY_Msk == (UART4_REGS->UART_SR& UART_SR_RXRDY_Msk) )
@@ -163,8 +157,6 @@ void static UART4_ErrorClear( void )
 
     /* Ignore the warning */
     (void)dummyData;
-
-    return;
 }
 
 void UART4_Initialize( void )
@@ -179,7 +171,7 @@ void UART4_Initialize( void )
     UART4_REGS->UART_MR = ((UART_MR_BRSRCCK_PERIPH_CLK) | (UART_MR_PAR_NO) | (0 << UART_MR_FILTER_Pos));
 
     /* Configure UART4 Baud Rate */
-    UART4_REGS->UART_BRGR = UART_BRGR_CD(976);
+    UART4_REGS->UART_BRGR = UART_BRGR_CD(81);
 
     /* Initialize instance object */
     uart4Obj.rxBuffer = NULL;
@@ -192,8 +184,6 @@ void UART4_Initialize( void )
     uart4Obj.txProcessedSize = 0;
     uart4Obj.txBusyStatus = false;
     uart4Obj.txCallback = NULL;
-
-    return;
 }
 
 UART_ERROR UART4_ErrorGet( void )
@@ -234,15 +224,19 @@ bool UART4_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
         /* Calculate BRG value */
         brgVal = srcClkFreq / (16 * baud);
 
-        /* Configure UART4 mode */
-        uartMode = UART4_REGS->UART_MR;
-        uartMode &= ~UART_MR_PAR_Msk;
-        UART4_REGS->UART_MR = uartMode | setup->parity ;
+        /* If the target baud rate is acheivable using this clock */
+        if (brgVal <= 65535)
+        {
+            /* Configure UART4 mode */
+            uartMode = UART4_REGS->UART_MR;
+            uartMode &= ~UART_MR_PAR_Msk;
+            UART4_REGS->UART_MR = uartMode | setup->parity ;
 
-        /* Configure UART4 Baud Rate */
-        UART4_REGS->UART_BRGR = UART_BRGR_CD(brgVal);
+            /* Configure UART4 Baud Rate */
+            UART4_REGS->UART_BRGR = UART_BRGR_CD(brgVal);
 
-        status = true;
+            status = true;
+        }
     }
 
     return status;
