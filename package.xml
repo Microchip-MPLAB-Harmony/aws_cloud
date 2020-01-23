@@ -2,8 +2,9 @@
 <Package name="aws_cloud">
     <Dependencies>
         <Dependency name="csp"  version="v3.5.2"/>
-        <Dependency name="core" version="v3.5.1"/>
-        <Dependency name="bsp" version="v3.3.0"/>
-        <Dependency name="net"  version="v3.4.0"/>
+        <Dependency name="core" version="v3.6.0"/>
+        <Dependency name="bsp" version="v3.5.0"/>
+        <Dependency name="net"  version="v3.5.1"/>
+	<Dependency name="amazon-freertos" version="201908.00"/>
     </Dependencies>
 </Package>
