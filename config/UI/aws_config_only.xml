@@ -1,0 +1,22 @@
+<structure>
+<!--Application Version-->
+<components config_name="AWS_CLOUD_APP" config_type="menu" config_label="Amazon FreeRTOS Application" config_visible="True" config_descr="Amazon FreeRTOS Application Information" config_default="">
+<component config_name="AWS_CLOUD_MAJOR" config_type="integer" config_label="Major Version" config_visible="True" config_descr="Major Application Information" config_default="0"/>
+<component config_name="AWS_CLOUD_MINOR" config_type="integer" config_label="Minor Version" config_visible="True" config_descr="Minor Application Information" config_default="9"/>
+<component config_name="AWS_CLOUD_BUILD" config_type="integer" config_label="Build Version" config_visible="True" config_descr="Build Number" config_default="2"/>
+</components>
+
+<!--IOT THING Details -->
+<components config_name="AWS_CLOUD_IOT_THING" config_type="menu" config_label="Amazon FreeRTOS IOT Configuration" config_visible="True" config_descr="IOT THING Configuration" config_default="">
+<component config_name="AWS_CLOUD_IOT_ENDPOINT" config_type="string" config_label="END POINT URL" config_visible="True" config_descr="Enter IOT End point URL" config_default=""/>
+<component config_name="AWS_CLOUD_IOT_NAME" config_type="string" config_label="IOT_THING_NAME" config_visible="True" config_descr="Enter the IOT THING NAME" config_default=""/>
+<component config_name="AWS_CLOUD_MQTT_BROKER_PORT" config_type="integer" config_label="MQTT BROKER PORT" config_visible="True" config_descr="MQTT BROKER PORT" config_default="8883"/>
+<component config_name="AWS_CLOUD_GREEN_GRASS_PORT" config_type="integer" config_label="GREEN_GRASS_PORT" config_visible="True" config_descr="Green Grass PORT" config_default="8443"/>
+</components>
+
+<!--IOT CERTIFICATE Details -->
+<components config_name="AWS_CLOUD_KEYS" config_type="menu" config_label="Open amazon-freertos\tools\certificate_configuration\CertificateConfigurator.html" config_visible="True" config_descr="Use this tool for certificate generation" config_default="">
+</components>
+</structure>
+
+
