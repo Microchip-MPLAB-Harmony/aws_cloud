@@ -21,5 +21,3 @@ def loadModule():
     aws_cryptp.addDependency("Core_SysTime_Dependency", "SYS_TIME", None, True, True)
 
     
-    execfile(Module.getPath() + "/config/aws_freertos.py")
-    execfile(Module.getPath() + "/config/aws_freertos_test.py")

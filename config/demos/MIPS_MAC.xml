@@ -1,5 +1,10 @@
 <structure>
 <dir name="amazon-freertos">
+		<dir name="demos">
+			<dir name="ota">
+				<file name="aws_iot_ota_update_demo.c" />
+			</dir>
+		</dir>
   <dir name="freertos_kernel">
     <dir name="portable">
       <dir name="MPLAB">
@@ -17,6 +22,23 @@
     </dir>
     <dir name="libraries">
     <dir name="freertos_plus">
+				<dir name="aws">
+					<dir name="ota">
+						<dir name="src">
+							<file name="aws_iot_ota_agent.c" />
+							<file name="aws_ota_agent_internal.h" />
+							<file name="aws_ota_cbor.c" />
+							<file name="aws_ota_cbor.h" />
+							<file name="aws_ota_cbor_internal.h" />
+							<file name="aws_ota_pal.h" />
+						</dir>
+						<dir name="include">
+							<file name="aws_iot_ota_agent.h" />
+							<file name="aws_ota_agent.h" />
+							<file name="aws_ota_types.h" />
+						</dir>
+					</dir>
+				</dir>
       <dir name="standard">
         <dir name="freertos_plus_tcp">
           <dir name="source">

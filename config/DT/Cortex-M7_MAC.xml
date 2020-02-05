@@ -18,6 +18,23 @@
     </dir>
     <dir name="libraries">
     <dir name="freertos_plus">
+				<dir name="aws">
+					<dir name="ota">
+						<dir name="src">
+							<file name="aws_iot_ota_agent.c" />
+							<file name="aws_ota_agent_internal.h" />
+							<file name="aws_ota_cbor.c" />
+							<file name="aws_ota_cbor.h" />
+							<file name="aws_ota_cbor_internal.h" />
+							<file name="aws_ota_pal.h" />
+						</dir>
+						<dir name="include">
+							<file name="aws_iot_ota_agent.h" />
+							<file name="aws_ota_agent.h" />
+							<file name="aws_ota_types.h" />
+						</dir>
+					</dir>
+				</dir>
       <dir name="standard">
         <dir name="freertos_plus_tcp">
           <dir name="source">
@@ -72,6 +89,7 @@
             <dir name="ports">
             <dir name="ota">
               <file name="aws_ota_pal.c" />
+	      <file name="aws_flash_config.h" />
             </dir>
             <dir name="pkcs11">
               <file name="iot_pkcs11_pal.c" />

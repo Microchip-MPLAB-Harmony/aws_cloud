@@ -37,10 +37,12 @@ CONFIG_DEFAULT_VAL="config_default"
 
 coreArch     = Database.getSymbolValue("core", "CoreArchitecture")
 coreFamily   = ATDF.getNode( "/avr-tools-device-file/devices/device" ).getAttribute( "family" )
-autoConnectTableDebug = [["sys_debug", "sys_debug_SYS_CONSOLE_dependency", "sys_console"]]
-autoConnectTableCmd = [["sys_command", "sys_command_SYS_CONSOLE_dependency", "sys_console"]]
+autoConnectTableDebug = [["sys_debug", "sys_debug_SYS_CONSOLE_dependency", "sys_console_0","sys_console"]]
+autoConnectTableCmd = [["sys_command", "sys_command_SYS_CONSOLE_dependency", "sys_console_0","sys_console"]]
 
-AMAZON_FREERTOS_PATH="../../../../../../../../../../"
+AMAZON_FREERTOS_PATH_DEFAULT="../../../../../../../../../../"
+AMAZON_FREERTOS_PATH_H3=""
+AMAZON_FREERTOS_PATH=""
 
 CONFIG_FREERTOS="FreeRTOS"
 CONFIG_MICRIUM="MicriumOSIII"
@@ -61,12 +63,54 @@ XML_ATTRIB_INC="include-files"
 CONFIG_DEMOS=0
 CONFIG_DEVICE_TESTER=1
 
+connected_components=["AmazonFreeRTOS", "AmazonDeviceTester"]
 connected_dep=["demos","DT"]
-connected_dep_index=CONFIG_DEMOS
+connected_dep_index=CONFIG_DEVICE_TESTER
+
 
 ###############################################################################
 ########################## FreeRTOS Configurations ############################
 ###############################################################################
+
+
+def onAttachmentConnected(source, target):
+    global connected_dep
+    global connected_dep_index
+
+    localComponent = source["component"]
+    remoteComponent = target["component"]
+    remoteID = remoteComponent.getID()
+    connectID = source["id"]
+    targetID = target["id"]
+    Log.writeInfoMessage("Running Amazon components "   + str(remoteID) +  str(connectID) + " " + str(targetID))
+
+    # For Dependency Connected (memory)
+
+    if(remoteID =="AmazonDeviceTester"):
+        connected_dep_index=CONFIG_DEVICE_TESTER
+    if (remoteID == "AmazonFreeRTOS"):
+        connected_dep_index=CONFIG_DEMOS
+    
+
+
+def onAttachmentDisconnected(source, target):
+    global connected_dep
+    global connected_dep_index
+
+
+def setH3DirectoryEnable(symbol, event):
+    global AMAZON_FREERTOS_PATH,AMAZON_FREERTOS_PATH_H3,AMAZON_FREERTOS_PATH_DEFAULT,connected_dep_index,connected_dep
+    configName = Variables.get("__CONFIGURATION_NAME")
+    symbol.setValue(event['symbol'].getValue())
+    if(event['symbol'].getValue()):
+        AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_DEFAULT
+    else:
+       AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_H3
+       
+    if(Database.getComponentByID(connected_components[connected_dep_index]) != None):
+        Log.writeInfoMessage("Running " + connected_components[connected_dep_index] +" Component *" + str(event['symbol'].getValue()))
+        AddAWSFile(symbol.getComponent(),"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+"_MAC.xml", True)
+
 
 def deactivateActiveRtos():
     activeComponents = Database.getActiveComponentIDs()
@@ -76,7 +120,7 @@ def deactivateActiveRtos():
             res = Database.deactivateComponents([CONFIG_FREERTOS])
         if (activeComponents[i] == CONFIG_MICRIUM):
             res = Database.deactivateComponents([CONFIG_MICRIUM])
-            
+
 def freeRtosIntConfig():
     if (coreArch == "MIPS"):
         Timer1InterruptHandlerIndex     = Interrupt.getInterruptIndex("TIMER_1")
@@ -144,19 +188,25 @@ def freeRtosIntConfig():
 
 #Instatntiate FreeRTOS Component
 def instantiateComponent(hw_interface):
-    global connected_dep_index
+    global aws_cloud_h3,connected_dep_index, AMAZON_FREERTOS_PATH,aws_cloud_h3,connected_dep
     Log.writeInfoMessage("Running AmazonFreeRTOS interface")
 
     # Deactivate the active RTOS if any.
     deactivateActiveRtos()
     res = Database.activateComponents(["HarmonyCore"])
-    
+
+    if(Database.getComponentByID("sys_time") == None):
+        res = Database.activateComponents(["sys_time"])
+
+    if(Database.getComponentByID("sys_console") == None):
+        res = Database.activateComponents(["sys_console"])
+
     if(Database.getComponentByID("sys_debug") == None):
         res = Database.activateComponents(["sys_debug"])
-        res = Database.connectDependencies(autoConnectTableDebug)    
+        res = Database.connectDependencies(autoConnectTableDebug)
     if(Database.getComponentByID("sys_command") == None):
         res = Database.activateComponents(["sys_command"])
-        res = Database.connectDependencies(autoConnectTableCmd)  
+        res = Database.connectDependencies(autoConnectTableCmd)
 
     if ((coreArch == "CORTEX-M4") or (coreArch == "CORTEX-M7")):
         if(Database.getComponentByID("trng") == None):
@@ -166,14 +216,27 @@ def instantiateComponent(hw_interface):
         if(Database.getComponentByID("nvm") == None):
             res = Database.activateComponents(["nvm"])
         if(Database.getComponentByID("rng") == None):
-            res = Database.activateComponents(["rng"])    
+            res = Database.activateComponents(["rng"])
 
     #FreeRTOS Configuration Menu
-    if(Database.getComponentByID("AmazonFreeRTOS") == None):
+    if(Database.getComponentByID("AmazonFreeRTOS") != None):
+        connected_dep_index=CONFIG_DEMOS
+    if(Database.getComponentByID("AmazonDeviceTester") != None):
         connected_dep_index=CONFIG_DEVICE_TESTER
-
     freeRtosIntConfig()
     Database.setSymbolValue("HarmonyCore", "SELECT_RTOS","FreeRTOS")
+    aws_cloud_h3 = hw_interface.createBooleanSymbol("HW_AWS_CLOUD_H3", None)
+    aws_cloud_h3.setLabel("aws cloud")
+    aws_cloud_h3.setVisible(False)
+    aws_cloud_h3.setDefaultValue(False)
+    aws_cloud_h3.setDependencies(setH3DirectoryEnable,["AmazonFreeRTOS.AWS_CLOUD_H3"])
+    aws_cloud_h3_dt = hw_interface.createBooleanSymbol("DT_HW_AWS_CLOUD_H3", None)
+    aws_cloud_h3_dt.setLabel("aws cloud_dt")
+    aws_cloud_h3_dt.setVisible(False)
+    aws_cloud_h3_dt.setDefaultValue(False)
+    aws_cloud_h3_dt.setDependencies(setH3DirectoryEnable,["AmazonDeviceTester.AWS_CLOUD_H3"])
+    
+
 
 
 ############################################################################
@@ -181,80 +244,92 @@ def instantiateComponent(hw_interface):
 ############################################################################
 
     configName = Variables.get("__CONFIGURATION_NAME")
-    AddAWSFile(hw_interface,"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+"_MAC.xml")
+    if(aws_cloud_h3.getValue() ==True):
+        AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_DEFAULT
+    else:
+       AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_H3
+
+    AddAWSFile(hw_interface,"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+"_MAC.xml", False)
     freeRtosIncWarn = hw_interface.createSettingSymbol("AFR_XC32_WARNING", None)
     freeRtosIncWarn.setCategory("C32")
     freeRtosIncWarn.setKey("make-warnings-into-errors")
     freeRtosIncWarn.setValue("false")
     AddAWSConfig(hw_interface,Module.getPath()+"config/UI/" + connected_dep[connected_dep_index] + "_"+ coreArch+"_MAC.xml")
- 
-
-def AddFileTemplate(component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=True):
-    global connected_dep_index
-    configName = Variables.get("__CONFIGURATION_NAME")
-    Log.writeInfoMessage(strPath.upper())
-    Log.writeInfoMessage(strFileName.upper())
-    Log.writeInfoMessage(strDestPath.upper())
-    Log.writeInfoMessage(strProjectPath.upper())
-    freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
-    freeRtosAddFile.setSourcePath("templates/" + connected_dep[connected_dep_index] +"/" + coreArch + "/" + strFileName)
-
-    if(strFileName.endswith(".ftl")):
-       strFileName= strFileName[:-4]
-       Log.writeInfoMessage(strPath.upper())
-       Log.writeInfoMessage(strFileName.upper())
-       Log.writeInfoMessage(strDestPath.upper())
-       Log.writeInfoMessage(strProjectPath.upper())
-    freeRtosAddFile.setOutputName(strFileName)
-    freeRtosAddFile.setDestPath(strDestPath)
-    freeRtosAddFile.setProjectPath(strProjectPath)
-    freeRtosAddFile.setType(strType)
-    freeRtosAddFile.setMarkup(bMarkup)
 
 
-def AddFile(component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=False):
-    configName = Variables.get("__CONFIGURATION_NAME")
-    Log.writeInfoMessage(strPath.upper())
-    Log.writeInfoMessage(strFileName.upper())
-    Log.writeInfoMessage(strDestPath.upper())
-    Log.writeInfoMessage(strProjectPath.upper())
-    freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
-    freeRtosAddFile.setSourcePath(strPath)
-    freeRtosAddFile.setOutputName(strFileName)
-    freeRtosAddFile.setDestPath(strDestPath)
-    freeRtosAddFile.setProjectPath(strProjectPath)
-    freeRtosAddFile.setType(strType)
-    freeRtosAddFile.setMarkup(bMarkup)
+def AddFileTemplate(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=True):
+    if updateOnlyPath:
+        component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
+    else:
+        global connected_dep,connected_dep_index
+        configName = Variables.get("__CONFIGURATION_NAME")
+        Log.writeInfoMessage(strPath.upper())
+        Log.writeInfoMessage(strFileName.upper())
+        Log.writeInfoMessage(strDestPath.upper())
+        Log.writeInfoMessage(strProjectPath.upper())
+        freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
+        freeRtosAddFile.setSourcePath("templates/" + connected_dep[connected_dep_index] +"/" + coreArch + "/" + strFileName)
+
+        if(strFileName.endswith(".ftl")):
+           strFileName= strFileName[:-4]
+           Log.writeInfoMessage(strPath.upper())
+           Log.writeInfoMessage(strFileName.upper())
+           Log.writeInfoMessage(strDestPath.upper())
+           Log.writeInfoMessage(strProjectPath.upper())
+        freeRtosAddFile.setOutputName(strFileName)
+        freeRtosAddFile.setDestPath(strDestPath)
+        freeRtosAddFile.setProjectPath(strProjectPath)
+        freeRtosAddFile.setType(strType)
+        freeRtosAddFile.setMarkup(bMarkup)
 
 
-def AddDir(root,component,strPath, strRelativeFilePath,strProjectPath):
+def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=False):
+    if updateOnlyPath:
+        component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
+    else:
+        configName = Variables.get("__CONFIGURATION_NAME")
+        Log.writeInfoMessage(strPath.upper())
+        Log.writeInfoMessage(strFileName.upper())
+        Log.writeInfoMessage(strDestPath.upper())
+        Log.writeInfoMessage(strProjectPath.upper())
+        freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
+        freeRtosAddFile.setSourcePath(strPath)
+        freeRtosAddFile.setOutputName(strFileName)
+        freeRtosAddFile.setDestPath(strDestPath)
+        freeRtosAddFile.setProjectPath(strProjectPath)
+        freeRtosAddFile.setType(strType)
+        freeRtosAddFile.setMarkup(bMarkup)
+
+
+def AddDir(root,component,strPath, strRelativeFilePath,strProjectPath, updateOnlyPath):
     for child in root:
         if child.tag == XML_ATTRIB_DIR:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
             NewstrRelativeFilePath = strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
             NewstrProjectPath = strProjectPath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddDir(child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath)
+            AddDir(child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath, updateOnlyPath)
         if child.tag == XML_ATTRIB_FILE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddFile(component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
+            AddFile(updateOnlyPath ,component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
 
         elif child.tag == XML_ATTRIB_TEMPLATE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddFileTemplate(component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
+            AddFileTemplate(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
 
 
 
-def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile):
+def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile, updateOnlyPath):
+    global AMAZON_FREERTOS_PATH
     tree = ET.parse(strXmlFile)
     root = tree.getroot()
     for child in root:
         if child.tag == XML_ATTRIB_DIR:
-            AddDir(child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]))
+            AddDir(child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]), updateOnlyPath)
         if child.tag == XML_ATTRIB_FILE:
-            AddFile(component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
+            AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
         if child.tag == XML_ATTRIB_TEMPLATE:
-            AddFileTemplate(component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
-        
+            AddFileTemplate(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
+
 
 def AddAWSConfig(aws_cloud,strXmlFile):
     tree = ET.parse(strXmlFile)
@@ -292,11 +367,11 @@ def AddAWSConfiguration(aws_cloud,parent_config,config_name,config_type,strLabel
         freeRtosSymMenu.setDefaultValue(int(strDefaultValue))
         freeRtosSymMenu.setMin(0)
         freeRtosSymMenu.setMax(999999999)
-	
+
     freeRtosSymMenu.setLabel(strLabel)
     freeRtosSymMenu.setDescription(strDesc)
     freeRtosSymMenu.setVisible(False)
-	
+
     #How to set generic Default Value.
     if(str(bVisible).lower()=="true"):
         freeRtosSymMenu.setVisible(True)
