@@ -56,6 +56,7 @@ XML_ATTRIB_COMBO="combo"
 XML_ATTRIB_STRING="string"
 XML_ATTRIB_BOOL="bool"
 XML_ATTRIB_INC="include-files"
+XML_ATTRIB_OVER_WRITE="overwrite"
 global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
 
 def setH3DirectoryEnable(symbol, event):
@@ -257,7 +258,7 @@ def AddFileTemplate(updateOnlyPath, component, strPath, strFileName, strDestPath
         freeRtosAddFile.setMarkup(bMarkup)
 
 
-def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=False, ):
+def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,bOverWrite=True,strType="SOURCE",bMarkup=False):
     if updateOnlyPath:
         component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
     else:
@@ -268,6 +269,7 @@ def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProj
         Log.writeInfoMessage(strProjectPath.upper())
         freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
         freeRtosAddFile.setSourcePath(strPath)
+        freeRtosAddFile.setOverwrite(bOverWrite)
         freeRtosAddFile.setOutputName(strFileName)
         freeRtosAddFile.setDestPath(strDestPath)
         freeRtosAddFile.setProjectPath(strProjectPath)
@@ -284,7 +286,10 @@ def AddDir(root,component,strPath, strRelativeFilePath,strProjectPath, updateOnl
             AddDir(child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath, updateOnlyPath)
         if child.tag == XML_ATTRIB_FILE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddFile(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
+            if( (XML_ATTRIB_OVER_WRITE in child.attrib) and child.attrib[XML_ATTRIB_OVER_WRITE] == "false"):
+                AddFile(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath,False)
+            else:
+                AddFile(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
 
         elif child.tag == XML_ATTRIB_TEMPLATE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
@@ -300,7 +305,10 @@ def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile, updateOnlyPat
         if child.tag == XML_ATTRIB_DIR:
             AddDir(child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]), updateOnlyPath)
         if child.tag == XML_ATTRIB_FILE:
-            AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
+            if( (XML_ATTRIB_OVER_WRITE in child.attrib)):
+                AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]),False)
+            else:
+                AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
         if child.tag == XML_ATTRIB_TEMPLATE:
             AddFileTemplate(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
 

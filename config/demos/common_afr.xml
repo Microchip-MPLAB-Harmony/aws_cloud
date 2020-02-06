@@ -2,32 +2,32 @@
 <dir name="amazon-freertos">
   <dir name="demos">
     <dir name="defender">
-      <file name="aws_iot_demo_defender.c" />
+      <file name="aws_iot_demo_defender.c" overwite="false" />
     </dir>
-      <dir name="demo_runner">
-      <file name="aws_demo.c" />
-      <file name="aws_demo_network_addr.c" />
-      <file name="aws_demo_version.c" />
-      <file name="iot_demo_freertos.c" />
-      <file name="iot_demo_runner.c" />
+      <dir name="demo_runner"  overwite="false">
+      <file name="aws_demo.c"  overwite="false"/>
+      <file name="aws_demo_network_addr.c"  overwite="false"/>
+      <file name="aws_demo_version.c" overwite="false" />
+      <file name="iot_demo_freertos.c"  overwite="false"/>
+      <file name="iot_demo_runner.c"  overwite="false"/>
     </dir>
       <dir name="dev_mode_key_provisioning">
       <dir name="include">
-        <file name="aws_dev_mode_key_provisioning.h" />
+        <file name="aws_dev_mode_key_provisioning.h"  overwite="false"/>
       </dir>
         <dir name="src">
-        <file name="aws_dev_mode_key_provisioning.c" />
+        <file name="aws_dev_mode_key_provisioning.c"  overwite="false"/>
       </dir>
       </dir>
       <dir name="greengrass_connectivity">
-      <file name="aws_greengrass_discovery_demo.c" />
+      <file name="aws_greengrass_discovery_demo.c"  overwite="false"/>
       <file name="README.md" />
     </dir>
       <dir name="https">
-      <file name="iot_demo_https_common.c" />
-      <file name="iot_demo_https_common.h" />
-      <file name="iot_demo_https_s3_download_async.c" />
-      <file name="iot_demo_https_s3_download_sync.c" />
+      <file name="iot_demo_https_common.c"  overwrite="false"/>
+      <file name="iot_demo_https_common.h"  overwrite="false"/>
+      <file name="iot_demo_https_s3_download_async.c" overwrite="false" />
+      <file name="iot_demo_https_s3_download_sync.c"  overwrite="false"/>
       <file name="presigned_urls_gen.py" />
       <file name="README.md" />
     </dir>
@@ -35,31 +35,31 @@
       <template name="aws_application_version.h.ftl" />
       <file name="aws_ble_gatt_server_demo.h" />
       <template name="aws_clientcredential.h.ftl" />
-      <file name="aws_clientcredential_keys.h" />
-      <file name="aws_demo.h" />
-      <file name="aws_iot_demo_network.h" />
-      <file name="aws_ota_codesigner_certificate.h" />
-      <file name="aws_wifi_connect_task.h" />
+      <file name="aws_clientcredential_keys.h"  overwrite="false"/>
+      <file name="aws_demo.h"  overwrite="false"/>
+      <file name="aws_iot_demo_network.h"  overwrite="false"/>
+      <file name="aws_ota_codesigner_certificate.h" overwrite="false" />
+      <file name="aws_wifi_connect_task.h" overwrite="false" />
       <file name="iot_ble_numericComparison.h" />
-      <file name="iot_config_common.h" />
-      <file name="iot_demo_logging.h" />
-      <file name="iot_demo_runner.h" />
+      <file name="iot_config_common.h"  overwrite="false"/>
+      <file name="iot_demo_logging.h" overwrite="false" />
+      <file name="iot_demo_runner.h" overwrite="false" />
     </dir>
       <dir name="mqtt">
-      <file name="iot_demo_mqtt.c" />
+      <file name="iot_demo_mqtt.c"  overwrite="false" />
     </dir>
       <dir name="network_manager">
-      <file name="aws_iot_demo_network.c" />
-      <file name="aws_iot_network_manager.c" />
-      <file name="iot_network_manager_private.h" />
+      <file name="aws_iot_demo_network.c"  overwrite="false" />
+      <file name="aws_iot_network_manager.c"  overwrite="false" />
+      <file name="iot_network_manager_private.h" overwrite="false" />
     </dir>
       <file name="README.md" />
     <dir name="shadow">
-      <file name="aws_iot_demo_shadow.c" />
+      <file name="aws_iot_demo_shadow.c"  overwrite="false" />
     </dir>
       <dir name="tcp">
-      <file name="aws_tcp_echo_client_single_task.c" />
-      <file name="aws_tcp_echo_client_single_tasks.h" />
+      <file name="aws_tcp_echo_client_single_task.c"   overwrite="false"/>
+      <file name="aws_tcp_echo_client_single_tasks.h"  overwrite="false" />
     </dir>
     </dir>
     <dir name="freertos_kernel">
