@@ -76,6 +76,9 @@
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f2" displayName="system" projectFiles="true">
+            <logicalFolder name="f6" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/system/cache/sys_cache.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="command" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/system/command/sys_command.h</itemPath>
             </logicalFolder>
@@ -974,6 +977,9 @@
             <itemPath>../src/config/sam_e70_xult/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="system" projectFiles="true">
+            <logicalFolder name="f6" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/system/cache/sys_cache.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="command" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/system/command/src/sys_command.c</itemPath>
             </logicalFolder>

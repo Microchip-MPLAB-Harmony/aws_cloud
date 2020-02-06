@@ -90,6 +90,10 @@ void MPU_Initialize(void)
     MPU->RASR = MPU_REGION_SIZE(11) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_NORMAL \
                 | MPU_ATTR_ENABLE | MPU_ATTR_EXECUTE_NEVER ;
 
+    /* Region 7 Name: PKCS_KEY_AREA, Base Address: 0x5fc000, Size: 16KB  */
+    MPU->RBAR = MPU_REGION(7, 0x5fc000);
+    MPU->RASR = MPU_REGION_SIZE(13) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_NORMAL_WT \
+                | MPU_ATTR_ENABLE  ;
 
 
 

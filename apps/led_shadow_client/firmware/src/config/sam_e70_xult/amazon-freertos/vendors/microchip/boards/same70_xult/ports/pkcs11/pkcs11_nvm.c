@@ -227,7 +227,9 @@ bool AWS_FlashPagesWrite(const uint32_t* ptrFlashData, const uint32_t* ptrPageDa
 static uint32_t AWS_EFC_Command(uint32_t efc_command)
 {
     while(EFC_IsBusy());
-    
+    __DSB();
+    __ISB();
+
 #if ((AWS_RAM_EFC_WORKAROUND & 2) != 0)
     return AWS_EFC_Command_Rom(efc_command);
 #endif  // ((AWS_RAM_EFC_WORKAROUND & 2) != 0)
