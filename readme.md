@@ -1,7 +1,7 @@
 ![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
-# MPLAB® Harmony 3 AWS Cloud applications
+# MPLAB® Harmony 3 Configurations and Applications to securely connect IoT devices to the AWS cloud using Amazon FreeRTOS.
 
 MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating
 embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller
@@ -17,9 +17,13 @@ This repository contains the MPLAB® Harmony 3
 
 # Contents Summary
 
-| Folder     | Description                                               |
-| ---        | ---                                                       |
-
+| Folder    | Description                                                |
+|-----------|------------------------------------------------------------|
+| apps      | Example applications for Amazon FreeRTOS                   |
+| config    | Amazon FreeRTOS module configuration scripts               |
+| doc       | Amazon FreeRTOS help documentation (chm format)            |
+| docs      | Amazon FreeRTOS help documentation (html format)           |
+| templates | Configurations file templates                              |
 
 ____
 
