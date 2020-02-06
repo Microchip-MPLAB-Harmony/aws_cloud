@@ -476,15 +476,15 @@
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
           <GeneratedChecksum dnOrder="4">22A7B02A53CC5974E9C82488B3D6773E</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A903F36251D267ADE56C8176CF82FC59</UserChecksum>
+          <UserChecksum dnOrder="5">22A7B02A53CC5974E9C82488B3D6773E</UserChecksum>
         </File>
         <File dnOrder="59">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">aws_clientcredential_keys.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">5FFDD97BC2B0BD01057CFA8D9C0AF67C</GeneratedChecksum>
-          <UserChecksum dnOrder="5">5FFDD97BC2B0BD01057CFA8D9C0AF67C</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="60">
           <Type dnOrder="0">SOURCE</Type>
@@ -507,8 +507,8 @@
           <Name dnOrder="1">aws_demo.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">8F21860C4FDAED1BF7FC1A78EBDD2985</GeneratedChecksum>
-          <UserChecksum dnOrder="5">8F21860C4FDAED1BF7FC1A78EBDD2985</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="63">
           <Type dnOrder="0">SOURCE</Type>
@@ -667,24 +667,24 @@
           <Name dnOrder="1">aws_iot_demo_network.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/network_manager</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/network_manager/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">750F2CB4854701B44B8D22FDF0252FF6</GeneratedChecksum>
-          <UserChecksum dnOrder="5">750F2CB4854701B44B8D22FDF0252FF6</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="83">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">aws_iot_demo_network.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">258AC74ED4D94789D3184384FC64CF48</GeneratedChecksum>
-          <UserChecksum dnOrder="5">258AC74ED4D94789D3184384FC64CF48</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="84">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">aws_iot_demo_shadow.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/shadow</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/shadow/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">754F4F394EFDC63308813C4E2F8A77A9</GeneratedChecksum>
-          <UserChecksum dnOrder="5">754F4F394EFDC63308813C4E2F8A77A9</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="85">
           <Type dnOrder="0">SOURCE</Type>
@@ -699,8 +699,8 @@
           <Name dnOrder="1">aws_iot_network_manager.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/network_manager</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/network_manager/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">2167F5E78471DA68BDF7C0E713AAFB42</GeneratedChecksum>
-          <UserChecksum dnOrder="5">2167F5E78471DA68BDF7C0E713AAFB42</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="87">
           <Type dnOrder="0">SOURCE</Type>
@@ -787,8 +787,8 @@
           <Name dnOrder="1">aws_ota_codesigner_certificate.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">34DD60205F21F73BBC2C6F33CC558649</GeneratedChecksum>
-          <UserChecksum dnOrder="5">34DD60205F21F73BBC2C6F33CC558649</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="98">
           <Type dnOrder="0">SOURCE</Type>
@@ -835,16 +835,16 @@
           <Name dnOrder="1">aws_tcp_echo_client_single_task.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/tcp</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/tcp/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">F19062E2E80E7A9617AB3F6BD0ABC6F8</GeneratedChecksum>
-          <UserChecksum dnOrder="5">F19062E2E80E7A9617AB3F6BD0ABC6F8</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="104">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">aws_tcp_echo_client_single_tasks.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/tcp</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/tcp/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">4521615F7CB15D40C2CD0D8E53D9EE10</GeneratedChecksum>
-          <UserChecksum dnOrder="5">4521615F7CB15D40C2CD0D8E53D9EE10</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="105">
           <Type dnOrder="0">SOURCE</Type>
@@ -859,8 +859,8 @@
           <Name dnOrder="1">aws_wifi_connect_task.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">C79702D657151207DAD93E94ACC57D5E</GeneratedChecksum>
-          <UserChecksum dnOrder="5">C79702D657151207DAD93E94ACC57D5E</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="107">
           <Type dnOrder="0">SOURCE</Type>
@@ -1755,8 +1755,8 @@
           <Name dnOrder="1">iot_config_common.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A3823E5DFEFD97FF26694C3D0E2E79DC</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A3823E5DFEFD97FF26694C3D0E2E79DC</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="219">
           <Type dnOrder="0">SOURCE</Type>
@@ -1795,48 +1795,48 @@
           <Name dnOrder="1">iot_demo_https_common.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/https</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/https/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">FEF3BF031B44C2DF3426457AF3C811A4</GeneratedChecksum>
-          <UserChecksum dnOrder="5">FEF3BF031B44C2DF3426457AF3C811A4</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="224">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">iot_demo_https_common.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/https</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/https/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">344A256B1F53B0DEA668FEBC0391399B</GeneratedChecksum>
-          <UserChecksum dnOrder="5">344A256B1F53B0DEA668FEBC0391399B</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="225">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">iot_demo_https_s3_download_async.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/https</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/https/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">5F2FF99E1ED708068ED07F3080A84086</GeneratedChecksum>
-          <UserChecksum dnOrder="5">5F2FF99E1ED708068ED07F3080A84086</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="226">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">iot_demo_https_s3_download_sync.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/https</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/https/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">6D26F5879F3AEE6EB232D4A0B1F18D71</GeneratedChecksum>
-          <UserChecksum dnOrder="5">6D26F5879F3AEE6EB232D4A0B1F18D71</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="227">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">iot_demo_logging.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">2876504BC41C3FF242FF61323BFADD4F</GeneratedChecksum>
-          <UserChecksum dnOrder="5">2876504BC41C3FF242FF61323BFADD4F</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="228">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">iot_demo_mqtt.c</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/mqtt</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/mqtt/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A1C4FBDE97FC5E0AF5AA3DFEDD347CFC</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A1C4FBDE97FC5E0AF5AA3DFEDD347CFC</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="229">
           <Type dnOrder="0">SOURCE</Type>
@@ -1851,8 +1851,8 @@
           <Name dnOrder="1">iot_demo_runner.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/include</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/include/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">2B5D5CAAD55A52BD478BA7EE52437B54</GeneratedChecksum>
-          <UserChecksum dnOrder="5">2B5D5CAAD55A52BD478BA7EE52437B54</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="231">
           <Type dnOrder="0">SOURCE</Type>
@@ -2195,8 +2195,8 @@
           <Name dnOrder="1">iot_network_manager_private.h</Name>
           <LogicalPath dnOrder="2">/amazon-freertos/demos/network_manager</LogicalPath>
           <PhysicalPath dnOrder="3">/amazon-freertos/demos/network_manager/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">1E15B6A5B8D67D8D09788FDB4742BBAB</GeneratedChecksum>
-          <UserChecksum dnOrder="5">1E15B6A5B8D67D8D09788FDB4742BBAB</UserChecksum>
+          <GeneratedChecksum dnOrder="4"/>
+          <UserChecksum dnOrder="5"/>
         </File>
         <File dnOrder="274">
           <Type dnOrder="0">SOURCE</Type>
