@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+<head>
+<title>Running the Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element700" onload="onBodyLoadEx('frames.html', 'topic', '00007.html');" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element710" id="areafixed">
+<div class="Element94">
+<a href="00002.html" target="topic">Amazon Web Services Cloud Applications</a> &gt; <a href="00003.html" target="topic">led_shadow_client</a> &gt; <a href="00007.html" target="topic">Running the Application</a></div>
+<div class="Element92">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="25%">
+<div class="Element1">
+Amazon FreeRTOS Help</div>
+</td><td width="25%">
+<div class="Element2">
+<a href="contents.html" target="tocidx">Contents</a> | <a href="00001.html" target="topic">Home</a></div>
+</td><td width="25%">
+<div class="Element90">
+<a href="00005.html" target="topic">Previous</a> | <a href="00003.html" target="topic">Up</a></div>
+</td><td width="25%">
+<div class="Element96">
+<a href="mailto:docerrors@microchip.com&subject=MPLAB Harmony Documentation Feedback (Topic ID: AWS Cloud led_shadow_clint Running the Application Topic Title: Running the Application)&body=Thank you for your feedback! Please include a description of your feedback, and indicate whether you are reporting an an error in the documentation or an enhancement.">Documentation Feedback</a><br> <a href="http://support.microchip.com" target="_blank">Microchip Support</a></div>
+</td></tr></table><div class="Element5">
+Running the Application</div>
+</div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+<div class="Element720" id="areascroll">
+<div class="Element721">
+
+<!-- Begin Page Content -->
+<a name="PageContent"></a><div class="Element58">
+<a name="4465736372697074696F6E"></a><div class="Element11">
+<div class="Element10">
+
+<ol class="Element630">
+<li value="1" class="Element600">Open the Terminal application (Ex.:Tera term) on the computer.</li>
+<li value="2" class="Element600">Connect to the EDBG Virtual COM port and configure the serial settings as follows:
+<ul class="Element631">
+<li class="Element601">Baud : 115200</li>
+<li class="Element601">Data : 8 Bits</li>
+<li class="Element601">Parity : None</li>
+<li class="Element601">Stop : 1 Bit</li>
+<li class="Element601">Flow Control : None</li>
+</ul></li>
+<li value="3" class="Element600">Clone the Amazon FreeRTOS github repository from the <a href="#" onclick="openExternalLink('https://github.com/MicrochipTech/amazon-freertos');"><img src="indicator_external_link.gif" border="0" alt="" title="">Microchip github page</a> and switch to mchpdev branch.</li>
+<li value="4" class="Element600">Open the Getting started guide for the board to be tested from <a href="#" onclick="openExternalLink('https://github.com/MicrochipTech/amazon-freertos');"><img src="indicator_external_link.gif" border="0" alt="" title="">Microchip github page</a> and complete the pre-requisites.</li>
+<li value="5" class="Element600">The AWS account needs to be used to run the demo, Follow the below procedure.
+<ul class="Element631">
+<li class="Element601">Login to your AWS amazon account</li>
+<li class="Element601">From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below.</li>
+</ul></li>
+</ol><p class="Element10" style="text-align: center;">
+<img src="aws_iot.png" border="0" alt="" title=""></p><p class="Element10">
+&nbsp;</p>
+
+<ul class="Element630">
+<li class="Element600">From the menu on the left, Click &quot;<strong>Manage</strong>&quot; and then Click &quot;<strong>Things</strong>&quot;. This will display all the things managed by your AWS account in the right pane.In the right pane, click the Things item, which is configured for your device.</li>
+</ul><p class="Element10" style="text-align: center;">
+<img src="things.png" border="0" alt="" title=""></p>
+<ul class="Element630">
+<li class="Element600">The THING Name and Shadow ARN are masked for security reasons. Click on the &quot;Shadow&quot; item in the right pane. This will display the device shadow page.</li>
+</ul>
+<ol class="Element630">
+<li value="6" class="Element600">Build and Program the application using the MPLAB X IDE.</li>
+<li value="7" class="Element600">The device will toggle one LED and now a shadow document will be created in the Device's Shadow page. The Shadow state document is JSON formatted file managed by AWS account.</li>
+</ol><p class="Element10" style="text-align: center;">
+<img src="shadow_document.png" border="0" alt="" title=""></p>
+<ol class="Element630">
+<li value="8" class="Element600">The JSON variable &quot;powerOn&quot; indicates the LED state of the board. This variable indicates the LED state on the board. The following is its Truth Table:</li>
+</ol><p class="Element10">
+&nbsp;</p>
+<div class="Element63">
+<div class="TableDiv">
+<table cellspacing="0" class="Table1">
+<tr>
+<td class="Element65" valign="top" width="3%">
+<div class="Element66">
+S. No.&nbsp;</div></td><td class="Element65" valign="top" width="6%">
+<div class="Element66">
+LED3&nbsp;</div></td><td class="Element65" valign="top" width="6%">
+<div class="Element66">
+LED2&nbsp;</div></td><td class="Element65" valign="top" width="6%">
+<div class="Element66">
+LED1&nbsp;</div></td><td class="Element65" valign="top" width="6%">
+<div class="Element66">
+Power On Value&nbsp;</div></td><td class="Element65" valign="top" width="73%">
+<div class="Element66">
+Remarks&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+1&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+0&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+All LEDs Off&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+2&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+1&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED1 On&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+3&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+2&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED2 On (Applicable only on PIC32MZ and E70)&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+4&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+3&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED2 and LED3 On (Applicable only on PIC32MZ and E70)&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+5&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+4&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED3 On (Applicable only on PIC32MZ)&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+6&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+5&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED1 and LED3 On (Applicable only on PIC32MZ)&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+7&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+OFF&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+6&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED2 and LED3 On (Applicable only on PIC32MZ)&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="3%">
+<div class="Element68">
+8&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+ON&nbsp;</div></td><td class="Element67" valign="top" width="6%">
+<div class="Element68">
+7&nbsp;</div></td><td class="Element67" valign="top" width="73%">
+<div class="Element68">
+LED1, LED2 and LED3 On (Applicable Only on PIC32MZ)&nbsp;</div></td></tr></table></div></div>
+<p class="Element10">
+&nbsp;</p>
+
+<ol class="Element630">
+<li value="9" class="Element600">The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document.</li>
+</ol><p class="Element10" style="text-align: center;">
+<img src="shadow_document_edit.png" border="0" alt="" title=""></p>
+<ol class="Element630">
+<li value="10" class="Element600">Change the power On value to match a valid value mentioned in the truth table and click on the Save Button.</li>
+</ol><p class="Element10">
+&nbsp;</p>
+<p class="Element10">
+The following table provides the expected output detail for different kits: </p><div class="Element63">
+<div class="TableDiv">
+<table cellspacing="0" class="Table1">
+<tr>
+<td class="Element65" valign="top" width="14%">
+<div class="Element66">
+Kit Name&nbsp;</div></td><td class="Element65" valign="top" width="86%">
+<div class="Element66">
+Output&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="14%">
+<div class="Element68">
+SAM E54 Xplained Pro Evaluation Kit&nbsp;</div></td><td class="Element67" valign="top" width="86%">
+<div class="Element68">
+When the device is connected and powered on, the LED0 on IO1 is toggled at power on and based on user action in device shadow page (refer above truth table), the LED value in the device is modified. The user may view the console for debug and connection information.&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="14%">
+<div class="Element68">
+SAM E70 Xplained Ultra Evaluation Kit&nbsp;</div></td><td class="Element67" valign="top" width="86%">
+<div class="Element68">
+When the device is connected and powered on, the LED0 on IO1 is toggled at power on and based on user action in device shadow page (refer above truth table), the LED value in the device is modified. The user may view the console for debug and connection information.&nbsp;</div></td></tr><tr>
+<td class="Element67" valign="top" width="14%">
+<div class="Element68">
+PIC32MZ EF Curisoity Development Board 2.0&nbsp;</div></td><td class="Element67" valign="top" width="86%">
+<div class="Element68">
+When the device is connected and powered on, the LED0 on IO1 is toggled at power on and based on user action in device shadow page (refer above truth table), the LED value in the device is modified. The user may view the console for debug and connection information.&nbsp;</div></td></tr></table></div></div>
+<p class="Element10">
+&nbsp;</p>
+<p class="Element10">
+<strong>Limitations</strong>:&nbsp;</p>
+<p class="Element10">
+For PIC32M based configurations, the user needs to accept the below change during code generation for PIC32M to work. </p><p class="Element10" style="text-align: center;">
+<img src="limitations.png" border="0" alt="" title=""></p></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<a href="00002.html" target="topic">Amazon Web Services Cloud Applications</a> &gt; <a href="00003.html" target="topic">led_shadow_client</a> &gt; <a href="00007.html" target="topic">Running the Application</a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="25%">
+<div class="Element3">
+Amazon FreeRTOS Help</div>
+</td><td width="25%">
+<div class="Element4">
+<a href="contents.html" target="tocidx">Contents</a> | <a href="00001.html" target="topic">Home</a></div>
+</td><td width="25%">
+<div class="Element91">
+<a href="00005.html" target="topic">Previous</a> | <a href="00003.html" target="topic">Up</a></div>
+</td><td width="25%">
+<div class="Element97">
+<a href="mailto:docerrors@microchip.com&subject=MPLAB Harmony Documentation Feedback (Topic ID: AWS Cloud led_shadow_clint Running the Application Topic Title: Running the Application)&body=Thank you for your feedback! Please include a description of your feedback, and indicate whether you are reporting an an error in the documentation or an enhancement.">Documentation Feedback</a><br> <a href="http://support.microchip.com" target="_blank">Microchip Support</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+</div>
+</div>
+
+<!-- End Client Area -->
+</body></html>
