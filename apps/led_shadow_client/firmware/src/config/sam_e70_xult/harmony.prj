@@ -1803,8 +1803,8 @@
           <Name dnOrder="1">interrupts.c</Name>
           <LogicalPath dnOrder="2">config/sam_e70_xult/</LogicalPath>
           <PhysicalPath dnOrder="3">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A7936032172063B16B7DDD7101D87FF4</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A7936032172063B16B7DDD7101D87FF4</UserChecksum>
+          <GeneratedChecksum dnOrder="4">14A6C5D661F0D83045462067F02E6E8E</GeneratedChecksum>
+          <UserChecksum dnOrder="5">14A6C5D661F0D83045462067F02E6E8E</UserChecksum>
         </File>
         <File dnOrder="225">
           <Type dnOrder="0">SOURCE</Type>
@@ -3091,8 +3091,8 @@
           <Name dnOrder="1">plib_nvic.c</Name>
           <LogicalPath dnOrder="2">config/sam_e70_xult/peripheral/nvic/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/nvic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">8E7B677579494DCE7A9E742E87EA9F67</GeneratedChecksum>
-          <UserChecksum dnOrder="5">8E7B677579494DCE7A9E742E87EA9F67</UserChecksum>
+          <GeneratedChecksum dnOrder="4">EF6ECF488D1FC0CCE4E30FE4B0D123C3</GeneratedChecksum>
+          <UserChecksum dnOrder="5">EF6ECF488D1FC0CCE4E30FE4B0D123C3</UserChecksum>
         </File>
         <File dnOrder="386">
           <Type dnOrder="0">SOURCE</Type>
@@ -3131,8 +3131,8 @@
           <Name dnOrder="1">plib_usart1.c</Name>
           <LogicalPath dnOrder="2">config/sam_e70_xult/peripheral/usart/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">7D525B47393F16198E06BB002C1730E6</GeneratedChecksum>
-          <UserChecksum dnOrder="5">7D525B47393F16198E06BB002C1730E6</UserChecksum>
+          <GeneratedChecksum dnOrder="4">17E65B2ED91C90EAB4EAA5F46967B2F5</GeneratedChecksum>
+          <UserChecksum dnOrder="5">17E65B2ED91C90EAB4EAA5F46967B2F5</UserChecksum>
         </File>
         <File dnOrder="391">
           <Type dnOrder="0">SOURCE</Type>
@@ -4459,8 +4459,8 @@
           <Name dnOrder="1">plib_usart1.h</Name>
           <LogicalPath dnOrder="2">config/sam_e70_xult/peripheral/usart/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/usart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">38C6B1A1F4FDDA8F5CDF12AD6A33FE71</GeneratedChecksum>
-          <UserChecksum dnOrder="5">38C6B1A1F4FDDA8F5CDF12AD6A33FE71</UserChecksum>
+          <GeneratedChecksum dnOrder="4">F9A99D2FAB2DA82C1FF0D1BBB95832A3</GeneratedChecksum>
+          <UserChecksum dnOrder="5">F9A99D2FAB2DA82C1FF0D1BBB95832A3</UserChecksum>
         </File>
         <File dnOrder="557">
           <Type dnOrder="0">HEADER</Type>
@@ -4778,7 +4778,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="aws_cloud;bootloader;bsp;core;csp;ethercat;expresslogic_threadx;gfx;micrium_ucos3;net;touch;wireless;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="aws_cloud;bsp;core;csp;net;wireless;"/>
     </Settings>
   </Configurator>
 </Configuration>
