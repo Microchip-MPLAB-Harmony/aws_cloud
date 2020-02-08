@@ -5,6 +5,6 @@
         <Dependency name="core" version="v3.6.0"/>
         <Dependency name="bsp" version="v3.6.0"/>
         <Dependency name="net"  version="v3.5.1"/>
-	<Dependency name="amazon-freertos" version="201908.00"/>
+        <Dependency name="amazon-freertos" version="v3.0.0"/>
     </Dependencies>
 </Package>
