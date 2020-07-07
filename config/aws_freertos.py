@@ -57,8 +57,9 @@ XML_ATTRIB_STRING="string"
 XML_ATTRIB_BOOL="bool"
 XML_ATTRIB_INC="include-files"
 XML_ATTRIB_OVER_WRITE="overwrite"
-global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
 
+
+#setH3DirectoryEnable
 def setH3DirectoryEnable(symbol, event):
     global AMAZON_FREERTOS_PATH,AMAZON_FREERTOS_PATH_H3,AMAZON_FREERTOS_PATH_DEFAULT,AMAZON_FREERTOS_INC_PATH
     global AMAZON_FREERTOS_INC_PATH_DEFAULT,AMAZON_FREERTOS_INC_H3,coreFamily,coreArch
@@ -71,94 +72,9 @@ def setH3DirectoryEnable(symbol, event):
     else:
         AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_H3
         AMAZON_FREERTOS_INC_PATH="../src/config/"+configName+"/amazon-freertos/"
-
-    formatIncFiles()
     AddAWSFile(symbol.getComponent(),"../",  "",Module.getPath()+CONFIG_COMMON_AFR , True )
-    
-    coreArch     = Database.getSymbolValue("core", "CoreArchitecture")
 
-    if (coreArch == "MIPS"):
-        freeRtosdefSym1.setValue(PIC32_INC_DIR)
-        freeRtosIncDirForAsm.setValue(PIC32_INC_DIR)
-    elif (coreArch == "CORTEX-M4"):
-        freeRtosdefSym2.setValue(SAME54_INC_DIR)
-    elif (coreArch == "CORTEX-M7"):
-        freeRtosdefSym3.setValue(SAME70_INC_DIR)
-
-def formatIncFiles():
-    global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,AMAZON_FREERTOS_INC_PATH,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
-    SAME54_PORT_DIR = (AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/same54_xpro/ports/pkcs11;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/same54_xpro/aws_demos/config_files;" +
-                       AMAZON_FREERTOS_INC_PATH +"freertos_kernel/portable/GCC/ARM_CM4F;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr/tcpip/src/common;" +
-                       AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54;")
-
-
-    SAME70_PORT_DIR = (AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/same70_xult/ports/pkcs11;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/same70_xult/aws_demos/config_files;" +
-                       AMAZON_FREERTOS_INC_PATH +"freertos_kernel/portable/GCC/ARM_CM7/r0p1;" +
-                       AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr/tcpip/src/common;" +
-                       AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same70;")
-
-
-    PIC32MZ_PORT_DIR = (AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;" +
-                        AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr;" +
-                        AMAZON_FREERTOS_INC_PATH +"vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/config_files;" +
-                        AMAZON_FREERTOS_INC_PATH +"freertos_kernel/portable/MPLAB/PIC32MZ;"  +
-                        AMAZON_FREERTOS_INC_PATH +"vendors/microchip/harmony3/afr/tcpip/src/common;" +
-                        AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/pic32mzef_h3;")
-
-
-    AFR_COMMON_INC_DIR = (AMAZON_FREERTOS_INC_PATH +"demos/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"freertos_kernel/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/abstractions/platform/freertos/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/abstractions/secure_sockets/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/abstractions/pkcs11/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/aws/defender/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/aws/shadow/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/common/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/https/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/mqtt/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/serializer/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/aws/greengrass/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/aws/ota/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/crypto/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/utils/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/tls/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/pkcs11/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/freertos_plus_tcp/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/abstractions/platform/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/common/include/private;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/c_sdk/standard/common/include/types;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;" +
-                          AMAZON_FREERTOS_INC_PATH +"demos/network_manager;" +
-                          AMAZON_FREERTOS_INC_PATH +"demos/https;" +
-                          AMAZON_FREERTOS_INC_PATH +"demos/tcp;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/jsmn;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/mbedtls/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/tinycbor;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/pkcs11;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/tinycrypt/asn1;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/tinycrypt/lib/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"demos/dev_mode_key_provisioning/include;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/abstractions/pkcs11/mbedtls;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/3rdparty/http-parser;" +
-                          AMAZON_FREERTOS_INC_PATH +"libraries/freertos_plus/aws/ota/src;")
-
-
-
-    SAME54_INC_DIR = AFR_COMMON_INC_DIR + SAME54_PORT_DIR
-    SAME70_INC_DIR = AFR_COMMON_INC_DIR + SAME70_PORT_DIR
-    PIC32_INC_DIR = AFR_COMMON_INC_DIR + PIC32MZ_PORT_DIR
-
-
-# Fetch Core Architecture and Family details
-###############################################################################
-########################## FreeRTOS Configurations ############################
-###############################################################################
-
+# Deactivate Other RTOS
 def deactivateActiveRtos():
     activeComponents = Database.getActiveComponentIDs()
 
@@ -179,7 +95,6 @@ def instantiateComponent(aws_cloud):
     coreArch     = Database.getSymbolValue("core", "CoreArchitecture")
     coreFamily   = ATDF.getNode( "/avr-tools-device-file/devices/device" ).getAttribute( "family" )
 
-
     # Deactivate the active RTOS if any.
     deactivateActiveRtos()
     autoComponentIDTable = ["stdio"]
@@ -187,16 +102,11 @@ def instantiateComponent(aws_cloud):
     #AmazonFreeRTOS Configuration Menu
 
     AddAWSConfig(aws_cloud,Module.getPath()+ CONFIG_UI_COMMON_AFR)
-
-
-
     awsSystemDefFile = aws_cloud.createFileSymbol("AWS_SYS_DEF_HEADER", None)
     awsSystemDefFile.setType("STRING")
     awsSystemDefFile.setOutputName("core.LIST_SYSTEM_DEFINITIONS_H_INCLUDES")
     awsSystemDefFile.setSourcePath("templates/definitions.h.ftl")
     awsSystemDefFile.setMarkup(True)
-
-
 
 ############################################################################
 #### Code Generation ####
@@ -222,45 +132,47 @@ def instantiateComponent(aws_cloud):
         Log.writeInfoMessage("Amazon module")
         AMAZON_FREERTOS_INC_PATH="../src/config/"+configName+"/amazon-freertos/"
         AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_H3
-
-
-    formatIncFiles()
     AddAWSFile(aws_cloud,"../",  "",Module.getPath()+CONFIG_COMMON_AFR , False )
-    if (coreArch == "MIPS"):
-        AddMIPS(aws_cloud,configName)
-    elif (coreArch == "CORTEX-M4"):
-        AddSAME54(aws_cloud,configName)
-    elif (coreArch == "CORTEX-M7"):
-        AddSAME70(aws_cloud,configName)
 
+#############################################################
+### ADD DIR, ADD FILE, ADD Template methods
+#############################################################
 
-
-
-def AddFileTemplate(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=True):
-    if updateOnlyPath:
+# Add File Template
+def AddFileTemplate(boolFileEnable, boolDisableGen, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=True):
+    if boolDisableGen:
+        component.getSymbolByID(strPath.upper()).setEnabled(boolFileEnable)
         component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
     else:
+        global connected_dep,connected_dep_index
         configName = Variables.get("__CONFIGURATION_NAME")
-
+        Log.writeInfoMessage(strPath.upper())
+        Log.writeInfoMessage(strFileName.upper())
+        Log.writeInfoMessage(strDestPath.upper())
+        Log.writeInfoMessage(strProjectPath.upper())
         freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
-        freeRtosAddFile.setSourcePath("templates/demos/" + strFileName)
+        freeRtosAddFile.setSourcePath("templates/" + strFileName)
 
         if(strFileName.endswith(".ftl")):
-            strFileName= strFileName[:-4]
-            Log.writeInfoMessage(strPath.upper())
-            Log.writeInfoMessage(strFileName.upper())
-            Log.writeInfoMessage(strDestPath.upper())
-            Log.writeInfoMessage(strProjectPath.upper())
+           strFileName= strFileName[:-4]
+           Log.writeInfoMessage(strPath.upper())
+           Log.writeInfoMessage(strFileName.upper())
+           Log.writeInfoMessage(strDestPath.upper())
+           Log.writeInfoMessage(strProjectPath.upper())
         freeRtosAddFile.setOutputName(strFileName)
         freeRtosAddFile.setDestPath(strDestPath)
         freeRtosAddFile.setProjectPath(strProjectPath)
         freeRtosAddFile.setType(strType)
         freeRtosAddFile.setMarkup(bMarkup)
+        freeRtosAddFile.setEnabled(boolFileEnable)
 
 
-def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProjectPath,bOverWrite=True,strType="SOURCE",bMarkup=False):
-    if updateOnlyPath:
+# Add File
+def AddFile(boolFileEnable, boolDisableGen, component, strPath, strFileName, strDestPath,strProjectPath,bOverWrite=True,strType="SOURCE",bMarkup=False):
+    if boolDisableGen:
+        component.getSymbolByID(strPath.upper()).setEnabled(boolFileEnable)
         component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
+        
     else:
         configName = Variables.get("__CONFIGURATION_NAME")
         Log.writeInfoMessage(strPath.upper())
@@ -276,42 +188,44 @@ def AddFile(updateOnlyPath, component, strPath, strFileName, strDestPath,strProj
         freeRtosAddFile.setType(strType)
         freeRtosAddFile.setMarkup(bMarkup)
 
-
-def AddDir(root,component,strPath, strRelativeFilePath,strProjectPath, updateOnlyPath):
+def AddDir(boolDirEnable,root,component,strPath, strRelativeFilePath,strProjectPath, boolDisableGen):
     for child in root:
         if child.tag == XML_ATTRIB_DIR:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
             NewstrRelativeFilePath = strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
             NewstrProjectPath = strProjectPath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddDir(child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath, updateOnlyPath)
+            AddDir(CheckAttrib(child,boolDirEnable),child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath, boolDisableGen)
         if child.tag == XML_ATTRIB_FILE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
             if( (XML_ATTRIB_OVER_WRITE in child.attrib) and child.attrib[XML_ATTRIB_OVER_WRITE] == "false"):
-                AddFile(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath,False)
+                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath,False)
             else:
-                AddFile(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
-
+                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
         elif child.tag == XML_ATTRIB_TEMPLATE:
             NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddFileTemplate(updateOnlyPath, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
+            AddFileTemplate(CheckAttrib(child,boolDirEnable), boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
 
 
 
-def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile, updateOnlyPath):
+# CheckAttrib not applicable for Amazon FreeRTOS Component, all files to be added.
+def CheckAttrib(child,boolDirEnable):
+    return boolDirEnable
+    
+
+def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile, boolDisableGen,boolDirEnable=True):
     global AMAZON_FREERTOS_PATH
     tree = ET.parse(strXmlFile)
     root = tree.getroot()
     for child in root:
         if child.tag == XML_ATTRIB_DIR:
-            AddDir(child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]), updateOnlyPath)
+            AddDir(CheckAttrib(child,boolDirEnable),child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]), boolDisableGen)
         if child.tag == XML_ATTRIB_FILE:
             if( (XML_ATTRIB_OVER_WRITE in child.attrib)):
-                AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]),False)
+                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]),False)
             else:
-                AddFile(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
+                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
         if child.tag == XML_ATTRIB_TEMPLATE:
-            AddFileTemplate(updateOnlyPath, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
-
+            AddFileTemplate(CheckAttrib(child,boolDirEnable),boolDisableGen, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
 
 
 def AddAWSConfig(aws_cloud,strXmlFile):
@@ -342,8 +256,9 @@ def AddAWSConfiguration(aws_cloud,parent_config,config_name,config_type,strLabel
         freeRtosSymMenu = aws_cloud.createBooleanSymbol(config_name, parent_config)
         freeRtosSymMenu.setDefaultValue(bool(strDefaultValue))
     elif str(config_type).lower() == XML_ATTRIB_COMBO:
+        strValues = strDefaultValue.split(' ')
         freeRtosSymMenu = aws_cloud.createComboSymbol(config_name, parent_config,strValues)
-        freeRtosSymMenu.setDefaultValue("SHADOW")
+        freeRtosSymMenu.setDefaultValue(strValues[0])
     else: #if type.lower() == "integer": considered integer.
         freeRtosSymMenu = aws_cloud.createIntegerSymbol(config_name, parent_config)
         freeRtosSymMenu.setDefaultValue(int(strDefaultValue))
@@ -358,65 +273,3 @@ def AddAWSConfiguration(aws_cloud,parent_config,config_name,config_type,strLabel
     if(str(bVisible).lower()=="true"):
         freeRtosSymMenu.setVisible(True)
     return freeRtosSymMenu
-
-
-def AddMIPS(hw_interface,configName):
-    global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
-    global freeRtosdefSym1,freeRtosIncDirForAsm
-
-    freeRtosIncDirForPre = hw_interface.createSettingSymbol("AFR1_XC32_AS_PRE_PROC_DIRS", None)
-    freeRtosIncDirForPre.setCategory("C32")
-    freeRtosIncDirForPre.setKey("preprocessor-macros")
-    freeRtosIncDirForPre.setValue("PIC32_USE_ETHERNET;__free_rtos__;")
-    freeRtosIncDirForPre.setAppend(True, ";")
-    symOptions = hw_interface.createSettingSymbol(None, None)
-    symOptions.setCategory("C32")
-    symOptions.setKey("appendMe")
-    symOptions.setValue("-mnewlib-libc -std=gnu99 -fgnu89-inline")
-    symOptions.setAppend(True, ";")
-    freeRtosdefSym1 = hw_interface.createSettingSymbol("AFR1_XC32_INCLUDE_DIRS", None)
-    freeRtosdefSym1.setCategory("C32")
-    freeRtosdefSym1.setKey("extra-include-directories")
-    freeRtosdefSym1.setValue(PIC32_INC_DIR)
-    freeRtosdefSym1.setAppend(True, ";")
-    freeRtosIncDirForLd = hw_interface.createSettingSymbol("AFR_XC32_INCLUDE_LD", None)
-    freeRtosIncDirForLd.setCategory("C32-LD")
-    freeRtosIncDirForLd.setKey("oXC32ld-extra-opts")
-    freeRtosIncDirForLd.setValue("-mnewlib-libc")
-    freeRtosIncDirForLd.setAppend(True, ";")
-    freeRtosIncDirForAsm = hw_interface.createSettingSymbol("AFR_XC32_INCLUDE_ASM1", None)
-    freeRtosIncDirForAsm.setCategory("C32-AS")
-    freeRtosIncDirForAsm.setKey("extra-include-directories-for-preprocessor")
-    freeRtosIncDirForAsm.setValue(PIC32_INC_DIR)
-    freeRtosIncDirForAsm.setAppend(True, ";")
-
-def AddSAME54(hw_interface,configName):
-    global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
-    global freeRtosdefSym2
-    freeRtosIncDirForPre = hw_interface.createSettingSymbol("AFR2_XC32_AS_PRE_PROC_DIRS", None)
-    freeRtosIncDirForPre.setCategory("C32")
-    freeRtosIncDirForPre.setKey("preprocessor-macros")
-    freeRtosIncDirForPre.setValue("PIC32_USE_ETHERNET")
-    freeRtosIncDirForPre.setAppend(True, ";")
-    freeRtosdefSym2 = hw_interface.createSettingSymbol("AFR2_XC32_INCLUDE_DIRS", None)
-    freeRtosdefSym2.setCategory("C32")
-    freeRtosdefSym2.setKey("extra-include-directories")
-    freeRtosdefSym2.setValue(SAME54_INC_DIR)
-    freeRtosdefSym2.setAppend(True, ";")
-    res = Database.activateComponents(["TRNG"])
-
-
-def AddSAME70(hw_interface,configName):
-    global SAME54_PORT_DIR,SAME70_PORT_DIR,PIC32MZ_PORT_DIR,SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
-    global freeRtosdefSym3
-
-    freeRtosIncDirForPre = hw_interface.createSettingSymbol("AFR3_XC32_AS_PRE_PROC_DIRS", None)
-    freeRtosIncDirForPre.setCategory("C32")
-    freeRtosIncDirForPre.setKey("preprocessor-macros")
-    freeRtosIncDirForPre.setValue("PIC32_USE_ETHERNET")
-    freeRtosIncDirForPre.setAppend(True, ";")
-    freeRtosdefSym3 = hw_interface.createSettingSymbol("AFR3_XC32_INCLUDE_DIRS", None)
-    freeRtosdefSym3.setCategory("C32")
-    freeRtosdefSym3.setKey("extra-include-directories")
-    freeRtosdefSym3.setValue(SAME70_INC_DIR)
-    freeRtosdefSym3.setAppend(True, ";")
