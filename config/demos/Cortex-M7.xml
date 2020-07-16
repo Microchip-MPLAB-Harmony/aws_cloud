@@ -127,6 +127,7 @@
 						<dir name="ports">
 							<dir name="ota">
 								<file name="aws_ota_pal.c" />
+								<file name="aws_flash_config.h" />
 							</dir>
 							<dir name="pkcs11">
 								<file name="iot_pkcs11_pal.c"  aws_config="NVM" />

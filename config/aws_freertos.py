@@ -102,12 +102,6 @@ def instantiateComponent(aws_cloud):
     #AmazonFreeRTOS Configuration Menu
 
     AddAWSConfig(aws_cloud,Module.getPath()+ CONFIG_UI_COMMON_AFR)
-    awsSystemDefFile = aws_cloud.createFileSymbol("AWS_SYS_DEF_HEADER", None)
-    awsSystemDefFile.setType("STRING")
-    awsSystemDefFile.setOutputName("core.LIST_SYSTEM_DEFINITIONS_H_INCLUDES")
-    awsSystemDefFile.setSourcePath("templates/definitions.h.ftl")
-    awsSystemDefFile.setMarkup(True)
-
 ############################################################################
 #### Code Generation ####
 ############################################################################
