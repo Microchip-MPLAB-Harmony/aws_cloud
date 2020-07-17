@@ -24,6 +24,11 @@
 #ifndef IOT_CONFIG_H_
 #define IOT_CONFIG_H_
 
+/* How long the MQTT library will wait for PINGRESPs or PUBACKs. */
+#define IOT_MQTT_RESPONSE_WAIT_MS            ( ${AWS_CLOUD_MQTT_RESP} ) 
+
+#define IOT_NETWORK_SOCKET_POLL_MS     ( ${AWS_CLOUD_SOCKET_POLL} ) 
+
 /* MQTT demo configuration. */
 #define IOT_DEMO_MQTT_PUBLISH_BURST_COUNT    ( ${AWS_CLOUD_MQTT_BC} )
 #define IOT_DEMO_MQTT_PUBLISH_BURST_SIZE     ( ${AWS_CLOUD_MQTT_BS} )
@@ -45,8 +50,10 @@
 #define IOT_LOG_LEVEL_MQTT                      ${AWS_CLOUD_LOG_MQTT}
 #define AWS_IOT_LOG_LEVEL_SHADOW                ${AWS_CLOUD_LOG_SHADOW}
 #define AWS_IOT_LOG_LEVEL_DEFENDER              ${AWS_CLOUD_LOG_DEFENDER}
-#define IOT_LOG_LEVEL_HTTPS                     IOT_LOG_INFO
-/* Platform thread priority. */
+
+
+/* Platform thread stack size and priority. */
+#define IOT_THREAD_DEFAULT_STACK_SIZE    ${AWS_CLOUD_THREAD_STACK_SZ}
 #define IOT_THREAD_DEFAULT_PRIORITY      ${AWS_CLOUD_THREAD_PRIORITY}
 
 /* Include the common configuration file for FreeRTOS. */

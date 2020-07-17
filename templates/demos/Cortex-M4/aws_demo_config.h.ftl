@@ -51,7 +51,11 @@
 /* Default configuration for all demos. Individual demos can override these below */
 #define democonfigDEMO_STACKSIZE                       ( configMINIMAL_STACK_SIZE * 8 )
 #define democonfigDEMO_PRIORITY                        ( tskIDLE_PRIORITY + ${AWS_CLOUD_DEMO_PRIORITY} )
+#ifdef PIC32_USE_ETHERNET
 #define democonfigNETWORK_TYPES                        ( AWSIOT_NETWORK_TYPE_ETH )
+#else
+#define democonfigNETWORK_TYPES                        ( AWSIOT_NETWORK_TYPE_WIFI )
+#endif
 
 #define democonfigSHADOW_DEMO_NUM_TASKS                ( 1 )
 #define democonfigSHADOW_DEMO_TASK_STACK_SIZE          ( configMINIMAL_STACK_SIZE * 4 )
@@ -59,6 +63,7 @@
 #define shadowDemoUPDATE_TASK_STACK_SIZE               ( configMINIMAL_STACK_SIZE * 5 )
 
 #define democonfigMQTT_ECHO_TLS_NEGOTIATION_TIMEOUT    pdMS_TO_TICKS( ${AWS_CLOUD_DEMO_ECHO_TLS_TO} )
+#define democonfigMQTT_ECHO_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 4 )
 #define democonfigMQTT_ECHO_TASK_PRIORITY              ( tskIDLE_PRIORITY + ${AWS_CLOUD_DEMO_ECHO_TASK_PRI})
 
 /* Timeout used when performing MQTT operations that do not need extra time

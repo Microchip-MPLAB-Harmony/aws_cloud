@@ -1,6 +1,6 @@
 /*
- * Amazon FreeRTOS V1.4.8
- * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ * FreeRTOS V1.1.4
+ * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -104,5 +104,15 @@
  * @brief Time in milliseconds after which the TCP send operation should timeout.
  */
 #define mqttconfigTCP_SEND_TIMEOUT_MS    ( ${AWS_CLOUD_MQTT_TCP_TIMEOUT} )
+
+/**
+ * @brief Length of the buffer used to receive data.
+ */
+#define mqttconfigRX_BUFFER_SIZE               ( 1024 + 128 )
+
+/**
+ * @brief The maximum time in ticks for which the MQTT task is permitted to block.
+ */
+#define mqttconfigMQTT_TASK_MAX_BLOCK_TICKS    ( ~( ( uint32_t ) 0 ) )
 
 #endif /* _AWS_MQTT_AGENT_CONFIG_H_ */

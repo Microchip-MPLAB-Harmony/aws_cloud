@@ -1,5 +1,5 @@
 /*
- * Amazon FreeRTOS V1.4.8
+ * Amazon FreeRTOS V1.1.4
  * Copyright (C) 2018 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -32,10 +32,12 @@
 #ifndef _AWS_PKCS11_CONFIG_H_
 #define _AWS_PKCS11_CONFIG_H_
 
+#ifdef PIC32_USE_ECC
+extern const char * pcPkcs11GetThingName(void);
+#endif
+
 /* A non-standard version of C_INITIALIZE should be used by this port. */
 /* #define pkcs11configC_INITIALIZE_ALT */
-#define pkcs11configFILE_NAME_CLIENT_CERTIFICATE    "FreeRTOS_P11_Certificate.dat"
-#define pkcs11configFILE_NAME_KEY                   "FreeRTOS_P11_Key.dat"
 
 /**
  * @brief PKCS #11 default user PIN.
@@ -46,8 +48,11 @@
  * both of those, the user PIN is assumed to be used herein for interoperability
  * purposes only, and not as a security feature.
  */
-#define configPKCS11_DEFAULT_USER_PIN    "${AWS_CLOUD_PKCS11_USERID}"
-
+#ifdef PIC32_USE_ECC
+#define configPKCS11_DEFAULT_USER_PIN    "00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF"
+#else
+#define configPKCS11_DEFAULT_USER_PIN    "0000"
+#endif
 /**
  * @brief Maximum length (in characters) for a PKCS #11 CKA_LABEL
  * attribute.
@@ -68,13 +73,19 @@
  */
 #define pkcs11configPAL_DESTROY_SUPPORTED                  0
 
+#ifdef PIC32_USE_ECC
+/**
+ * @brief Set to 1 if importing device private key via C_CreateObject is supported.  0 if not.
+ */
+#define pkcs11configIMPORT_PRIVATE_KEYS_SUPPORTED          0
+#endif
 /**
  * @brief Set to 1 if OTA image verification via PKCS #11 module is supported.
  *
  * If set to 0, OTA code signing certificate is built in via
  * aws_ota_codesigner_certificate.h.
  */
-#define pkcs11configOTA_SUPPORTED                          1
+#define pkcs11configOTA_SUPPORTED                          0
 
 /**
  * @brief Set to 1 if PAL supports storage for JITP certificate,

@@ -22,6 +22,10 @@
  * http://aws.amazon.com/freertos
  * http://www.FreeRTOS.org
  */
+ #include <stdint.h>
+
+/* Unity includes. */
+#include "unity_internals.h"
 
 /**
  * @file aws_mqtt_config.h
@@ -50,6 +54,9 @@
  */
 #define mqttconfigSUBSCRIPTION_MANAGER_MAX_SUBSCRIPTIONS    ( ${AWS_CLOUD_MQTT_SUBSCR_MAX_COUNT} )
 
+#define mqttconfigASSERT( x )                       if( ( x ) == 0 ) TEST_ABORT()
+
+
 /*
  * Uncomment the following two lines to enable asserts.
  */
@@ -59,6 +66,6 @@
 /**
  * @brief Set this macro to 1 for enabling debug logs.
  */
-#define mqttconfigENABLE_DEBUG_LOGS    ${AWS_CLOUD_DEBUG_MQTT}
+#define mqttconfigENABLE_DEBUG_LOGS    ( ${AWS_CLOUD_DEBUG_MQTT} )
 
 #endif /* _AWS_MQTT_CONFIG_H_ */

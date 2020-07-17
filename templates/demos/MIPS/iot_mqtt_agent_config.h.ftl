@@ -105,4 +105,14 @@
  */
 #define mqttconfigTCP_SEND_TIMEOUT_MS    ( ${AWS_CLOUD_MQTT_TCP_TIMEOUT} )
 
+/**
+ * @brief Length of the buffer used to receive data.
+ */
+#define mqttconfigRX_BUFFER_SIZE               ( 1024 + 128 )
+
+/**
+ * @brief The maximum time in ticks for which the MQTT task is permitted to block.
+ */
+#define mqttconfigMQTT_TASK_MAX_BLOCK_TICKS    ( ~( ( uint32_t ) 0 ) )
+
 #endif /* _AWS_MQTT_AGENT_CONFIG_H_ */
