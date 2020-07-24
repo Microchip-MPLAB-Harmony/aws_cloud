@@ -172,12 +172,12 @@ def instantiateComponent(aws_cloud):
         hw_interface.setDependencyEnabled("WDRV_WINC", False)
         hw_interface.setDependencyEnabled("NETCONFIG_MAC_Dependency", True)
     elif (config_aws_conf.index(aws_cloud_h3_conf.getValue())==CONFIG_WIRED_ECC):
-        hw_interface.setDependencyEnabled("Amazon_Secure_Element", True)
+        hw_interface.setDependencyEnabled("Amazon_Secure_Element", False)
         hw_interface.setDependencyEnabled("WDRV_WINC", False)
         hw_interface.setDependencyEnabled("NETCONFIG_MAC_Dependency", True)
     else:
         hw_interface.setDependencyEnabled("NETCONFIG_MAC_Dependency", False)
-        hw_interface.setDependencyEnabled("Amazon_Secure_Element", True)
+        hw_interface.setDependencyEnabled("Amazon_Secure_Element", False)
         hw_interface.setDependencyEnabled("WDRV_WINC", True)
 
 

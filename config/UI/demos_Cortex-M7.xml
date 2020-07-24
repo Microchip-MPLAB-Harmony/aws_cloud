@@ -36,7 +36,7 @@
 </components>
 
 <!--MQTT CONFIG Details -->
-<components config_name="AWS_CLOUD_MQTT" config_type="menu" config_label="Amazon FreeRTOS Buffer Pool" config_visible="True" config_descr="MQTT Configuration" config_default="">
+<components config_name="AWS_CLOUD_MQTT" config_type="menu" config_label="Amazon FreeRTOS MQTT Config" config_visible="True" config_descr="MQTT Configuration" config_default="">
 <component config_name="AWS_CLOUD_MQTT_SUBSCRIPTION" config_type="bool" config_label="MQTT SUBSCRIBE TOPIC" config_visible="True" config_descr="MQTT Subscription Topic" config_default="True"/>
 <component config_name="AWS_CLOUD_MQTT_SUBSCR_TOPIC_LEN_MAX" config_type="integer" config_label="TOPIC MAXIMUM LENGTH" config_visible="True" config_descr="Maximum length of the topic" config_default="128"/>
 <component config_name="AWS_CLOUD_MQTT_SUBSCR_MAX_COUNT" config_type="integer" config_label="MQTT SUBSCRIBER MAX COUNT" config_visible="True" config_descr="Maximum number of subscribers" config_default="8"/>

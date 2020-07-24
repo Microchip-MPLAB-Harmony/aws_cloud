@@ -97,7 +97,6 @@
 		<dir name="libraries">
 			<dir name="3rdparty">
 				<dir name="http_parser">
-					<file name=".git" />
 					<file name=".mailmap" />
 					<file name=".travis.yml" />
 					<file name="AUTHORS" />
@@ -264,7 +263,6 @@
 					</dir>
 				</dir>
 				<dir name="pkcs11">
-					<file name=".git" />
 					<file name="pkcs11.h" />
 					<file name="pkcs11f.h" />
 					<file name="pkcs11t.h" />

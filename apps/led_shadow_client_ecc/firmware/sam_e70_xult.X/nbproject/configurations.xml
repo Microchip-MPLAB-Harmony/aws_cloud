@@ -338,7 +338,6 @@
         <logicalFolder name="f2" displayName="libraries" projectFiles="true">
           <logicalFolder name="f3" displayName="3rdparty" projectFiles="true">
             <logicalFolder name="f1" displayName="http_parser" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser/.git</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser/.mailmap</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser/.travis.yml</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser/AUTHORS</itemPath>
@@ -505,7 +504,6 @@
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f4" displayName="pkcs11" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11/.git</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11/pkcs11.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11/pkcs11f.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11/pkcs11t.h</itemPath>
