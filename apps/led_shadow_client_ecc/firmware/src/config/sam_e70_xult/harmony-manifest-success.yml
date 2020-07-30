@@ -4,20 +4,27 @@
 
 
 project: led_shadow_client_ecc
-creation_date: 2020-07-24T21:55:50.865+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-07-30T22:32:21.048+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mplabx_version: --Please Update your plugin--        # if MPLAB X plugin only
-plugin_version: v3.4.2        # if MPLAB X plugin only
+mplabx_version: v5.35        # if MPLAB X plugin only
+plugin_version: v3.5.1        # if MPLAB X plugin only
 
 modules:
-    - {name: "cryptoauthlib", version: "v3.2.1"}
-    - {name: "csp", version: "v3.7.1"}
-    - {name: "core", version: "v3.7.2"}
-    - {name: "dev_packs", version: "v3.7.0"}
-    - {name: "amazon-freertos", version: "unknown"}
-    - {name: "mhc", version: "unknown"}
-    - {name: "aws_cloud", version: "unknown"}
-    - {name: "net", version: "v3.6.1"}
+    - {name: "amazon-freertos", version: "v3.1.0"}
+    - {name: "aws_cloud", version: "v3.1.0"}
     - {name: "bsp", version: "v3.7.0"}
+    - {name: "CMSIS-FreeRTOS", version: "v10.3.0"}
+    - {name: "contentmanager", version: "v1.4.0"}
+    - {name: "core", version: "v3.7.2"}
+    - {name: "cryptoauthlib", version: "v3.2.2"}
+    - {name: "csp", version: "v3.7.1"}
+    - {name: "dev_packs", version: "v3.7.0"}
+    - {name: "mhc", version: "v3.4.1"}
+    - {name: "net", version: "v3.6.1"}
+    - {name: "quick_docs", version: "v1.0.0"}
+    - {name: "usb", version: "v3.6.0"}
+    - {name: "wireless", version: "v3.2.0"}
+    - {name: "wolfMQTT", version: "v1.2.1"}
+    - {name: "wolfssl", version: "v4.3.0"}
 

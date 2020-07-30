@@ -1066,7 +1066,7 @@
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
-                <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/ATECC608A_0.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/atca_hal.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/atca_hal.h</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/atca_start_config.h</itemPath>
@@ -2040,6 +2040,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/c4/aws_cloud/apps/led_shadow_client_ecc/firmware/pic32mz_ef_curiosity_v2.X/debug/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

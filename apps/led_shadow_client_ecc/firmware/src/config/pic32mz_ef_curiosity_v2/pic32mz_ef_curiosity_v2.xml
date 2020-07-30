@@ -24,584 +24,59 @@
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="1" id="..//AMAZON-FREERTOS/LIBRARIES/ABSTRACTIONS/SECURE_SOCKETS/FREERTOS_PLUS_TCP/IOT_SECURE_SOCKETS.C">
+        <File dnOrder="1" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/AWS_DEMOS/APPLICATION_CODE/ATCA_CERT_CHAIN.C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="2" id="..//AMAZON-FREERTOS/LIBRARIES/ABSTRACTIONS/WIFI/INCLUDE/IOT_WIFI.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="3" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOSIPCONFIGDEFAULTS.H">
+        <File dnOrder="2" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/AWS_DEMOS/APPLICATION_CODE/ATCA_CERT_CHAIN.H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="4" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_ARP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="5" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_DHCP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="6" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_DNS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="7" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_ERRNO_TCP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="8" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_IP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="9" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_IP_PRIVATE.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="10" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_SOCKETS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="11" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_STREAM_BUFFER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="12" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_TCP_IP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="13" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_TCP_WIN.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="14" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/FREERTOS_UDP_IP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="15" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/IPTRACEMACRODEFAULTS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="16" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/NETWORKBUFFERMANAGEMENT.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="17" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/INCLUDE/NETWORKINTERFACE.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="18" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_ARP.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="19" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_DHCP.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="20" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_DNS.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="21" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_IP.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="22" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_SOCKETS.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="23" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_STREAM_BUFFER.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="24" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_TCP_IP.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="25" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_TCP_WIN.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="26" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/FREERTOS_UDP_IP.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="27" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/PORTABLE/COMPILER/GCC/PACK_STRUCT_END.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="28" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/PORTABLE/COMPILER/GCC/PACK_STRUCT_START.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="29" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/PORTABLE/NETWORKINTERFACE/PIC32MZEF_H3/BUFFERALLOCATION_2.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="30" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/PORTABLE/NETWORKINTERFACE/PIC32MZEF_H3/NETWORKINTERFACE_ETH.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="31" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/SOURCE/README.URL">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="32" id="..//AMAZON-FREERTOS/LIBRARIES/FREERTOS_PLUS/STANDARD/FREERTOS_PLUS_TCP/UNCRUSTIFY.CFG">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="33" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/AWS_DEMOS/APPLICATION_CODE/ATCA_CERT_CHAIN.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="34" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/AWS_DEMOS/APPLICATION_CODE/ATCA_CERT_CHAIN.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="35" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/PKCS11/IOT_PKCS11_PAL.C">
+        <File dnOrder="3" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/PKCS11/IOT_PKCS11_PAL.C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="36" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/PKCS11/IOT_PKCS11_SECURE_ELEMENT.C">
+        <File dnOrder="4" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/PKCS11/IOT_PKCS11_SECURE_ELEMENT.C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="37" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/WIFI/AWS_WIFI.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="38" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/BOARDS/CURIOSITY2_PIC32MZEF/PORTS/WIFI/IOT_SECURE_SOCKETS.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="39" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/AFR.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="40" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/SYSTEM/SYS_TIME_H2_ADAPTER.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="41" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/SYSTEM/SYS_TIME_H2_ADAPTER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="42" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/SYSTEM_CONFIG.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="43" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/IPV4.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="44" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/IPV6.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="45" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/LLDP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="46" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/COMMON/HELPERS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="47" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/COMMON/SYS_FS_WRAPPER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="48" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/HASH_FNV.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="49" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/HASH_FNV.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="50" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/HELPERS.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="51" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/LINK_LIST.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="52" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/LLDP_MANAGER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="53" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/OAHASH.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="54" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/OAHASH.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="55" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HEAP_ALLOC.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="56" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HEAP_ALLOC.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="57" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HEAP_EXTERNAL.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="58" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HEAP_INTERNAL.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="59" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HELPERS.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="60" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HELPERS_PRIVATE.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="61" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_HELPER_C32.S">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="62" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_MANAGER_CONTROL.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="63" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_MODULE_MANAGER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="64" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_NOTIFY.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="65" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_NOTIFY.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="66" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_PACKET.C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="67" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_PACKET.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="68" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_PRIVATE.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="69" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/SRC/TCPIP_TYPES.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="70" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="71" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_COMMON_PORTS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="72" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_ETHERNET.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="73" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_HEAP.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="74" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_HELPERS.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="75" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_MAC.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="76" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_MAC_OBJECT.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="77" id="..//AMAZON-FREERTOS/VENDORS/MICROCHIP/HARMONY3/AFR/TCPIP/TCPIP_MANAGER.H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Setting dnOrder="78" id="AFR2_XC32_AS_PRE_PROC_DIRS0">
+        <Setting dnOrder="5" id="AFR2_XC32_AS_PRE_PROC_DIRS0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">false</Value>
             </Boolean>
           </Attributes>
         </Setting>
-        <Setting dnOrder="79" id="AFR2_XC32_AS_PRE_PROC_DIRS1">
+        <Setting dnOrder="6" id="AFR2_XC32_AS_PRE_PROC_DIRS1">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Setting>
-        <Setting dnOrder="80" id="AFR2_XC32_AS_PRE_PROC_DIRS2">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </Setting>
-        <Integer dnOrder="81" id="AWS_CLOUD_SHADOW_UC">
+        <Integer dnOrder="7" id="AWS_CLOUD_SHADOW_UC">
           <Values dnOrder="0">
             <User dnOrder="0" value="2"/>
           </Values>
         </Integer>
-        <Combo dnOrder="82" id="AWS_DEMO_RUN">
+        <Combo dnOrder="8" id="AWS_DEMO_RUN">
           <Values dnOrder="0">
             <User dnOrder="0" value="SHADOW"/>
           </Values>
         </Combo>
-        <File dnOrder="83" id="AWS_SYS_DEF_HEADER">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Combo dnOrder="84" id="H3_AWS_CLOUD_CONF">
+        <Combo dnOrder="9" id="H3_AWS_CLOUD_CONF">
           <Values dnOrder="0">
             <User dnOrder="0" value="Ethernet + ECC608"/>
           </Values>
@@ -626,27 +101,17 @@
             <String dnOrder="1" id="targetAttachmentID">
               <Value dnOrder="0">libdrvPic32mEthmac</Value>
             </String>
-            <Boolean dnOrder="2" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
           </Attributes>
         </DirectDependency>
-        <GenericDependency dnOrder="2" id="WDRV_WINC">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </GenericDependency>
       </Attachments>
     </UniqueComponent>
-    <GeneratorComponent dnOrder="2" id="atecc608a">
+    <GeneratorComponent dnOrder="2" id="atecc608">
       <Instances dnOrder="0">
-        <InstanceComponent dnOrder="0" id="atecc608a" instance="0">
+        <InstanceComponent dnOrder="0" id="atecc608" instance="0">
           <Symbols dnOrder="0">
             <String dnOrder="0" id="HAL_INTERFACE">
               <Values dnOrder="0">
-                <Dynamic dnOrder="0" id="atecc608a_0" value="I2C1"/>
+                <Dynamic dnOrder="0" id="atecc608_0" value="I2C1"/>
               </Values>
             </String>
             <Hex dnOrder="1" id="I2C_ADDR">
@@ -655,13 +120,18 @@
               </Values>
             </Hex>
             <KeyValueSet dnOrder="2" id="INTERFACE">
-              <Values dnOrder="0">
-                <Dynamic dnOrder="0" id="atecc608a_0" value="0"/>
+              <Attributes dnOrder="0">
+                <Boolean dnOrder="0" id="readOnly">
+                  <Value dnOrder="0">true</Value>
+                </Boolean>
+              </Attributes>
+              <Values dnOrder="1">
+                <Dynamic dnOrder="0" id="atecc608_0" value="0"/>
               </Values>
             </KeyValueSet>
           </Symbols>
           <Attachments dnOrder="1">
-            <MultiCapability dnOrder="0" id="ATECC608A_DEP_PLIB_I2C">
+            <MultiCapability dnOrder="0" id="ATECC608_DEP_PLIB_I2C">
               <TargetAttachments dnOrder="0">
                 <TargetAttachment dnOrder="0" targetAttachmentID="I2C1_I2C" targetComponentID="i2c1"/>
               </TargetAttachments>
@@ -1523,179 +993,186 @@
             <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="170" id="FLASH_CONTROL_INTERRUPT_ENABLE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="nvm" value="true"/>
-          </Values>
-        </Boolean>
-        <Boolean dnOrder="171" id="FLASH_CONTROL_INTERRUPT_ENABLE_UPDATE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="false"/>
-          </Values>
-        </Boolean>
-        <String dnOrder="172" id="FLASH_CONTROL_INTERRUPT_HANDLER">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="nvm" value="NVM_InterruptHandler"/>
-          </Values>
-        </String>
-        <Boolean dnOrder="173" id="FLASH_CONTROL_INTERRUPT_HANDLER_LOCK">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="nvm" value="true"/>
-          </Values>
-        </Boolean>
-        <Boolean dnOrder="174" id="I2C1_BUS_INTERRUPT_ENABLE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="true"/>
-          </Values>
-        </Boolean>
-        <Boolean dnOrder="175" id="I2C1_BUS_INTERRUPT_ENABLE_UPDATE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="false"/>
-          </Values>
-        </Boolean>
-        <String dnOrder="176" id="I2C1_BUS_INTERRUPT_HANDLER">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="I2C1_BUS_InterruptHandler"/>
-          </Values>
-        </String>
-        <Boolean dnOrder="177" id="I2C1_BUS_INTERRUPT_HANDLER_LOCK">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="true"/>
-          </Values>
-        </Boolean>
-        <Boolean dnOrder="178" id="I2C1_CLOCK_ENABLE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="true"/>
-          </Values>
-        </Boolean>
-        <Integer dnOrder="179" id="I2C1_CLOCK_FREQUENCY">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="100000000"/>
-          </Values>
-        </Integer>
-        <Boolean dnOrder="180" id="I2C1_MASTER_INTERRUPT_ENABLE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="true"/>
-          </Values>
-        </Boolean>
-        <Boolean dnOrder="181" id="I2C1_MASTER_INTERRUPT_ENABLE_UPDATE">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="false"/>
-          </Values>
-        </Boolean>
-        <String dnOrder="182" id="I2C1_MASTER_INTERRUPT_HANDLER">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="I2C1_MASTER_InterruptHandler"/>
-          </Values>
-        </String>
-        <Boolean dnOrder="183" id="I2C1_MASTER_INTERRUPT_HANDLER_LOCK">
-          <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="i2c1" value="true"/>
-          </Values>
-        </Boolean>
-        <File dnOrder="184" id="INTERRUPTS_ASM">
+        <File dnOrder="170" id="EVIC_INT_ASM">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <String dnOrder="185" id="KEIL_STACK_HEAP_SIZE">
+        <Boolean dnOrder="171" id="FLASH_CONTROL_INTERRUPT_ENABLE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="nvm" value="true"/>
+          </Values>
+        </Boolean>
+        <Boolean dnOrder="172" id="FLASH_CONTROL_INTERRUPT_ENABLE_UPDATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core" value="false"/>
+          </Values>
+        </Boolean>
+        <String dnOrder="173" id="FLASH_CONTROL_INTERRUPT_HANDLER">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="nvm" value="NVM_InterruptHandler"/>
+          </Values>
+        </String>
+        <Boolean dnOrder="174" id="FLASH_CONTROL_INTERRUPT_HANDLER_LOCK">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="nvm" value="true"/>
+          </Values>
+        </Boolean>
+        <Boolean dnOrder="175" id="I2C1_BUS_INTERRUPT_ENABLE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="true"/>
+          </Values>
+        </Boolean>
+        <Boolean dnOrder="176" id="I2C1_BUS_INTERRUPT_ENABLE_UPDATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core" value="false"/>
+          </Values>
+        </Boolean>
+        <String dnOrder="177" id="I2C1_BUS_INTERRUPT_HANDLER">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="I2C1_BUS_InterruptHandler"/>
+          </Values>
+        </String>
+        <Boolean dnOrder="178" id="I2C1_BUS_INTERRUPT_HANDLER_LOCK">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="true"/>
+          </Values>
+        </Boolean>
+        <Boolean dnOrder="179" id="I2C1_CLOCK_ENABLE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="true"/>
+          </Values>
+        </Boolean>
+        <Integer dnOrder="180" id="I2C1_CLOCK_FREQUENCY">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core" value="100000000"/>
+          </Values>
+        </Integer>
+        <Boolean dnOrder="181" id="I2C1_MASTER_INTERRUPT_ENABLE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="true"/>
+          </Values>
+        </Boolean>
+        <Boolean dnOrder="182" id="I2C1_MASTER_INTERRUPT_ENABLE_UPDATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="core" value="false"/>
+          </Values>
+        </Boolean>
+        <String dnOrder="183" id="I2C1_MASTER_INTERRUPT_HANDLER">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="I2C1_MASTER_InterruptHandler"/>
+          </Values>
+        </String>
+        <Boolean dnOrder="184" id="I2C1_MASTER_INTERRUPT_HANDLER_LOCK">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="i2c1" value="true"/>
+          </Values>
+        </Boolean>
+        <File dnOrder="185" id="INTERRUPTS_ASM">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <String dnOrder="186" id="KEIL_STACK_HEAP_SIZE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="0x1200"/>
           </Values>
         </String>
-        <Hex dnOrder="186" id="PMD4_REG_VALUE">
+        <Hex dnOrder="187" id="PMD4_REG_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="510"/>
           </Values>
         </Hex>
-        <Hex dnOrder="187" id="PMD5_REG_VALUE">
+        <Hex dnOrder="188" id="PMD5_REG_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="807288606"/>
           </Values>
         </Hex>
-        <Hex dnOrder="188" id="PMD6_REG_VALUE">
+        <Hex dnOrder="189" id="PMD6_REG_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="8585217"/>
           </Values>
         </Hex>
-        <Hex dnOrder="189" id="PMD7_REG_VALUE">
+        <Hex dnOrder="190" id="PMD7_REG_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="4194304"/>
           </Values>
         </Hex>
-        <Boolean dnOrder="190" id="RNG_CLOCK_ENABLE">
+        <Boolean dnOrder="191" id="RNG_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="rng" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="191" id="RNG_CLOCK_FREQUENCY">
+        <Integer dnOrder="192" id="RNG_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="120000000"/>
           </Values>
         </Integer>
-        <Hex dnOrder="192" id="SYS_PORT_B_LAT">
+        <Hex dnOrder="193" id="SYS_PORT_B_LAT">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="896"/>
           </Values>
         </Hex>
-        <Hex dnOrder="193" id="SYS_PORT_B_ODC">
+        <Hex dnOrder="194" id="SYS_PORT_B_ODC">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="896"/>
           </Values>
         </Hex>
-        <Hex dnOrder="194" id="SYS_PORT_B_TRIS">
+        <Hex dnOrder="195" id="SYS_PORT_B_TRIS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="896"/>
           </Values>
         </Hex>
-        <Hex dnOrder="195" id="SYS_PORT_F_ANSEL">
+        <Hex dnOrder="196" id="SYS_PORT_F_ANSEL">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="8192"/>
           </Values>
         </Hex>
-        <Hex dnOrder="196" id="SYS_PORT_H_ANSEL">
+        <Hex dnOrder="197" id="SYS_PORT_H_ANSEL">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="48"/>
           </Values>
         </Hex>
-        <Hex dnOrder="197" id="SYS_PORT_J_ANSEL">
+        <Hex dnOrder="198" id="SYS_PORT_J_ANSEL">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="2816"/>
           </Values>
         </Hex>
-        <Hex dnOrder="198" id="SYS_PORT_J_LAT">
+        <Hex dnOrder="199" id="SYS_PORT_J_LAT">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="136"/>
           </Values>
         </Hex>
-        <Hex dnOrder="199" id="SYS_PORT_J_ODC">
+        <Hex dnOrder="200" id="SYS_PORT_J_ODC">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="136"/>
           </Values>
         </Hex>
-        <Hex dnOrder="200" id="SYS_PORT_J_TRIS">
+        <Hex dnOrder="201" id="SYS_PORT_J_TRIS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="136"/>
           </Values>
         </Hex>
-        <Hex dnOrder="201" id="SYS_PORT_K_LAT">
+        <Hex dnOrder="202" id="SYS_PORT_K_LAT">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="128"/>
           </Values>
         </Hex>
-        <Hex dnOrder="202" id="SYS_PORT_K_ODC">
+        <Hex dnOrder="203" id="SYS_PORT_K_ODC">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="128"/>
           </Values>
         </Hex>
-        <Hex dnOrder="203" id="SYS_PORT_K_TRIS">
+        <Hex dnOrder="204" id="SYS_PORT_K_TRIS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="128"/>
           </Values>
         </Hex>
-        <Combo dnOrder="204" id="SYS_PORT_PPS_INPUT_FUNCTION_0">
+        <Combo dnOrder="205" id="SYS_PORT_PPS_INPUT_FUNCTION_0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1705,7 +1182,7 @@
             <User dnOrder="0" value="U6RX"/>
           </Values>
         </Combo>
-        <KeyValueSet dnOrder="205" id="SYS_PORT_PPS_INPUT_PIN_0">
+        <KeyValueSet dnOrder="206" id="SYS_PORT_PPS_INPUT_PIN_0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1715,7 +1192,7 @@
             <User dnOrder="0" value="27"/>
           </Values>
         </KeyValueSet>
-        <KeyValueSet dnOrder="206" id="SYS_PORT_PPS_OUTPUT_FUNCTION_0">
+        <KeyValueSet dnOrder="207" id="SYS_PORT_PPS_OUTPUT_FUNCTION_0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1725,7 +1202,7 @@
             <User dnOrder="0" value="16"/>
           </Values>
         </KeyValueSet>
-        <Combo dnOrder="207" id="SYS_PORT_PPS_OUTPUT_PIN_0">
+        <Combo dnOrder="208" id="SYS_PORT_PPS_OUTPUT_PIN_0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1735,219 +1212,219 @@
             <User dnOrder="0" value="RPF2"/>
           </Values>
         </Combo>
-        <Boolean dnOrder="208" id="TIMER_1_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="209" id="TIMER_1_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="209" id="TMR1_CLOCK_ENABLE">
+        <Boolean dnOrder="210" id="TMR1_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="AmazonHWInterface" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="210" id="TMR1_CLOCK_FREQUENCY">
+        <Integer dnOrder="211" id="TMR1_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="100000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="211" id="UART1_CLOCK_ENABLE">
+        <Boolean dnOrder="212" id="UART1_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="212" id="UART1_CLOCK_FREQUENCY">
+        <Integer dnOrder="213" id="UART1_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="100000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="213" id="UART1_FAULT_INTERRUPT_ENABLE">
+        <Boolean dnOrder="214" id="UART1_FAULT_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="214" id="UART1_FAULT_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="215" id="UART1_FAULT_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="215" id="UART1_FAULT_INTERRUPT_HANDLER">
+        <String dnOrder="216" id="UART1_FAULT_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="UART1_FAULT_InterruptHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="216" id="UART1_FAULT_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="217" id="UART1_FAULT_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="217" id="UART1_RX_INTERRUPT_ENABLE">
+        <Boolean dnOrder="218" id="UART1_RX_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="218" id="UART1_RX_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="219" id="UART1_RX_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="219" id="UART1_RX_INTERRUPT_HANDLER">
+        <String dnOrder="220" id="UART1_RX_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="UART1_RX_InterruptHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="220" id="UART1_RX_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="221" id="UART1_RX_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="221" id="UART1_TX_INTERRUPT_ENABLE">
+        <Boolean dnOrder="222" id="UART1_TX_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="222" id="UART1_TX_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="223" id="UART1_TX_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
-        <String dnOrder="223" id="UART1_TX_INTERRUPT_HANDLER">
+        <String dnOrder="224" id="UART1_TX_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="UART1_TX_InterruptHandler"/>
           </Values>
         </String>
-        <Boolean dnOrder="224" id="UART1_TX_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="225" id="UART1_TX_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="225" id="UART6_CLOCK_ENABLE">
+        <Boolean dnOrder="226" id="UART6_CLOCK_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="226" id="UART6_CLOCK_FREQUENCY">
+        <Integer dnOrder="227" id="UART6_CLOCK_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="100000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="227" id="UART6_FAULT_INTERRUPT_ENABLE">
+        <Boolean dnOrder="228" id="UART6_FAULT_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="228" id="UART6_FAULT_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="229" id="UART6_FAULT_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
-        <String dnOrder="229" id="UART6_FAULT_INTERRUPT_HANDLER">
+        <String dnOrder="230" id="UART6_FAULT_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="UART6_FAULT_Handler"/>
           </Values>
         </String>
-        <Boolean dnOrder="230" id="UART6_FAULT_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="231" id="UART6_FAULT_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="231" id="UART6_RX_INTERRUPT_ENABLE">
+        <Boolean dnOrder="232" id="UART6_RX_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="232" id="UART6_RX_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="233" id="UART6_RX_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
-        <String dnOrder="233" id="UART6_RX_INTERRUPT_HANDLER">
+        <String dnOrder="234" id="UART6_RX_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="UART6_RX_Handler"/>
           </Values>
         </String>
-        <Boolean dnOrder="234" id="UART6_RX_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="235" id="UART6_RX_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="235" id="UART6_TX_INTERRUPT_ENABLE">
+        <Boolean dnOrder="236" id="UART6_TX_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="236" id="UART6_TX_INTERRUPT_ENABLE_UPDATE">
+        <Boolean dnOrder="237" id="UART6_TX_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
-        <String dnOrder="237" id="UART6_TX_INTERRUPT_HANDLER">
+        <String dnOrder="238" id="UART6_TX_INTERRUPT_HANDLER">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="UART6_TX_Handler"/>
           </Values>
         </String>
-        <Boolean dnOrder="238" id="UART6_TX_INTERRUPT_HANDLER_LOCK">
+        <Boolean dnOrder="239" id="UART6_TX_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="239" id="USE_PPS_INPUT_0">
+        <Boolean dnOrder="240" id="USE_PPS_INPUT_0">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="240" id="USE_PPS_OUTPUT_0">
+        <Boolean dnOrder="241" id="USE_PPS_OUTPUT_0">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <Comment dnOrder="241" id="WDT_CONFIG_COMMENT">
+        <Comment dnOrder="242" id="WDT_CONFIG_COMMENT">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Comment>
-        <File dnOrder="242" id="WDT_HEADER">
+        <File dnOrder="243" id="WDT_HEADER">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <Combo dnOrder="243" id="WDT_MODE">
+        <Combo dnOrder="244" id="WDT_MODE">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Combo>
-        <File dnOrder="244" id="WDT_SOURCE">
+        <File dnOrder="245" id="WDT_SOURCE">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="245" id="WDT_SYS_DEF">
+        <File dnOrder="246" id="WDT_SYS_DEF">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <String dnOrder="246" id="WDT_TIMEOUT_PERIOD">
+        <String dnOrder="247" id="WDT_TIMEOUT_PERIOD">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </String>
-        <Boolean dnOrder="247" id="WDT_USE">
+        <Boolean dnOrder="248" id="WDT_USE">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <KeyValueSet dnOrder="248" id="clkSvcMode">
+        <KeyValueSet dnOrder="249" id="clkSvcMode">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core" value="0"/>
           </Values>
@@ -1956,39 +1433,27 @@
     </UniqueComponent>
     <UniqueComponent dnOrder="5" id="core_timer">
       <Symbols dnOrder="0">
-        <Float dnOrder="0" id="CORE_TIMER_COMPARE_MS">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </Float>
-        <Integer dnOrder="1" id="CORE_TIMER_FREQUENCY">
+        <Integer dnOrder="0" id="CORE_TIMER_FREQUENCY">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="100000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="2" id="CORE_TIMER_INTERRUPT_MODE">
+        <Boolean dnOrder="1" id="CORE_TIMER_INTERRUPT_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="3" id="CORE_TIMER_PERIODIC_INTERRUPT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-          <Values dnOrder="1">
+        <Boolean dnOrder="2" id="CORE_TIMER_PERIODIC_INTERRUPT">
+          <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="false"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="4" id="CORE_TIMER_PERIOD_US">
+        <Integer dnOrder="3" id="CORE_TIMER_PERIOD_US">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="1000"/>
           </Values>
         </Integer>
-        <String dnOrder="5" id="CORE_TIMER_PERIOD_VALUE">
+        <String dnOrder="4" id="CORE_TIMER_PERIOD_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="core_timer" value="0x186a0"/>
           </Values>
@@ -2014,6 +1479,7 @@
             <StringArray dnOrder="0" id="values">
               <Values dnOrder="0">
                 <Value dnOrder="0">ATECC608A</Value>
+                <Value dnOrder="1">ATECC608</Value>
               </Values>
             </StringArray>
           </Attributes>
@@ -2028,7 +1494,357 @@
             <Dynamic dnOrder="0" id="cryptoauthlib" value="false"/>
           </Values>
         </Boolean>
-        <ListEntry dnOrder="3" id="CAL_PLIB_LIST_ENTRIES">
+        <File dnOrder="3" id="CAL_FILE_SRC_39">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="4" id="CAL_FILE_SRC_40">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="5" id="CAL_FILE_SRC_41">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="6" id="CAL_FILE_SRC_42">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="7" id="CAL_FILE_SRC_43">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="8" id="CAL_FILE_SRC_44">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="9" id="CAL_FILE_SRC_45">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="10" id="CAL_FILE_SRC_46">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="11" id="CAL_FILE_SRC_47">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="12" id="CAL_FILE_SRC_48">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="13" id="CAL_FILE_SRC_49">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="14" id="CAL_FILE_SRC_50">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="15" id="CAL_FILE_SRC_51">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="16" id="CAL_FILE_SRC_52">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="17" id="CAL_FILE_SRC_53">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="18" id="CAL_FILE_SRC_54">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="19" id="CAL_FILE_SRC_55">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="20" id="CAL_FILE_SRC_56">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="21" id="CAL_FILE_SRC_57">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="22" id="CAL_FILE_SRC_58">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="23" id="CAL_FILE_SRC_59">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="24" id="CAL_FILE_SRC_60">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="25" id="CAL_FILE_SRC_61">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="26" id="CAL_FILE_SRC_62">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="27" id="CAL_FILE_SRC_63">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="28" id="CAL_FILE_SRC_64">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="29" id="CAL_FILE_SRC_65">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="30" id="CAL_FILE_SRC_66">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="31" id="CAL_FILE_SRC_67">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="32" id="CAL_FILE_SRC_68">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="33" id="CAL_FILE_SRC_69">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="34" id="CAL_FILE_SRC_70">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="35" id="CAL_FILE_SRC_71">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="36" id="CAL_FILE_SRC_72">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="37" id="CAL_FILE_SRC_73">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="38" id="CAL_FILE_SRC_74">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="39" id="CAL_FILE_SRC_75">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="40" id="CAL_FILE_SRC_76">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="41" id="CAL_FILE_SRC_77">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="42" id="CAL_FILE_SRC_78">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="43" id="CAL_FILE_SRC_79">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="44" id="CAL_FILE_SRC_80">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="45" id="CAL_FILE_SRC_81">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="46" id="CAL_FILE_SRC_82">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="47" id="CAL_FILE_SRC_83">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="48" id="CAL_FILE_SRC_84">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="49" id="CAL_FILE_SRC_85">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="50" id="CAL_FILE_SRC_86">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="51" id="CAL_FILE_SRC_FREERTOS">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <File dnOrder="52" id="CAL_FILE_SRC_HAL_I2C">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
+        <ListEntry dnOrder="53" id="CAL_PLIB_LIST_ENTRIES">
           <Attributes dnOrder="0">
             <StringArray dnOrder="0" id="values">
               <Values dnOrder="0">
@@ -2057,6 +1873,20 @@
             <Dynamic dnOrder="0" id="drvMiim" value="_ETH_BASE_ADDRESS"/>
           </Values>
         </String>
+        <Menu dnOrder="1" id="DRV_MIIM_RTOS_MENU">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </Menu>
+        <File dnOrder="2" id="DRV_SDHC_SYS_RTOS_TASK">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="enabled">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+        </File>
       </Symbols>
     </UniqueComponent>
     <UniqueComponent dnOrder="11" id="drvPic32mEthmac">
@@ -2096,58 +1926,37 @@
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="2" id="CONFIGURATION_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="3" id="DRIVER_COMMON">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="4" id="DRIVER_ROOT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Boolean dnOrder="5" id="ENABLE_APP_FILE">
+        <Boolean dnOrder="2" id="ENABLE_APP_FILE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="6" id="ENABLE_DRV_COMMON">
+        <Boolean dnOrder="3" id="ENABLE_DRV_COMMON">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="sys_console_0" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="7" id="ENABLE_OSAL">
+        <Boolean dnOrder="4" id="ENABLE_OSAL">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="8" id="ENABLE_SYS_CACHE">
+        <Boolean dnOrder="5" id="ENABLE_SYS_CACHE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="false"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="9" id="ENABLE_SYS_COMMON">
+        <Boolean dnOrder="6" id="ENABLE_SYS_COMMON">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="sys_time" value="true"/>
           </Values>
         </Boolean>
-        <Boolean dnOrder="10" id="ENABLE_SYS_INT">
+        <Boolean dnOrder="7" id="ENABLE_SYS_INT">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="HarmonyCore" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="11" id="GEN_APP_RTOS_TASK_0_DELAY">
+        <Integer dnOrder="8" id="GEN_APP_RTOS_TASK_0_DELAY">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -2157,128 +1966,51 @@
             <User dnOrder="0" value="1000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="12" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
+        <Boolean dnOrder="9" id="GEN_APP_RTOS_TASK_0_USE_DELAY">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <Menu dnOrder="13" id="GEN_APP_RTOS_TASK_CONF_MENU0">
+        <Menu dnOrder="10" id="GEN_APP_RTOS_TASK_CONF_MENU0">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Menu>
-        <Menu dnOrder="14" id="GEN_APP_TASK_MENU">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Menu>
-        <File dnOrder="15" id="INT_DEF">
+        <File dnOrder="11" id="GEN_RTOS_APP_TASKS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="16" id="INT_HEADER">
+        <File dnOrder="12" id="GEN_RTOS_APP_TASKS_DEF">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="17" id="INT_MAPPING">
+        <File dnOrder="13" id="OSAL_FREERTOS_C">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="18" id="INT_SOURCE">
+        <File dnOrder="14" id="OSAL_FREERTOS_H">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </File>
-        <File dnOrder="19" id="OSAL_DEFINITIONS_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="20" id="OSAL_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="21" id="OSAL_SYSDEF_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <Combo dnOrder="22" id="SELECT_RTOS">
+        <Combo dnOrder="15" id="SELECT_RTOS">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="AmazonHWInterface" value="FreeRTOS"/>
           </Values>
         </Combo>
-        <File dnOrder="23" id="SYSTEM_COMMON">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="24" id="SYSTEM_MODULE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="25" id="SYSTEM_ROOT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="26" id="SYS_DEBUG_DEF_HEADER">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="27" id="SYS_DEBUG_HEADER">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="28" id="TASKS_C">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
-        <File dnOrder="29" id="USER_H">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="enabled">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </File>
       </Symbols>
     </UniqueComponent>
     <UniqueComponent dnOrder="13" id="i2c1">
@@ -2298,10 +2030,10 @@
         <DirectCapability dnOrder="0" id="I2C1_I2C">
           <Attributes dnOrder="0">
             <String dnOrder="0" id="targetComponentID">
-              <Value dnOrder="0">atecc608a_0</Value>
+              <Value dnOrder="0">atecc608_0</Value>
             </String>
             <String dnOrder="1" id="targetAttachmentID">
-              <Value dnOrder="0">ATECC608A_DEP_PLIB_I2C</Value>
+              <Value dnOrder="0">ATECC608_DEP_PLIB_I2C</Value>
             </String>
           </Attributes>
         </DirectCapability>
@@ -2410,27 +2142,6 @@
                 </Boolean>
               </Attributes>
             </File>
-            <File dnOrder="7" id="SYS_CONSOLE_USB_CDC_SOURCE">
-              <Attributes dnOrder="0">
-                <Boolean dnOrder="0" id="enabled">
-                  <Value dnOrder="0">false</Value>
-                </Boolean>
-              </Attributes>
-            </File>
-            <File dnOrder="8" id="SYS_CONSOLE_USB_DEFINITIONS_HEADER">
-              <Attributes dnOrder="0">
-                <Boolean dnOrder="0" id="enabled">
-                  <Value dnOrder="0">false</Value>
-                </Boolean>
-              </Attributes>
-            </File>
-            <File dnOrder="9" id="SYS_CONSOLE_USB_HEADER">
-              <Attributes dnOrder="0">
-                <Boolean dnOrder="0" id="enabled">
-                  <Value dnOrder="0">false</Value>
-                </Boolean>
-              </Attributes>
-            </File>
           </Symbols>
           <Attachments dnOrder="1">
             <DirectDependency dnOrder="0" id="sys_console_UART_dependency">
@@ -2476,15 +2187,7 @@
     <UniqueComponent dnOrder="20" id="sys_time">
       <Symbols dnOrder="0">
         <Combo dnOrder="0" id="SYS_TIME_OPERATING_MODE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="readOnly">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-            <Boolean dnOrder="1" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-          <Values dnOrder="1">
+          <Values dnOrder="0">
             <Dynamic dnOrder="0" id="sys_time" value="TICKLESS"/>
           </Values>
         </Combo>
@@ -2537,48 +2240,22 @@
           </Attributes>
         </File>
         <Boolean dnOrder="4" id="UART_RING_BUFFER_ENABLE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="readOnly">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-          <Values dnOrder="1">
+          <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="true"/>
           </Values>
         </Boolean>
-        <Integer dnOrder="5" id="UART_RX_RING_BUFFER_SIZE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Integer>
-        <File dnOrder="6" id="UART_SOURCE">
+        <File dnOrder="5" id="UART_SOURCE">
           <Attributes dnOrder="0">
             <String dnOrder="0" id="source">
               <Value dnOrder="0">../peripheral/uart_00734/templates/plib_uart_ring_buffer.c.ftl</Value>
             </String>
           </Attributes>
         </File>
-        <Integer dnOrder="7" id="UART_TX_RING_BUFFER_SIZE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Integer>
-        <Hex dnOrder="8" id="UMODE_VALUE">
+        <Hex dnOrder="6" id="UMODE_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart1" value="0"/>
           </Values>
         </Hex>
-        <Boolean dnOrder="9" id="USART_INTERRUPT_MODE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="readOnly">
-              <Value dnOrder="0">true</Value>
-            </Boolean>
-          </Attributes>
-        </Boolean>
       </Symbols>
       <Attachments dnOrder="1">
         <DirectCapability dnOrder="0" id="UART1_UART">
@@ -2610,19 +2287,12 @@
             <Dynamic dnOrder="0" id="uart6" value="100000000"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="3" id="UART_RING_BUFFER_ENABLE">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </Boolean>
-        <Hex dnOrder="4" id="UMODE_VALUE">
+        <Hex dnOrder="3" id="UMODE_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart6" value="0"/>
           </Values>
         </Hex>
-        <Boolean dnOrder="5" id="USART_INTERRUPT_MODE">
+        <Boolean dnOrder="4" id="USART_INTERRUPT_MODE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="stdio" value="false"/>
           </Values>
@@ -2643,17 +2313,16 @@
     </UniqueComponent>
   </Components>
   <UserData>
-    <GraphSettings canvasHeight="800" canvasWidth="400" dnOrder="0"/>
-    <ComponentGraph dnOrder="1" id="__ROOTVIEW">
+    <ComponentGraph dnOrder="0" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
         <ElementPosition dnOrder="0" id="AmazonFreeRTOS" x="475" y="406"/>
         <ElementPosition dnOrder="1" id="AmazonHWInterface" x="230" y="360"/>
         <ElementPosition dnOrder="2" id="BSP_PIC32MZ_EF_Curiosity_2.0" x="14" y="84"/>
         <ElementPosition dnOrder="3" id="HarmonyCore" x="19" y="450"/>
-        <ElementPosition dnOrder="4" id="atecc608a" x="330" y="520"/>
+        <ElementPosition dnOrder="4" id="atecc608" x="880" y="20"/>
         <ElementPosition dnOrder="5" id="core" x="240" y="20"/>
         <ElementPosition dnOrder="6" id="core_timer" x="24" y="212"/>
-        <ElementPosition dnOrder="7" id="cryptoauthlib" x="596" y="505"/>
+        <ElementPosition dnOrder="7" id="cryptoauthlib" x="576" y="499"/>
         <ElementPosition dnOrder="8" id="cryptoauthlib_pkcs11" x="617" y="625"/>
         <ElementPosition dnOrder="9" id="dfp" x="20" y="20"/>
         <ElementPosition dnOrder="10" id="drvExtPhyLan8740" x="207" y="487"/>
@@ -2671,5 +2340,6 @@
         <ElementPosition dnOrder="22" id="uart6" x="270" y="57"/>
       </ElementPositions>
     </ComponentGraph>
+    <GraphSettings canvasHeight="1100" canvasWidth="1500" dnOrder="1"/>
   </UserData>
 </Configuration>

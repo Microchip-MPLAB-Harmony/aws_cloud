@@ -1130,7 +1130,7 @@
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
-                <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/ATECC608A_0.c</itemPath>
+                <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/atca_hal.c</itemPath>
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/atca_hal.h</itemPath>
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/atca_start_config.h</itemPath>
