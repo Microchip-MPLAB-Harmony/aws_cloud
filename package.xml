@@ -6,7 +6,7 @@
         <Dependency name="bsp" version="v3.7.0"/>
         <Dependency name="net"  version="v3.6.1"/>
 		<Dependency name="wireless"  version="v3.2.0"/>
-		<Dependency name="cryptoauthlib"  version="v3.2.1"/>
+		<Dependency name="cryptoauthlib"  version="v3.2.2"/>
         <Dependency name="amazon-freertos" version="v3.1.0"/>
     </Dependencies>
 </Package>

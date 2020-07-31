@@ -3748,8 +3748,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">/amazon-freertos/vendors/microchip/boards/same70_xult/ports/pkcs11</LogicalPath>
           <PhysicalPath dnOrder="4">/amazon-freertos/vendors/microchip/boards/same70_xult/ports/pkcs11/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">09A49FA07A13132807228CA763BAB1B8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">09A49FA07A13132807228CA763BAB1B8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5F7CA8C528EF1FB80E2CCB3A66CC550B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5F7CA8C528EF1FB80E2CCB3A66CC550B</UserChecksum>
         </File>
         <File dnOrder="416">
           <Type dnOrder="0">SOURCE</Type>
@@ -7102,7 +7102,7 @@
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="aws_cloud;bsp;core;cryptoauthlib;csp;net;quick_docs;usb;wireless;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="aws_cloud;bsp;core;crypto;cryptoauthlib;csp;net;wireless;"/>
     </Settings>
   </Configurator>
 </Configuration>
