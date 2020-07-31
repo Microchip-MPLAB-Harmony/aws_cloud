@@ -24,12 +24,22 @@ This repository contains the MPLAB® Harmony 3 AWS Cloud application examples
 - [Release Notes](release_notes.md)
 - [MPLAB® Harmony License](mplab_harmony_license.md)
 
-## Cloning repos
+# Contents Summary
 
-To clone or download these application from Github,go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/aws_cloud) and then click Clone button to clone this repo or download as zip file. 
-This content can also be download using content manager by following [these instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki)
+| Folder    | Description                                                |
+|-----------|------------------------------------------------------------|
+| apps      | Example applications for Amazon FreeRTOS                   |
+| config    | Amazon FreeRTOS module configuration scripts               |
+| doc       | Images for Amazon FreeRTOS Component documentation           		         |
+| docs      | Amazon FreeRTOS help documentation           		         |
+| templates | Configurations file templates                              |
 
-This repo also uses amazon-freertos(https://github.com/MicrochipTech/amazon-freertos).
+
+## Cloning AWS_Cloud repo
+
+To clone or download the repo from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions
+
+This repo contains scripts needed to represent [amazon-freertos](https://github.com/MicrochipTech/amazon-freertos) as Harmony 3 component. It requires [amazon-freertos](https://github.com/MicrochipTech/amazon-freertos) repository to be cloned for code generation.
 
 ## Cloning FreeRTOS (amazon-freertos)
 
@@ -37,7 +47,7 @@ This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodu
 
 Note: If you download the ZIP file provided by GitHub UI or using content-manager, you will not get the contents of the submodules. (The ZIP file is also not a valid git repository)
 
-To clone using HTTPS:
+To clone:
 ```
 git clone https://github.com/MicrochipTech/amazon-freertos --recurse-submodules
 ```
