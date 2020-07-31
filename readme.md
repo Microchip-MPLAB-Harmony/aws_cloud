@@ -24,9 +24,34 @@ This repository contains the MPLAB® Harmony 3 AWS Cloud application examples
 - [Release Notes](release_notes.md)
 - [MPLAB® Harmony License](mplab_harmony_license.md)
 
-To clone or download these application from Github,go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_uart) and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following [these instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki)
+## Cloning repos
 
-## Contents Summary
+To clone or download these application from Github,go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/aws_cloud) and then click Clone button to clone this repo or download as zip file. 
+This content can also be download using content manager by following [these instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki)
+
+This repo also uses amazon-freertos(https://github.com/MicrochipTech/amazon-freertos).
+
+## Cloning FreeRTOS (amazon-freertos)
+
+This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to bring in dependent components.
+
+Note: If you download the ZIP file provided by GitHub UI or using content-manager, you will not get the contents of the submodules. (The ZIP file is also not a valid git repository)
+
+To clone using HTTPS:
+```
+git clone https://github.com/MicrochipTech/amazon-freertos --recurse-submodules
+```
+
+If you have downloaded the repo without using the `--recurse-submodules` argument, you need to run:
+```
+git submodule update --init --recursive
+```
+
+# Getting Started
+
+For more information on FreeRTOS, refer to the [Getting Started guide of different boards](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev/vendors/microchip/boards).
+
+# Contents Summary
 
 | Folder    | Description                                                |
 |-----------|------------------------------------------------------------|
