@@ -7,7 +7,7 @@ nav_order: 1
 ![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
-# MPLAB® Harmony 3 Configurations and Applications to securely connect IoT devices to the AWS cloud using Amazon FreeRTOS.
+# MPLAB® Harmony 3 Configurations and Applications to securely connect IoT devices to the AWS cloud using FreeRTOS.
 
 MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating
 embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller
@@ -28,10 +28,10 @@ This repository contains the MPLAB® Harmony 3 AWS Cloud application examples
 
 | Folder    | Description                                                |
 |-----------|------------------------------------------------------------|
-| apps      | Example applications for Amazon FreeRTOS                   |
-| config    | Amazon FreeRTOS module configuration scripts               |
-| doc       | Images for Amazon FreeRTOS Component documentation           		         |
-| docs      | Amazon FreeRTOS help documentation           		         |
+| apps      | Example applications for FreeRTOS                   |
+| config    | FreeRTOS module configuration scripts               |
+| doc       | Image files           		         |
+| docs      | FreeRTOS help documentation           		         |
 | templates | Configurations file templates                              |
 
 
@@ -39,9 +39,9 @@ This repository contains the MPLAB® Harmony 3 AWS Cloud application examples
 
 To clone or download the repo from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions
 
-This repo contains scripts needed to represent [amazon-freertos](https://github.com/MicrochipTech/amazon-freertos) as Harmony 3 component. It requires [amazon-freertos](https://github.com/MicrochipTech/amazon-freertos) repository to be cloned for code generation.
+This repo contains scripts needed to represent [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos) as Harmony 3 component. It requires [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos) repository to be cloned for code generation.
 
-## Cloning FreeRTOS (amazon-freertos)
+## Cloning FreeRTOS.
 
 This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to bring in dependent components.
 
@@ -61,26 +61,15 @@ git submodule update --init --recursive
 
 For more information on FreeRTOS, refer to the [Getting Started guide of different boards](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev/vendors/microchip/boards).
 
-# Contents Summary
-
-| Folder    | Description                                                |
-|-----------|------------------------------------------------------------|
-| apps      | Example applications for Amazon FreeRTOS                   |
-| config    | Amazon FreeRTOS module configuration scripts               |
-| doc       | Images for Amazon FreeRTOS Component documentation           		         |
-| docs      | Amazon FreeRTOS help documentation           		         |
-| templates | Configurations file templates                              |
-
-
 ## Introduction
 
-The Amazon FreeRTOS is abstracted as Harmony 3 component to easily configure and generate code to develop cloud connected applications using Harmony 3 framework.
-It uses updated version of Amazon FreeRTOS 202002.00 to support Microchip products for code generation.
+The FreeRTOS is abstracted as Harmony 3 component to easily configure and generate code to develop cloud connected applications using Harmony 3 framework.
+It uses updated version of FreeRTOS 202002.00 to support Microchip products for code generation.
 
 Amazon FreeRTOS is now termed as FreeRTOS, but we still use the term Amazon FreeRTOS as the H3 component name to avoid confusion with 
 existing H3 FreeRTOS (kernel) Component.
 
-The Amazon FreeRTOS is supported in the following products.
+FreeRTOS is supported in the following products.
 
 - SAM E70/S70/V70/V71 Family + ECC608 (Optional)
 - SAM D5x/E5x Family + ECC608 (Optional) + WINC1500/WINC3400 (Optional)
@@ -88,14 +77,15 @@ The Amazon FreeRTOS is supported in the following products.
 
 This repository contains following three components for configuration and code generation.
 
-##AmazonFreeRTOS Component 
-Amazon FreeRTOS component is used to configure and generate Amazon FreeRTOS code, indepdent of any hardware configuration 
+## AmazonFreeRTOS Component 
+
+Amazon FreeRTOS component is used to configure and generate FreeRTOS code, indepdent of any hardware configuration 
 
 ![Things Screen](doc/images/H3_Component_1.png)
 
-##AmazonHWInterface component 
-The Hardware interface components is used for device specific (E5x/D5x/E70/S70/V70/V71/PIC32MZEF) and 
-Hardware specific (Ethernet/WIFI, NVM/ECC608) configuration and harcode generation.
+## AmazonHWInterface component 
+
+The Hardware interface component is used to abstract device, interface and key storage configuration and code generation. 
 
 ![Things Screen](doc/images/H3_Component_2.png)
 
@@ -117,13 +107,14 @@ This solution is available in all platforms.
 
 This solution is available in SAMD5x/E5x platform only.
 
-#AmazonDeviceTester component 
+## AmazonDeviceTester component 
+
 Amazon DeviceTester component is used to configure and generate code for qualification testing. It adds required dependencies for testing the Amazon FreeRTOS solution using Amazon IDT (refer: https://docs.aws.amazon.com/freertos/latest/userguide/device-tester-for-freertos-ug.html). 
 
 ![Things Screen](doc/images/H3_Component_3.png) 
 
 Important Licensing Information:
-For Amazon-FreeRTOS License, please refer to the license file under the [amazon-freertos](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev) folder. 
+For FreeRTOS License, please refer to the license file in the [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev) repository. 
 
 
 

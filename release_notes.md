@@ -5,8 +5,8 @@
 ## AWS Cloud Release Notes v3.1.0
 
 ### New Features
-- Supports ECC608 Integeration with Amazon FreeRTOS and Wi-Fi Support (WINC1500/WINC3400) for SAM D/E MCUs.
-- [Updated version of Amazon FreeRTOS 202002.00](https://github.com/MicrochipTech/amazon-freertos/tree/v3.1.0) to add support for following
+- Supports ECC608 Integeration with FreeRTOS and Wi-Fi Support (WINC1500/WINC3400) for  SAM D5x/E5x MCUs.
+- [Updated version of FreeRTOS 202002.00](https://github.com/MicrochipTech/amazon-freertos/tree/v3.1.0) to add support for following
 [SAM S70](https://www.microchip.com/design-centers/32-bit/sam-32-bit-mcus/sam-s-mcus),
 [SAM E70](https://www.microchip.com/design-centers/32-bit/sam-32-bit-mcus/sam-e-mcus),
 [SAM V70/V71](https://www.microchip.com/design-centers/32-bit/sam-32-bit-mcus/sam-v-mcus),
@@ -20,7 +20,7 @@
 	| Development kits                                                                                                                  | Applications |
 	| --------------------------------------------------------------------------------------------------------------------------------- | ---          |
 	| [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=ATSAME70-XULT)      |  1           |
-	| [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)                    |  1           |
+	| [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)                    |  3           |
 	| [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)                  |  1           |
 
 
@@ -39,8 +39,9 @@
 * [BSP v3.7.0](https://github.com/Microchip-MPLAB-Harmony/bsp/tree/v3.7.0)
 * [DEV_PACKS v3.7.0](https://github.com/Microchip-MPLAB-Harmony/dev_packs/tree/v3.7.0)
 * [NET v3.6.1](https://github.com/Microchip-MPLAB-Harmony/net/tree/v3.6.1)
-* [Updated version of Amazon FreeRTOS 202002.00 for Microchip Products](https://github.com/MicrochipTech/amazon-freertos/tree/v3.1.0)
+* [Updated version of FreeRTOS 202002.00 for Microchip Products](https://github.com/MicrochipTech/amazon-freertos/tree/v3.1.0)
 * [MHC v3.4.1](https://github.com/Microchip-MPLAB-Harmony/mhc/tree/v3.4.1)
+* [Cryptoauthlib v3.2.2](https://github.com/MicrochipTech/cryptoauthlib)
 
 
 
