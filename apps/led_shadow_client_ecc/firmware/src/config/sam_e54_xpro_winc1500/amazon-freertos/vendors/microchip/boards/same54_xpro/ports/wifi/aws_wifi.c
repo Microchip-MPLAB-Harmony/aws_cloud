@@ -71,7 +71,7 @@ extern const atcacert_def_t g_cert_def_0_root ;
 
 /* initialization done timeout. */
 #define WIFI_MAC_INIT_TIMEOUT                   ( pdMS_TO_TICKS( 5000 ) )
-#define WIFI_MAC_CONNECT_TIMEOUT                ( pdMS_TO_TICKS( 15000 ) )
+#define WIFI_MAC_CONNECT_TIMEOUT                ( pdMS_TO_TICKS( 10000 ) )
 #define WIFI_MAC_DISCONNECT_TIMEOUT             ( pdMS_TO_TICKS( 3000 ) )
 #define WIFI_MAC_PING_TIMEOUT                   ( pdMS_TO_TICKS( 5000 ) )
 #define WIFI_MAC_SET_CIPHER_TIMEOUT             ( pdMS_TO_TICKS( 3000 ) )
@@ -601,7 +601,7 @@ void AWS_MCHP_ConnectEvent(void)
 {
      wifiConnected = true;
 	 tryReconnect = 5;
-     m2m_wifi_get_system_time();
+     WDRV_WINC_SystemTimeGetCurrent(wifi_handle, NULL);
      xTaskNotify( waiting_task, WDRV_MAC_EVENT_CONNECT_DONE, eSetBits );
 }
 
@@ -721,6 +721,7 @@ static signed char ecdh_derive_client_shared_secret(
         if (ATCA_SUCCESS == atcab_ecdh_tempkey(server_public_key->x, ecdh_shared_secret))
         {
             status = M2M_SUCCESS;
+            configPRINTF(("ecdh_derive_client_shared_secret completed\r\n"));
         }
     }
 	return status;
@@ -834,6 +835,7 @@ uint16_t *signature_size)
     {
         wifi_context.pkcs11_funcs->C_CloseSession(wifi_context.pkcs11_session);
     }
+    configPRINTF(("ecdsa_process_sign_gen_request completed\r\n"));
 
     return xResult;
 }
@@ -1794,6 +1796,10 @@ static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAd
     
     memcpy(wifiIPv4Address, &ipAddress, sizeof(wifiIPv4Address));
     configPRINTF(("IP address is %s\r\n", inet_ntop(AF_INET, &ipAddress, s, sizeof(s))));
+    
+    AWS_MCHP_ConnectEvent();
+    if (g_network_change_cb != NULL)
+        g_network_change_cb(AWSIOT_NETWORK_TYPE_WIFI, eNetworkStateEnabled);
 }
  
 
@@ -1852,15 +1858,13 @@ static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAd
 {
     if (WDRV_WINC_CONN_STATE_CONNECTED == currentState)
     {
-        configPRINTF(("[%s] Connected\r\n", __func__));
-        AWS_MCHP_ConnectEvent();
-        if (g_network_change_cb != NULL)
-            g_network_change_cb(AWSIOT_NETWORK_TYPE_WIFI, eNetworkStateEnabled);
+        configPRINTF(("[%s] AP Connected\r\n", __func__));
+        
        
     }
     else if (WDRV_WINC_CONN_STATE_DISCONNECTED == currentState)
     {
-        configPRINTF(("[%s] Disconnect\r\n", __func__));
+        configPRINTF(("[%s] AP Disconnect\r\n", __func__));
         AWS_MCHP_DisconnectEvent();
         if (g_network_change_cb != NULL)
             g_network_change_cb(AWSIOT_NETWORK_TYPE_WIFI, eNetworkStateDisabled);

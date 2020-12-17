@@ -65,7 +65,7 @@
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/wdt/plib_wdt.h"
-#include "peripheral/i2c/plib_i2c1.h"
+#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
 #include "app.h"

@@ -71,7 +71,7 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/dmac/plib_dmac.h"
 #include "peripheral/wdt/plib_wdt.h"
-#include "peripheral/sercom/spim/plib_sercom4_spi.h"
+#include "peripheral/sercom/spi_master/plib_sercom4_spi_master.h"
 #include "peripheral/eic/plib_eic.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"

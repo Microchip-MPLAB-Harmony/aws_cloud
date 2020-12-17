@@ -134,6 +134,7 @@ static void prvMiscInitialization( void )
 
    
     SYS_Initialize( NULL );
+    
     SOCKETS_Init();
 #ifndef PIC32_USE_ETHERNET
     initialize_wifi();

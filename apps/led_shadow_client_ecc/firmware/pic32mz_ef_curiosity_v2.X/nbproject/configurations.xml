@@ -74,6 +74,11 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/atca_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/clk/plib_clk.h</itemPath>
@@ -88,8 +93,10 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f9" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/plib_i2c1.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/plib_i2c_master.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f1" displayName="nvm" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/nvm/plib_nvm.h</itemPath>
@@ -133,18 +140,7 @@
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/configuration.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/definitions.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_freertos.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFM144_DFP"
-                       projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
@@ -152,6 +148,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="pic32mz_ef_curiosity_v2"
+                       projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2/p32MZ2048EFM144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -1064,6 +1067,8 @@
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
@@ -1124,7 +1129,11 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/atca_status.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/atca_version.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/cryptoauthlib.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clk" projectFiles="true">
@@ -1140,7 +1149,9 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f9" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/plib_i2c1.c</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f1" displayName="nvm" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/nvm/plib_nvm.c</itemPath>
@@ -1188,17 +1199,44 @@
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/exceptions.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="pic32mz_ef_curiosity_v2.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/AmazonFreeRTOS.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/AmazonHWInterface.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/cryptoauthlib_pkcs11.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drvExtPhyLan8740.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drvMiim.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drvPic32mEthmac.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/nvm.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/rng.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/uart1.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/uart6.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/pic32mz_ef_curiosity_v2/harmony.prj</itemPath>
+      <itemPath>../src/config/pic32mz_ef_curiosity_v2/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -1214,12 +1252,14 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.30</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.2.51"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -1237,6 +1277,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -1253,7 +1294,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/network_manager;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/https;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/tcp;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/jsmn;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/http_parser;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/config_files;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/application_code;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/portable/MPLAB/PIC32MZ;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/pic32mzef_h3;../src;../src/config/pic32mz_ef_curiosity_v2;../src/packs/PIC32MZ2048EFM144_DFP;../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib;../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto;../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/pkcs11"/>
+                  value="../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib;../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/crypto;../src/config/pic32mz_ef_curiosity_v2/library/cryptoauthlib/pkcs11;../src;../src/config/pic32mz_ef_curiosity_v2;../src/packs/PIC32MZ2048EFM144_DFP;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/network_manager;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/https;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/tcp;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/jsmn;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/http_parser;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/wifi/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/wifi;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/config_files;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/application_code;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/portable/MPLAB/PIC32MZ;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/pic32mzef_h3"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1283,7 +1324,7 @@
         <property key="expand-macros" value="false"/>
         <property key="extra-include-directories-for-assembler" value=""/>
         <property key="extra-include-directories-for-preprocessor"
-                  value="../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/network_manager;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/https;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/tcp;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/jsmn;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/http_parser;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/config_files;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/application_code;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/portable/MPLAB/PIC32MZ;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/pic32mzef_h3;"/>
+                  value="../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/platform/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/network_manager;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/https;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/tcp;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/jsmn;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/3rdparty/http_parser;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/abstractions/wifi/include;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/wifi;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/config_files;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/boards/curiosity2_pic32mzef/aws_demos/application_code;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/freertos_kernel/portable/MPLAB/PIC32MZ;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/pic32mz_ef_curiosity_v2/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/pic32mzef_h3;"/>
         <property key="false-conditionals" value="false"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
@@ -1320,7 +1361,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="1024"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -1351,7 +1392,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/packs/PIC32MZ2048EFM144_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

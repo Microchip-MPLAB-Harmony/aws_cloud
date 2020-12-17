@@ -36,7 +36,7 @@
 
 #define AWS_NVM_ROW_SIZE            (2 * 1024)
 #define AWS_NVM_PAGE_SIZE           (512)
-#define AWS_NVM_BLOCK_SIZE           (8192)
+#define AWS_NVM_BLOCK_SIZE           (8192UL)
 #define AWS_NVM_FLASH_SIZE          (NVMCTRL_FLASH_SIZE/2) // Size of each bank
 #define AWS_NVM_FLASH_START_ADDRESS (NVMCTRL_FLASH_START_ADDRESS)
 #define AWS_NVM_ERASE_PAGES_MAX     (32)    // max number of pages that could be erased once
@@ -44,6 +44,8 @@
 #define AWS_NVM_LOCK_REGION_PAGES   (32)    // number of pages in a lock region
 #define AWS_QUAD_SIZE               (16)
 #define AWS_NVM_BOOTLOADER_SIZE     (0x10000)
+
+bool AWS_NVM_WriteDescriptor(uint8_t * ptrFlash, uint8_t *pData, int iSize);
 
 // erases the boot upper page 4
 bool AWS_FlashRegionProtect(int regionNo, uint32_t regionSize, const void* flashAddress, bool enable);

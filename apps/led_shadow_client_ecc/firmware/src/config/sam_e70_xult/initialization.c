@@ -173,6 +173,26 @@ const SYS_DEBUG_INIT debugInit =
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 
 
 /*******************************************************************************
@@ -188,7 +208,11 @@ const SYS_DEBUG_INIT debugInit =
 void SYS_Initialize ( void* data )
 {
 
+
     EFC_Initialize();
+    STDIO_BufferModeSet();
+
+
   
     CLOCK_Initialize();
 	PIO_Initialize();
@@ -206,7 +230,7 @@ void SYS_Initialize ( void* data )
 
 	TWIHS0_Initialize();
 
-	USART1_Initialize();
+    USART1_Initialize();
 
 	RSWDT_REGS->RSWDT_MR = RSWDT_MR_WDDIS_Msk;	// Disable RSWDT 
 

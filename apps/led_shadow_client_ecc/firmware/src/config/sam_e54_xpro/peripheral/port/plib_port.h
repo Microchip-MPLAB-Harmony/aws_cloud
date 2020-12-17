@@ -65,27 +65,27 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for GPIO_PB08 pin ***/
 #define GPIO_PB08_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 8)
 #define GPIO_PB08_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 8)
 #define GPIO_PB08_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 8)
-#define GPIO_PB08_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define GPIO_PB08_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 8)
 #define GPIO_PB08_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 8)
+#define GPIO_PB08_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8)) & 0x01)
 #define GPIO_PB08_PIN                  PORT_PIN_PB08
 
 /*** Macros for LED_0 pin ***/
 #define LED_0_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = 1 << 10)
 #define LED_0_Clear()             (PORT_REGS->GROUP[3].PORT_OUTCLR = 1 << 10)
 #define LED_0_Toggle()            (PORT_REGS->GROUP[3].PORT_OUTTGL = 1 << 10)
-#define LED_0_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 10)) & 0x01)
 #define LED_0_OutputEnable()      (PORT_REGS->GROUP[3].PORT_DIRSET = 1 << 10)
 #define LED_0_InputEnable()       (PORT_REGS->GROUP[3].PORT_DIRCLR = 1 << 10)
+#define LED_0_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 10)) & 0x01)
 #define LED_0_PIN                  PORT_PIN_PD10
 
-
-
+/*** Macros for LED pin ***/
+#define LED_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
+#define LED_PIN                  PORT_PIN_PC18
 // *****************************************************************************
 /* PORT Group
 
@@ -1042,7 +1042,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1081,7 +1081,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

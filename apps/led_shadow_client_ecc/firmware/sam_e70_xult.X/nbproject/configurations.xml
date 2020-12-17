@@ -71,6 +71,11 @@
               <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/atca_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f7" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/clk/plib_clk.h</itemPath>
@@ -142,12 +147,8 @@
           <itemPath>../src/config/sam_e70_xult/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e70_xult/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult/device.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME70Q21B_DFP" projectFiles="true">
@@ -192,7 +193,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME70Q21B_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAME70Q21B_DFP/atsame70q21b.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -208,6 +208,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -218,6 +219,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
+          <itemPath>../src/config/sam_e70_xult/ATSAME70Q21B.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -1128,6 +1134,8 @@
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+                <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
+                <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
@@ -1188,7 +1196,11 @@
               <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/atca_status.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/atca_version.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/cryptoauthlib.h</itemPath>
+              <itemPath>../src/config/sam_e70_xult/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f7" displayName="clk" projectFiles="true">
@@ -1261,17 +1273,43 @@
           <itemPath>../src/config/sam_e70_xult/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_e70_xult.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/AmazonFreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/AmazonHWInterface.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/cryptoauthlib_pkcs11.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/drvExtPhyLan8740.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/drvGmac.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/drvMiim.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/trng.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/uart0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/usart1.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e70_xult/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_e70_xult/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -1287,13 +1325,15 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.2.59"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.4.78"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -1311,6 +1351,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -1351,7 +1392,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/sam_e70_xult/amazon-freertos/demos/include;../src/config/sam_e70_xult/amazon-freertos/freertos_kernel/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/platform/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/sam_e70_xult/amazon-freertos/demos/network_manager;../src/config/sam_e70_xult/amazon-freertos/demos/https;../src/config/sam_e70_xult/amazon-freertos/demos/tcp;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/jsmn;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/sam_e70_xult/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/pkcs11;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/wifi/include;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/wifi;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/posix;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/aws_demos/config_files;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/aws_demos/application_code;../src/config/sam_e70_xult/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM7/r0p1;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same70;../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/sam_e70_xult/library/cryptoauthlib;../src/config/sam_e70_xult/library/cryptoauthlib/crypto;../src/config/sam_e70_xult/library/cryptoauthlib/pkcs11"/>
+                  value="../src/config/sam_e70_xult/library/cryptoauthlib;../src/config/sam_e70_xult/library/cryptoauthlib/crypto;../src/config/sam_e70_xult/library/cryptoauthlib/pkcs11;../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/sam_e70_xult/amazon-freertos/demos/include;../src/config/sam_e70_xult/amazon-freertos/freertos_kernel/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/platform/include;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/sam_e70_xult/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/sam_e70_xult/amazon-freertos/demos/network_manager;../src/config/sam_e70_xult/amazon-freertos/demos/https;../src/config/sam_e70_xult/amazon-freertos/demos/tcp;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/jsmn;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/sam_e70_xult/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/sam_e70_xult/amazon-freertos/libraries/3rdparty/http_parser;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/pkcs11;../src/config/sam_e70_xult/amazon-freertos/libraries/abstractions/wifi/include;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/wifi;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/ports/posix;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/aws_demos/config_files;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/boards/same70_xult/aws_demos/application_code;../src/config/sam_e70_xult/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM7/r0p1;../src/config/sam_e70_xult/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/sam_e70_xult/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same70"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1416,7 +1457,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="1024"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -1424,7 +1465,7 @@
         <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
         <property key="no-device-startup-code" value="true"/>
         <property key="no-startup-files" value="false"/>
-        <property key="oXC32ld-extra-opts" value=""/>
+        <property key="oXC32ld-extra-opts" value="-mno-newlib-nano"/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
@@ -1447,7 +1488,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e70_xult;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1488,6 +1530,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1501,6 +1544,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>

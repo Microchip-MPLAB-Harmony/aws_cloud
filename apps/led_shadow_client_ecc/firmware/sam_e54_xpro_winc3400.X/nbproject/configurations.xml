@@ -36,7 +36,6 @@
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmasic.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmbus.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmdrv.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmflash.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmspi.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
@@ -105,6 +104,11 @@
               <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/atca_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f7" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/clock/plib_clock.h</itemPath>
@@ -132,9 +136,9 @@
                 <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/i2c_master/plib_sercom7_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spim/plib_sercom4_spi.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spim/plib_sercom_spi_common.h</itemPath>
+              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/usart/plib_sercom2_usart.h</itemPath>
@@ -189,12 +193,8 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400/device.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
@@ -242,8 +242,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -259,6 +257,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -269,6 +268,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="sam_e54_xpro_winc3400"
+                       projectFiles="true">
+          <itemPath>../src/config/sam_e54_xpro_winc3400/ATSAME54P20A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -1039,7 +1045,6 @@
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmasic.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmbus.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmdrv.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmflash.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmspi.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_ota.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_ssl.c</itemPath>
@@ -1150,6 +1155,8 @@
                 <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
@@ -1210,7 +1217,11 @@
               <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/atca_status.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/atca_version.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/cryptoauthlib.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f7" displayName="clock" projectFiles="true">
@@ -1238,8 +1249,8 @@
               <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/i2c_master/plib_sercom7_i2c_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spim/plib_sercom4_spi.c</itemPath>
+              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f1" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/usart/plib_sercom2_usart.c</itemPath>
@@ -1292,18 +1303,46 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="sam_e54_xpro_winc3400.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/AmazonFreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/AmazonHWInterface.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/cryptoauthlib_pkcs11.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/drvWifiWinc.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom7.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/tc3.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/trng.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_xpro_winc3400/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.xml</itemPath>
+      <itemPath>../src/config/sam_e54_xpro_winc3400/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -1321,13 +1360,15 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.40</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.4.70"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.1.43"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -1345,6 +1386,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>${MP_CC_DIR}\xc32-objcopy -O ihex "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.elf" "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex" &amp;&amp; ${MP_CC_DIR}\xc32-objcopy -p -I ihex -O binary "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex" "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin"</makeCustomizationPostStep>
@@ -1385,7 +1427,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/freertos_kernel/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/platform/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/network_manager;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/https;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/tcp;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/jsmn;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/http_parser;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/ports/pkcs11;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/wifi/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54/ports/wifi;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/aws_demos/config_files;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/aws_demos/application_code;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/ports/posix;../src/config/sam_e54_xpro_winc3400/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54;../src/config/sam_e54_xpro_winc3400/driver/winc/include/;../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash;../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib;../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto;../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/pkcs11"/>
+                  value="../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib;../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/crypto;../src/config/sam_e54_xpro_winc3400/library/cryptoauthlib/pkcs11;../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400/driver/winc/include/;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/freertos_kernel/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/platform/freertos/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/secure_sockets/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/pkcs11/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/aws/defender/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/aws/shadow/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/https/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/mqtt/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/serializer/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/greengrass/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/ota/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/crypto/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/utils/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/tls/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/pkcs11/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/platform/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include/private;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/c_sdk/standard/common/include/types;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/Compiler/GCC;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/network_manager;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/https;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/tcp;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/jsmn;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/mbedtls/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycbor;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/pkcs11;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycrypt/asn1;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/tinycrypt/lib/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/demos/dev_mode_key_provisioning/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/pkcs11/mbedtls;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/3rdparty/http_parser;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/aws/ota/src;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/ports/pkcs11;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/abstractions/wifi/include;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/ports/wifi;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/harmony3/afr;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/aws_demos/config_files;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/aws_demos/application_code;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/boards/same54_xpro/ports/posix;../src/config/sam_e54_xpro_winc3400/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F;../src/config/sam_e54_xpro_winc3400/amazon-freertos/vendors/microchip/harmony3/afr/tcpip/src/common;../src/config/sam_e54_xpro_winc3400/amazon-freertos/libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
@@ -1449,7 +1491,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="1024"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -1457,7 +1499,7 @@
         <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
         <property key="no-device-startup-code" value="true"/>
         <property key="no-startup-files" value="false"/>
-        <property key="oXC32ld-extra-opts" value=""/>
+        <property key="oXC32ld-extra-opts" value="-mno-newlib-nano"/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
@@ -1481,7 +1523,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1522,6 +1565,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1535,6 +1579,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>

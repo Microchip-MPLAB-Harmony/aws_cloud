@@ -80,13 +80,13 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                     0
-#define SYS_TIME_MAX_TIMERS                  5
-#define SYS_TIME_HW_COUNTER_WIDTH            32
-#define SYS_TIME_HW_COUNTER_PERIOD           4294967295U
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD	     (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY         200000000
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (620)
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (32)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (200000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (620)
 
 #define SYS_CONSOLE_INDEX_0                       0
 
@@ -163,7 +163,9 @@ extern "C" {
                                                     TCPIP_MAC_RX_FILTER_TYPE_BCAST_ACCEPT |\
                                                     TCPIP_MAC_RX_FILTER_TYPE_MCAST_ACCEPT |\
                                                     TCPIP_MAC_RX_FILTER_TYPE_UCAST_ACCEPT |\
-                                                    TCPIP_MAC_RX_FILTER_TYPE_RUNT_REJECT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_RUNT_ACCEPT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_MCAST_HASH_ACCEPT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_UCAST_HASH_ACCEPT |\
                                                     TCPIP_MAC_RX_FILTER_TYPE_CRC_ERROR_REJECT |\
                                                     0
 #define TCPIP_EMAC_ETH_OPEN_FLAGS       			\
@@ -192,6 +194,9 @@ extern "C" {
 #define TCPIP_EMAC_FLOW_CONTROL_FULL_WMARK          2
 #define TCPIP_EMAC_FLOW_CONTROL_EMPTY_WMARK         0
 
+
+
+#define TCPIP_IF_ETHMAC
 
                                                   
 #define TCPIP_INTMAC_PHY_CONFIG_FLAGS              	( 0 \

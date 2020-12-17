@@ -9,13 +9,12 @@
 #include "cryptoauthlib.h"
 
 
-
 ATCAIfaceCfg atecc608_0_init_data = {
     .iface_type            = ATCA_I2C_IFACE,
     .devtype               = ATECC608,
     .atcai2c.slave_address = 0x6C,
     .atcai2c.bus           = 0,
-    .atcai2c.baud          = 50000000,
+    .atcai2c.baud          = 100000,
     .wake_delay            = 1500,
     .rx_retries            = 20,
     .cfg_data              = &i2c1_plib_i2c_api
