@@ -10,7 +10,7 @@
 
 <!--IOT DEMO Config -->
 <components config_name="AWS_CLOUD_DEMO_MENU" config_type="menu" config_label="Amazon FreeRTOS Demo Configuration" config_visible="True" config_descr="Tested Demos Configuration" config_default="">
-<component config_name="AWS_DEMO_RUN" config_type="combo" config_label="Amazon FreeRTOS Demo Name" config_visible="True" config_descr="Demo Selection" config_default="MQTT SHADOW"/>
+<component config_name="AWS_DEMO_RUN" config_type="combo" config_label="Amazon FreeRTOS Demo Name" config_visible="True" config_descr="Demo Selection" config_default="MQTT SHADOW OTA"/>
 <component config_name="AWS_CLOUD_DEMO_PRIORITY" config_type="integer" config_label="Demo Priority" config_visible="True" config_descr="Demo Priority" config_default="5"/>
 <component config_name="AWS_CLOUD_DEMO_MQTT_TO" config_type="integer" config_label="Demo MQTT Timeout" config_visible="True" config_descr="Demo MQTT Timeout" config_default="3000"/>
 <component config_name="AWS_CLOUD_DEMO_ECHO_TLS_TO" config_type="integer" config_label="Demo MQTT ECHO TLS Timeout" config_visible="True" config_descr="Demo MQTT Echo TLS Timeout" config_default="12000"/>

@@ -123,7 +123,7 @@
 <component config_name="AWS_CLOUD_FREERTOS_ISR_STACK_SIZE" config_type="integer" config_label="ISR Stack Size" config_visible="True" config_descr="ISR Stack Size" config_default="512"/>
 <component config_name="AWS_CLOUD_FREERTOS_SUPP_DYNAMIC" config_type="bool" config_label="Enable Dynamic Allocation" config_visible="True" config_descr="Enable Dynamic Allocation" config_default="True"/>
 <component config_name="AWS_CLOUD_FREERTOS_SUPP_STATIC" config_type="bool" config_label="Enable Static Allocation" config_visible="True" config_descr="Enable Static Allocation" config_default="True"/>
-<component config_name="AWS_CLOUD_FREERTOS_HEAP_SIZE" config_type="integer" config_label="Maximum Heap Size" config_visible="True" config_descr="Maximum Heap Size" config_default="230000"/>
+<component config_name="AWS_CLOUD_FREERTOS_HEAP_SIZE" config_type="integer" config_label="Maximum Heap Size" config_visible="True" config_descr="Maximum Heap Size" config_default="210000"/>
 <component config_name="AWS_CLOUD_FREERTOS_MAX_TASK_LEN" config_type="integer" config_label="Maximum Task Length" config_visible="True" config_descr="Maximum Task Length" config_default="16"/>
 <component config_name="AWS_CLOUD_FREERTOS_USE_16B_TICKS" config_type="bool" config_label="Enable 16 Bit Ticks" config_visible="True" config_descr="Enable 16 Bit Ticks" config_default=""/>
 <component config_name="AWS_CLOUD_FREERTOS_IDLE_YIELD" config_type="bool" config_label="Enable IDLE Task to Yield" config_visible="True" config_descr="Enable IDLE Task to Yield" config_default="True"/>

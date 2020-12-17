@@ -39,8 +39,10 @@
  *
  *  These defines are used in iot_demo_runner.h for demo selection */
 
-<#if AWS_DEMO_RUN == 'SHADOW'>
-    <#lt>#define CONFIG_SHADOW_DEMO_ENABLED                
+<#if AWS_DEMO_RUN == 'OTA'>
+    <#lt>#define CONFIG_OTA_UPDATE_DEMO_ENABLED                
+<#elseif AWS_DEMO_RUN == 'SHADOW'>
+    <#lt>#define CONFIG_SHADOW_DEMO_ENABLED   
 <#else>
     <#lt>#define CONFIG_MQTT_DEMO_ENABLED
 </#if>
