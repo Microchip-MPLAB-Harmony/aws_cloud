@@ -28,12 +28,15 @@ from xml.sax.saxutils import quoteattr as xml_quoteattr
 import xml.etree.ElementTree as ET
 
 # Fetch Core Architecture and Family details
+global hw_interface, aws_cloud_h3_conf,aws_cloud_h3,awsSystemDefFile,deviceName,boolInstantiated
+
 CONFIG_NAME="config_name"
 CONFIG_TYPE="config_type"
 CONFIG_LABEL="config_label"
 CONFIG_VISIBLE="config_visible"
 CONFIG_DESC="config_descr"
 CONFIG_DEFAULT_VAL="config_default"
+CONFIG_FOLDER_SLASH="/"
 
 coreArch     = Database.getSymbolValue("core", "CoreArchitecture")
 coreFamily   = ATDF.getNode( "/avr-tools-device-file/devices/device" ).getAttribute( "family" )
@@ -76,6 +79,8 @@ CONFIG_WIRED=0
 CONFIG_WIRELESS=2
 CONFIG_FLASH_PKCS11=0
 CONFIG_SECURE_PKCS11=1
+CONFIG_SAMG="samg"
+CONFIG_SAMDE5x="samde5x"
 
 connected_components=["AmazonFreeRTOS", "AmazonDeviceTester"]
 connected_elements=["aws_demos","aws_tests"]
@@ -83,6 +88,7 @@ connected_dep=["demos","DT"]
 connected_dep_index=CONFIG_DEVICE_TESTER
 hw_connection_index=CONFIG_WIRED
 pkcs11_conn_index=CONFIG_FLASH_PKCS11
+boolInstantiated=False
 
 CONFIG_WIRED_FLASH=0
 CONFIG_WIRED_ECC=1
@@ -101,23 +107,30 @@ freeRtosPreProc=[]
 freeRtosdefSym1=[]
 freeRtosdefSym2=[]
 SAME54_INC_DIR=[]
+SAMG_INC_DIR=[]
 SAME70_INC_DIR=[]
 PIC32_INC_DIR=[]
 
-global hw_interface, aws_cloud_h3_conf,aws_cloud_h3,awsSystemDefFile
+
 
 
 #Instatntiate FreeRTOS Component
 def instantiateComponent(aws_cloud):
     global connected_dep_index, AMAZON_FREERTOS_PATH,AMAZON_FREERTOS_PATH_DEFAULT,aws_cloud_h3,connected_dep,pkcs11_conn_index,hw_connection_index
-    global config_aws,config_aws_conf,aws_cloud_h3_conf,AMAZON_FREERTOS_INC_H3,awsSystemDefFile
+    global config_aws,config_aws_conf,aws_cloud_h3_conf,AMAZON_FREERTOS_INC_H3,awsSystemDefFile,deviceName,CONFIG_SAMG,CONFIG_SAMDE5x,boolInstantiated
     Log.writeInfoMessage("Running AmazonFreeRTOS interface")
     global hw_interface
     hw_interface=aws_cloud
     # Deactivate the active RTOS if any.
     deactivateActiveRtos()
+    aws_cloud_mac = hw_interface.createStringSymbol("AWS_CLOUD_MAC", None)
+    aws_cloud_mac.setLabel("aws cloud")
+    aws_cloud_mac.setVisible(False)
+    aws_cloud_mac.setDefaultValue("GMAC")
     res = Database.activateComponents(["HarmonyCore"])
     configName = Variables.get("__CONFIGURATION_NAME")
+    deviceName = Variables.get("__PROCESSOR")
+    Log.writeInfoMessage(" Expect SAMG " +deviceName.upper())
 
     if(Database.getComponentByID("sys_time") == None):
         res = Database.activateComponents(["sys_time"])
@@ -137,6 +150,7 @@ def instantiateComponent(aws_cloud):
             res = Database.activateComponents(["trng"])
 
     if ((coreArch == CONFIG_MIPS)):
+        aws_cloud_mac.setValue("ETHMAC")
         if(Database.getComponentByID("nvm") == None):
             res = Database.activateComponents(["nvm"])
         if(Database.getComponentByID("rng") == None):
@@ -153,6 +167,8 @@ def instantiateComponent(aws_cloud):
     aws_cloud_h3.setLabel("aws cloud")
     aws_cloud_h3.setVisible(False)
     aws_cloud_h3.setDefaultValue(False)
+
+
     aws_cloud_h3.setDependencies(setH3DirectoryEnable,["AmazonFreeRTOS.AWS_CLOUD_H3"])
     aws_cloud_h3_dt = hw_interface.createBooleanSymbol("DT_HW_AWS_CLOUD_H3", None)
     aws_cloud_h3_dt.setLabel("aws cloud_dt")
@@ -161,10 +177,17 @@ def instantiateComponent(aws_cloud):
     aws_cloud_h3_dt.setDependencies(setH3DirectoryEnable,["AmazonDeviceTester.AWS_CLOUD_H3"])
     aws_cloud_h3_conf = hw_interface.createComboSymbol("H3_AWS_CLOUD_CONF", None,config_aws_conf)
     aws_cloud_h3_conf.setLabel("Hardware Configuration")
-    aws_cloud_h3_conf.setVisible(True)
-    aws_cloud_h3_conf.setDefaultValue(config_aws_conf[0])
+    if(CONFIG_SAMG.upper() in deviceName):
+        aws_cloud_h3_conf.setDefaultValue(config_aws_conf[2])
+        aws_cloud_h3_conf.setVisible(False)
+    else:
+        aws_cloud_h3_conf.setVisible(True)
+        aws_cloud_h3_conf.setDefaultValue(config_aws_conf[0])
     aws_cloud_h3_conf.setDependencies(setH3ConfEnable,["H3_AWS_CLOUD_CONF"])
     Log.writeInfoMessage("Running AmazonFreeRTOS interface SSA  SS " + str(config_aws_conf.index(aws_cloud_h3_conf.getValue())))
+
+    
+
 
 
     if(config_aws_conf.index(aws_cloud_h3_conf.getValue())==CONFIG_WIRED_FLASH):
@@ -198,6 +221,12 @@ def instantiateComponent(aws_cloud):
         awsSystemDefFile.setSourcePath("templates/definitions.h.ftl")
         awsSystemDefFile.setMarkup(True)
         awsSystemDefFile.setEnabled(True)
+
+        awsNetConfigSysConfigFile = hw_interface.createFileSymbol("AWS_MAC_IP_CONFIG", None)
+        awsNetConfigSysConfigFile.setType("STRING")
+        awsNetConfigSysConfigFile.setOutputName("core.LIST_SYSTEM_CONFIG_H_MIDDLEWARE_CONFIGURATION")
+        awsNetConfigSysConfigFile.setSourcePath("templates/network_config.h.ftl")
+        awsNetConfigSysConfigFile.setMarkup(True)
     
         
 
@@ -217,17 +246,27 @@ def instantiateComponent(aws_cloud):
 
     formatIncFiles()
 
-    AddCommonIDEConfig(hw_interface,configName)	   
+    AddCommonIDEConfig(hw_interface,configName)    
 
     if (coreArch == CONFIG_MIPS):
-        AddMIPS(hw_interface,configName)
+        AddMIPSCompilerConfig(hw_interface,configName)
+    else:
+        AddARMCompilerConfig(hw_interface,configName)
 
-    AddAWSFile(hw_interface,"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", False)
+    if (coreArch == CONFIG_MIPS or coreArch == CONFIG_M7):
+        AddAWSFile(hw_interface,Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", True)
+    else:
+        if(CONFIG_SAMG.upper() in deviceName):
+           AddAWSFile(hw_interface,Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMG+".xml", True)
+        else:
+            AddAWSFile(hw_interface,Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMDE5x+".xml", True)
+           
     freeRtosIncWarn = hw_interface.createSettingSymbol("AFR_XC32_WARNING", None)
     freeRtosIncWarn.setCategory("C32")
     freeRtosIncWarn.setKey("make-warnings-into-errors")
     freeRtosIncWarn.setValue("false")
     AddAWSConfig(hw_interface,Module.getPath()+"config/UI/" + connected_dep[connected_dep_index] + "_"+ coreArch+".xml")
+    boolInstantiated=True
 
 
 ###############################################################################
@@ -312,50 +351,85 @@ def deactivateActiveRtos():
 ### ADD DIR, ADD FILE, ADD Template methods
 #############################################################
 
-# Add File Template
-def AddFileTemplate(boolFileEnable, boolDisableGen, component, strPath, strFileName, strDestPath,strProjectPath,strType="SOURCE",bMarkup=True):
-    global coreArch 
-    if  boolDisableGen:
-        component.getSymbolByID(strPath.upper()).setEnabled(boolFileEnable)
-        component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
-    else:
-        global connected_dep,connected_dep_index
-        configName = Variables.get("__CONFIGURATION_NAME")
-        Log.writeInfoMessage(strPath.upper())
-        Log.writeInfoMessage(strFileName.upper())
-        Log.writeInfoMessage(strDestPath.upper())
-        Log.writeInfoMessage(strProjectPath.upper())
-        freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
-        freeRtosAddFile.setSourcePath("templates/" + connected_dep[connected_dep_index] +"/" + coreArch + "/" + strFileName)
+#############################################################
+### Purpose: Creates/Add all the Files/Folders specified in
+### XML file on behalf od given component, refer XML file
+### for file format.
+            
+### component: MHC Object
+### strXMLFile: XML File to be loaded
+### boolCreateFileSym: Create FileSymbol
+### boolDirEnable: Enable or Disable the File.
+#############################################################
+def AddAWSFile(component,strXmlFile, boolCreateFileSym,boolDirEnable=True):
+    global AMAZON_FREERTOS_PATH
+    tree = ET.parse(strXmlFile)
+    root = tree.getroot()
+    strProjectPath =""
+    strDestPath=""
+    strSourcePath=""
+    for child in root:
+        strXMLElement=str(child.attrib[XML_ATTRIB_NAME]) 
+        if(strSourcePath==""):
+            strSourcePath= "../" + strXMLElement
+            strDestPath=  AMAZON_FREERTOS_PATH+strXMLElement
+            strProjectPath=strXMLElement
+        else:
+            strSourcePath= strSourcePath + "/" + strXMLElement
+            strDestPath= strDestPath +  "/" + strXMLElement
+            strProjectPath= strProjectPath +  "/" + strXMLElement
+        
+        if child.tag == XML_ATTRIB_DIR:
+            AddDir(component, boolCreateFileSym, CheckAttrib(child,boolDirEnable),child,strProjectPath,strSourcePath,strDestPath)
+        if child.tag == XML_ATTRIB_FILE:
+            if( (XML_ATTRIB_OVER_WRITE in child.attrib)):
+                AddFile(component, boolCreateFileSym, CheckAttrib(child,boolDirEnable),strXMLElement,strProjectPath,strSourcePath, strDestPath,False)
+            else:
+                AddFile(component, boolCreateFileSym, CheckAttrib(child,boolDirEnable),strXMLElement,strProjectPath, strSourcePath,strDestPath)
+        if child.tag == XML_ATTRIB_TEMPLATE:
+            AddFileTemplate(component, boolCreateFileSym, CheckAttrib(child,boolDirEnable),strXMLElement,strProjectPath,strSourcePath, strDestPath,False)
 
-        if(strFileName.endswith(".ftl")):
-           strFileName= strFileName[:-4]
-           Log.writeInfoMessage(strPath.upper())
-           Log.writeInfoMessage(strFileName.upper())
-           Log.writeInfoMessage(strDestPath.upper())
-           Log.writeInfoMessage(strProjectPath.upper())
-        freeRtosAddFile.setOutputName(strFileName)
-        freeRtosAddFile.setDestPath(strDestPath)
-        freeRtosAddFile.setProjectPath(strProjectPath)
-        freeRtosAddFile.setType(strType)
-        freeRtosAddFile.setMarkup(bMarkup)
-        freeRtosAddFile.setEnabled(boolFileEnable)
 
+#############################################################
+### Purpose: Creates/Add all the Files/Folders specified in
+### a given XML Element, refer XML file
+### for file format.
+            
+### component: MHC Object
+### boolCreateFileSym: Create FileSymbol or not
+### boolXMLEnable: Enable or Disable the File/Directory.
+### XMLParent: XML Element on which this operation to be carried.
+#############################################################
+def AddDir(component,boolCreateFileSym, boolXMLEnable, XMLParent,strprjPath, strSourcePath,strDestPath):
+    for child in XMLParent:
+        strElemName = str(child.attrib[XML_ATTRIB_NAME])
+        NewStrPrjPath = strprjPath + "/" + strElemName
+        NewstrDestPath = strDestPath +  "/" + strElemName
+        NewstrSourcePath = strSourcePath +  "/" + strElemName
+        if child.tag == XML_ATTRIB_DIR:
+            AddDir(component,boolCreateFileSym,CheckAttrib(child,boolXMLEnable),child,NewStrPrjPath, NewstrSourcePath ,NewstrDestPath)
+        if child.tag == XML_ATTRIB_FILE:
+            if( (XML_ATTRIB_OVER_WRITE in child.attrib) and child.attrib[XML_ATTRIB_OVER_WRITE] == "false"):
+                AddFile(component,boolCreateFileSym,CheckAttrib(child,boolXMLEnable),strElemName,strprjPath,strSourcePath ,strDestPath,False)
+            else:
+                AddFile(component,boolCreateFileSym,CheckAttrib(child,boolXMLEnable),strElemName,strprjPath, strSourcePath ,strDestPath)
+        elif child.tag == XML_ATTRIB_TEMPLATE:
+            AddFileTemplate(component,boolCreateFileSym,CheckAttrib(child,boolXMLEnable),strElemName,strprjPath, strSourcePath ,strDestPath)
 
 # Add File
-def AddFile(boolFileEnable, boolDisableGen, component, strPath, strFileName, strDestPath,strProjectPath,bOverWrite=True,strType="SOURCE",bMarkup=False):
-    if boolDisableGen:
-        component.getSymbolByID(strPath.upper()).setEnabled(boolFileEnable)
-        component.getSymbolByID(strPath.upper()).setDestPath(strDestPath)
-        
+def AddFile(component,boolCreateFileSym,boolFileEnable, strFileName, strProjectPath, setSourcePath,strDestPath,bOverWrite=True,strType="SOURCE",bMarkup=False):
+    Log.writeInfoMessage("Add File" + strProjectPath.upper() + " " + strFileName + " " +str(boolCreateFileSym) + " " + str(boolFileEnable) + " " )
+    Log.writeInfoMessage(strProjectPath)
+    Log.writeInfoMessage(setSourcePath)
+    Log.writeInfoMessage(strDestPath)
+    if boolCreateFileSym == False:
+        component.getSymbolByID(strProjectPath.upper() +"/" + strFileName.upper()).setEnabled(boolFileEnable)
+        component.getSymbolByID(strProjectPath.upper() +"/" + strFileName.upper()).setDestPath(strDestPath)
     else:
         configName = Variables.get("__CONFIGURATION_NAME")
-        Log.writeInfoMessage(strPath.upper())
-        Log.writeInfoMessage(strFileName.upper())
-        Log.writeInfoMessage(strDestPath.upper())
-        Log.writeInfoMessage(strProjectPath.upper())
-        freeRtosAddFile = component.createFileSymbol(strPath.upper(), None)
-        freeRtosAddFile.setSourcePath(strPath)
+        freeRtosAddFile = component.createFileSymbol(strProjectPath.upper() +"/" + strFileName.upper() , None)
+        Log.writeInfoMessage("Creating File Symbol " + strProjectPath.upper() )
+        freeRtosAddFile.setSourcePath(setSourcePath + "/" + strFileName)
         freeRtosAddFile.setOverwrite(bOverWrite)
         freeRtosAddFile.setOutputName(strFileName)
         freeRtosAddFile.setDestPath(strDestPath)
@@ -364,22 +438,40 @@ def AddFile(boolFileEnable, boolDisableGen, component, strPath, strFileName, str
         freeRtosAddFile.setMarkup(bMarkup)
         freeRtosAddFile.setEnabled(boolFileEnable)
 
-def AddDir(boolDirEnable,root,component,strPath, strRelativeFilePath,strProjectPath, boolDisableGen):
-    for child in root:
-        if child.tag == XML_ATTRIB_DIR:
-            NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            NewstrRelativeFilePath = strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
-            NewstrProjectPath = strProjectPath +  "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddDir(CheckAttrib(child,boolDirEnable),child,component,NewstrPath, NewstrRelativeFilePath ,NewstrProjectPath, boolDisableGen)
-        if child.tag == XML_ATTRIB_FILE:
-            NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            if( (XML_ATTRIB_OVER_WRITE in child.attrib) and child.attrib[XML_ATTRIB_OVER_WRITE] == "false"):
-                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath,False)
-            else:
-                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
-        elif child.tag == XML_ATTRIB_TEMPLATE:
-            NewstrPath = strPath + "/" + str(child.attrib[XML_ATTRIB_NAME])
-            AddFileTemplate(CheckAttrib(child,boolDirEnable), boolDisableGen, component,NewstrPath, str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath ,strProjectPath)
+
+# Add File Template
+# Project Path -> Path of the File in MPLAB project from Project Graph
+# 
+def AddFileTemplate(component, boolCreateFileSym,boolFileEnable, strFileName, strProjectPath, setSourcePath, strDestPath,strType="SOURCE",bMarkup=True):
+    global coreArch
+    global connected_dep,connected_dep_index
+    Log.writeInfoMessage("Add File Template" + strProjectPath.upper() + " " + strFileName + " " +str(boolCreateFileSym) + " " + str(boolFileEnable) + " " )
+    Log.writeInfoMessage(strDestPath.upper())
+    Log.writeInfoMessage(strProjectPath.upper())
+    if  boolCreateFileSym == False:
+        component.getSymbolByID(strProjectPath.upper() +"/" + strFileName.upper()).setEnabled(boolFileEnable)
+        component.getSymbolByID(strProjectPath.upper() +"/" + strFileName.upper()).setDestPath(strDestPath)
+            
+    else:
+        configName = Variables.get("__CONFIGURATION_NAME")
+        freeRtosAddFile = component.createFileSymbol(strProjectPath.upper() +"/" + strFileName.upper(), None)
+        freeRtosAddFile.setSourcePath("templates/" + connected_dep[connected_dep_index] + CONFIG_FOLDER_SLASH + coreArch + CONFIG_FOLDER_SLASH + strFileName)
+        if(strFileName.endswith(".ftl")):
+           strFileName= strFileName[:-4]
+           #Log.writeInfoMessage(strPath.upper())
+           #Log.writeInfoMessage(strFileName.upper())
+           #Log.writeInfoMessage(strDestPath.upper())
+           #Log.writeInfoMessage(strProjectPath.upper())
+        freeRtosAddFile.setDestPath(strDestPath)
+        freeRtosAddFile.setOutputName(strFileName)
+        freeRtosAddFile.setProjectPath(strProjectPath)
+        freeRtosAddFile.setType(strType)
+        freeRtosAddFile.setMarkup(bMarkup)
+        freeRtosAddFile.setEnabled(boolFileEnable)
+
+
+
+
 
 
 
@@ -406,22 +498,6 @@ def CheckAttrib(child,boolDirEnable):
 
     return temp_disable_file
 
-    
-
-def AddAWSFile(component,strPath, strRelativeFilePath, strXmlFile, boolDisableGen,boolDirEnable=True):
-    global AMAZON_FREERTOS_PATH
-    tree = ET.parse(strXmlFile)
-    root = tree.getroot()
-    for child in root:
-        if child.tag == XML_ATTRIB_DIR:
-            AddDir(CheckAttrib(child,boolDirEnable),child,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), AMAZON_FREERTOS_PATH + strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath +  "/" + str(child.attrib[XML_ATTRIB_NAME]), boolDisableGen)
-        if child.tag == XML_ATTRIB_FILE:
-            if( (XML_ATTRIB_OVER_WRITE in child.attrib)):
-                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]),False)
-            else:
-                AddFile(CheckAttrib(child,boolDirEnable),boolDisableGen,component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
-        if child.tag == XML_ATTRIB_TEMPLATE:
-            AddFileTemplate(CheckAttrib(child,boolDirEnable),boolDisableGen, component,strPath + "/" + str(child.attrib[XML_ATTRIB_NAME]), str(child.attrib[XML_ATTRIB_NAME]), strRelativeFilePath+ "/" + str(child.attrib[XML_ATTRIB_NAME]),strRelativeFilePath + "/" + str(child.attrib[XML_ATTRIB_NAME]))
 
 
 def AddAWSConfig(aws_cloud,strXmlFile):
@@ -475,14 +551,14 @@ def AddAWSConfiguration(aws_cloud,parent_config,config_name,config_type,strLabel
 ############# 
 ####################################################################################################
 def formatIncFiles():
-    SAME54_PORT_DIR=[]
-    global SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR
+    global SAME54_INC_DIR,SAME70_INC_DIR,PIC32_INC_DIR,SAMG_INC_DIR
     global connected_dep_index,connected_elements
     global AMAZON_FREERTOS_INC_PATH_DEFAULT
     global AMAZON_FREERTOS_INC_H3
     SAME54_PORT_DIR=[]
     SAME70_PORT_DIR=[]
     PIC32MZ_PORT_DIR=[]
+    SAMG_PORT_DIR=[]
     AFR_COMMON_INC_DIR=[]
     AFR_TEST_INC_DIR=[]
     
@@ -493,7 +569,7 @@ def formatIncFiles():
     for i in range(4):
         SAME54_PORT_DIR.append(include_dir_path[i] +"vendors/microchip/boards/same54_xpro/ports/pkcs11;" +
                            include_dir_path[i] +"libraries/abstractions/wifi/include;" +
-                           include_dir_path[i] +"vendors/microchip/boards/same54/ports/wifi;" +
+                           include_dir_path[i] +"vendors/microchip/boards/same54_xpro/ports/wifi;" +
                            include_dir_path[i] +"vendors/microchip/harmony3/afr;" +
                            include_dir_path[i] +"vendors/microchip/boards/same54_xpro/"+ connected_elements[i % 2] + "/config_files;" +
                            include_dir_path[i] +"vendors/microchip/boards/same54_xpro/"+ connected_elements[i % 2] + "/application_code;" +
@@ -501,6 +577,16 @@ def formatIncFiles():
                            include_dir_path[i] +"freertos_kernel/portable/GCC/ARM_CM4F;" +
                            include_dir_path[i] +"vendors/microchip/harmony3/afr/tcpip/src/common;" +
                            include_dir_path[i] +"libraries/freertos_plus/standard/freertos_plus_tcp/source/portable/NetworkInterface/same54;")
+
+        SAMG_PORT_DIR.append(include_dir_path[i] +"vendors/microchip/boards/samg55_xpro/ports/pkcs11;" +
+                           include_dir_path[i] +"libraries/abstractions/wifi/include;" +
+                           include_dir_path[i] +"vendors/microchip/boards/samg55_xpro/ports/wifi;" +
+                           include_dir_path[i] +"vendors/microchip/harmony3/afr;" +
+                           include_dir_path[i] +"vendors/microchip/boards/samg55_xpro/"+ connected_elements[i % 2] + "/config_files;" +
+                           include_dir_path[i] +"vendors/microchip/boards/samg55_xpro/"+ connected_elements[i % 2] + "/application_code;" +
+                           include_dir_path[i] +"vendors/microchip/boards/samg55_xpro/ports/posix;" +
+                           include_dir_path[i] +"freertos_kernel/portable/GCC/ARM_CM4F;" +
+                           include_dir_path[i] +"vendors/microchip/harmony3/afr/tcpip/src/common;")
 
 
         SAME70_PORT_DIR.append(include_dir_path[i] +"vendors/microchip/boards/same70_xult/ports/pkcs11;" +
@@ -517,6 +603,10 @@ def formatIncFiles():
 
         PIC32MZ_PORT_DIR.append(include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/ports/pkcs11;" +
                             include_dir_path[i] +"vendors/microchip/harmony3/afr;" +
+                           include_dir_path[i] +"libraries/abstractions/wifi/include;" +
+                           include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/ports/wifi;" +
+                           include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;" +
+
                             include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/ports/posix;" +
                             include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/"+ connected_elements[i % 2] + "/config_files;" +
                             include_dir_path[i] +"vendors/microchip/boards/curiosity2_pic32mzef/"+ connected_elements[i % 2] + "/application_code;" +
@@ -611,12 +701,14 @@ def formatIncFiles():
     for i in range(4):
         if (i % 2 == 0):
             SAME54_INC_DIR.append(AFR_COMMON_INC_DIR[i] + SAME54_PORT_DIR[i])
+            SAMG_INC_DIR.append(AFR_COMMON_INC_DIR[i] + SAMG_PORT_DIR[i])
             SAME70_INC_DIR.append(AFR_COMMON_INC_DIR[i] + SAME70_PORT_DIR[i])
             PIC32_INC_DIR.append(AFR_COMMON_INC_DIR[i] + PIC32MZ_PORT_DIR[i])
         else:
             SAME54_INC_DIR.append(AFR_TEST_INC_DIR[i] + SAME54_PORT_DIR[i])
             SAME70_INC_DIR.append(AFR_TEST_INC_DIR[i] + SAME70_PORT_DIR[i])
             PIC32_INC_DIR.append(AFR_TEST_INC_DIR[i] + PIC32MZ_PORT_DIR[i])
+            SAMG_INC_DIR.append(AFR_TEST_INC_DIR[i] + SAMG_PORT_DIR[i])
 
 ############################################################################
 #### Add MPLAB Additional configurations (AddSAME54, AddSAME70, ADDMIPS)
@@ -627,7 +719,7 @@ def formatIncFiles():
 ############################################################################
 def setH3DirectoryEnable(symbol, event):
     global AMAZON_FREERTOS_PATH,AMAZON_FREERTOS_PATH_H3,AMAZON_FREERTO,S_PATH_DEFAULTconnected_dep_index,connected_dep
-    global coreArch
+    global coreArch,boolInstantiated
     global freeRtosdefSym2,freeRtosdefSym1
     
     configName = Variables.get("__CONFIGURATION_NAME")
@@ -642,6 +734,8 @@ def setH3DirectoryEnable(symbol, event):
     else:
         AMAZON_FREERTOS_PATH=AMAZON_FREERTOS_PATH_H3
 
+    Log.writeInfoMessage("Running Amazon Path " + AMAZON_FREERTOS_PATH)
+
     for i in range(4):
         if(i== iIndex):
             freeRtosdefSym1[i].setEnabled(True)
@@ -653,10 +747,21 @@ def setH3DirectoryEnable(symbol, event):
                 freeRtosdefSym2[i].setEnabled(False)# MIPS only
 
     #Change include directory enable/disable.
+
+    if(boolInstantiated==False):
+        return 
     
     if(Database.getComponentByID(connected_components[connected_dep_index]) != None):
         Log.writeInfoMessage("Running X " + connected_components[connected_dep_index] +" Component *" + str(event['symbol'].getValue()))
-        AddAWSFile(symbol.getComponent(),"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", True)
+       
+        if (coreArch == CONFIG_MIPS or coreArch == CONFIG_M7):
+            AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", False)
+        else:
+            if(CONFIG_SAMG.upper() in deviceName):
+               AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMG+".xml", False)
+            else:
+                AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMDE5x+".xml", False)
+
 
 
 def setH3ConfEnable(symbol, event):
@@ -667,6 +772,7 @@ def setH3ConfEnable(symbol, event):
     localComponent = event["symbol"].getComponent()
     global pkcs11_conn_index,awsSystemDefFile
     global hw_connection_index,freeRtosPreProc
+    global hw_interface,boolInstantiated
 
     if(config_aws_conf.index(event['symbol'].getValue())==CONFIG_WIRED_FLASH):
         
@@ -707,18 +813,28 @@ def setH3ConfEnable(symbol, event):
             freeRtosPreProc[i].setEnabled(True);
         else:
             freeRtosPreProc[i].setEnabled(False);
+
+    if(boolInstantiated == False):
+        return
        
     if(Database.getComponentByID(connected_components[connected_dep_index]) != None):
-        AddAWSFile(symbol.getComponent(),"../", "",Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", True)
+        if (coreArch == CONFIG_MIPS or coreArch == CONFIG_M7):
+            AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + coreArch+".xml", False)
+        else:
+            if(CONFIG_SAMG.upper() in deviceName):
+               AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMG+".xml", False)
+            else:
+                AddAWSFile(symbol.getComponent(),Module.getPath()+"config/"+ connected_dep[connected_dep_index] + "/" + CONFIG_SAMDE5x+".xml", False)
+        
         
 
 def AddCommonIDEConfig(hw_interface,configName):
-    global PIC32_INC_DIR,SAME70_INC_DIR,SAME54_INC_DIR
+    global PIC32_INC_DIR,SAME70_INC_DIR,SAME54_INC_DIR,SAMG_INC_DIR,CONFIG_SAMG
     global freeRtosdefSym1,freeRtosdefSym2
     global connected_dep_index
     global hw_connection_index
     global pkcs11_conn_index
-    global aws_cloud_h3,config_aws_conf
+    global aws_cloud_h3,config_aws_conf,deviceName
     
 
     strIncludeWired=";PIC32_USE_ETHERNET;__free_rtos__"
@@ -748,7 +864,10 @@ def AddCommonIDEConfig(hw_interface,configName):
         if(coreArch == CONFIG_MIPS):
             freeRtosdefSym1[i].setValue(PIC32_INC_DIR[i])
         if(coreArch == CONFIG_M4):
-            freeRtosdefSym1[i].setValue(SAME54_INC_DIR[i])
+            if(CONFIG_SAMG.upper() in deviceName):
+                freeRtosdefSym1[i].setValue(SAMG_INC_DIR[i])
+            else:
+                freeRtosdefSym1[i].setValue(SAME54_INC_DIR[i])
         if(coreArch == CONFIG_M7):
             freeRtosdefSym1[i].setValue(SAME70_INC_DIR[i])            
         freeRtosdefSym1[i].setAppend(True, ";")
@@ -777,14 +896,18 @@ def AddCommonIDEConfig(hw_interface,configName):
             freeRtosdefSym2[connected_dep_index].setEnabled(True)  #[H3 demo,H3 DT, AFR demo,AFR (DT)]
 
             
-def AddMIPS(hw_interface,configName):
+def AddMIPSCompilerConfig(hw_interface,configName):
     symOptions = hw_interface.createSettingSymbol(None, None)
     symOptions.setCategory("C32")
     symOptions.setKey("appendMe")
     symOptions.setValue("-mnewlib-libc -std=gnu99 -fgnu89-inline")
-    symOptions.setAppend(True, ";")
     freeRtosIncDirForLd = hw_interface.createSettingSymbol("AFR_XC32_INCLUDE_LD", None)
     freeRtosIncDirForLd.setCategory("C32-LD")
     freeRtosIncDirForLd.setKey("oXC32ld-extra-opts")
     freeRtosIncDirForLd.setValue("-mnewlib-libc")
-    freeRtosIncDirForLd.setAppend(True, ";")
+
+def AddARMCompilerConfig(hw_interface,configName):
+    freeRtosIncDirForLd = hw_interface.createSettingSymbol("AFR_XC32_INCLUDE_LD", None)
+    freeRtosIncDirForLd.setCategory("C32-LD")
+    freeRtosIncDirForLd.setKey("oXC32ld-extra-opts")
+    freeRtosIncDirForLd.setValue("-mno-newlib-nano")
