@@ -1,20 +1,18 @@
 <structure>
-<dir name="amazon-freertos">
-  <dir name="freertos_kernel">
-    <dir name="portable">
-      <dir name="MPLAB">
-        <dir name="PIC32MZ">
-          <file name="ISR_Support.h" />
-          <file name="port.c" />
-          <file name="portmacro.h" />
-          <file name="port_asm.S" />
-        </dir>
-        </dir>
-        <dir name="MemMang">
-        <file name="heap_4.c" />
-      </dir>
-      </dir>
-    </dir>
+	<dir name="amazon-freertos">
+		<dir name="freertos_kernel">
+			<dir name="portable">
+				<dir name="GCC">
+					<dir name="ARM_CM4F">
+						<file name="port.c" />
+						<file name="portmacro.h" />
+					</dir>
+				</dir>
+				<dir name="MemMang">
+					<file name="heap_4.c" />
+				</dir>
+			</dir>
+		</dir>
 		<dir name="libraries">
 			<dir name="abstractions">
 				<dir name="wifi" aws_config="WIFI">
@@ -84,12 +82,6 @@
 										<file name="pack_struct_start.h" />
 									</dir>
 								</dir>
-								<dir name="NetworkInterface" aws_config = "MAC">
-									<dir name="pic32mzef_h3">
-										<file name="BufferAllocation_2.c" />
-										<file name="NetworkInterface_eth.c"/>
-									</dir>
-								</dir>
 							</dir>
 						</dir>
 					</dir>
@@ -99,7 +91,7 @@
 		<dir name="vendors">
 			<dir name="microchip">
 				<dir name="boards">
-					<dir name="curiosity2_pic32mzef">
+					<dir name="samg55_xpro">
 						<dir name="aws_demos">
 							<dir name="application_code" aws_config="ECC">
 								<file name="atca_cert_chain.c" />
@@ -124,9 +116,6 @@
 							</dir>
 						</dir>
 						<dir name="ports">
-							<dir name="ota">
-								<file name="aws_ota_pal.c" />
-							</dir>
 							<dir name="pkcs11">
 								<file name="iot_pkcs11_pal.c"  aws_config="NVM" />
 								<file name="iot_pkcs11_secure_element.c" aws_config="ECC"/>
@@ -172,7 +161,6 @@
 								<file name="tcpip_heap_external.c" />
 								<file name="tcpip_heap_internal.c" />
 								<file name="tcpip_helpers.c" />
-								<file name="tcpip_helper_c32.S" />
 								<file name="tcpip_helpers_private.h" />
 								<file name="tcpip_manager_control.h" />
 								<file name="tcpip_module_manager.h" />

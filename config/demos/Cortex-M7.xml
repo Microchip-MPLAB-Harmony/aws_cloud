@@ -38,9 +38,9 @@
 					</dir>
 				</dir>
 			</dir>
-			<dir name="freertos_plus" aws_config="MAC">
+			<dir name="freertos_plus">
 				<dir name="standard">
-					<dir name="freertos_plus_tcp" aws_config="MAC">
+					<dir name="freertos_plus_tcp">
 						<dir name="include">
 							<file name="FreeRTOSIPConfigDefaults.h" />
 							<file name="FreeRTOS_ARP.h" />
@@ -58,7 +58,7 @@
 							<file name="NetworkBufferManagement.h" />
 							<file name="NetworkInterface.h" />
 						</dir>
-						<dir name="source">
+						<dir name="source" aws_config="MAC">
 							<file name="FreeRTOS_ARP.c" />
 							<file name="FreeRTOS_DHCP.c" />
 							<file name="FreeRTOS_DNS.c" />
@@ -74,7 +74,7 @@
 					</dir>
 				</dir>
 			</dir>
-			<dir name="freertos_plus" aws_config="MAC">
+			<dir name="freertos_plus">
 				<dir name="standard">
 					<dir name="freertos_plus_tcp">
 						<dir name="source">
@@ -85,7 +85,7 @@
 										<file name="pack_struct_start.h" />
 									</dir>
 								</dir>
-								<dir name="NetworkInterface" >
+								<dir name="NetworkInterface" aws_config = "MAC">
 									<dir name="same70">
 										<file name="BufferAllocation_2.c" />
 										<file name="NetworkInterface_eth.c"/>
