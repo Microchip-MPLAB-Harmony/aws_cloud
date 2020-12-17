@@ -2,12 +2,10 @@
 <dir name="amazon-freertos">
   <dir name="freertos_kernel">
     <dir name="portable">
-      <dir name="MPLAB">
-        <dir name="PIC32MZ">
-          <file name="ISR_Support.h" />
+      <dir name="GCC">
+        <dir name="ARM_CM4F">
           <file name="port.c" />
           <file name="portmacro.h" />
-          <file name="port_asm.S" />
         </dir>
         </dir>
         <dir name="MemMang">
@@ -85,7 +83,7 @@
 									</dir>
 								</dir>
 								<dir name="NetworkInterface" aws_config = "MAC">
-									<dir name="pic32mzef_h3">
+									<dir name="same54">
 										<file name="BufferAllocation_2.c" />
 										<file name="NetworkInterface_eth.c"/>
 									</dir>
@@ -99,7 +97,7 @@
 		<dir name="vendors">
 			<dir name="microchip">
 				<dir name="boards">
-					<dir name="curiosity2_pic32mzef">
+					<dir name="same54_xpro">
 						<dir name="aws_tests">
 							<dir name="application_code" aws_config="ECC">
 								<file name="atca_cert_chain.c" />
@@ -176,7 +174,6 @@
               <file name="tcpip_heap_external.c" />
               <file name="tcpip_heap_internal.c" />
               <file name="tcpip_helpers.c" />
-              <file name="tcpip_helper_c32.S" />
               <file name="tcpip_helpers_private.h" />
               <file name="tcpip_manager_control.h" />
               <file name="tcpip_module_manager.h" />
@@ -198,8 +195,7 @@
           </dir>
           </dir>
         </dir>
-      </dir>
-    </dir>
-  </dir>
-
+			</dir>
+		</dir>
+	</dir>
 </structure>

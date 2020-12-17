@@ -632,34 +632,6 @@
 						</dir>
 					</dir>
 					<dir name="freertos_plus_tcp">
-						<dir name="include">
-							<file name="FreeRTOSIPConfigDefaults.h" />
-							<file name="FreeRTOS_ARP.h" />
-							<file name="FreeRTOS_DHCP.h" />
-							<file name="FreeRTOS_DNS.h" />
-							<file name="FreeRTOS_errno_TCP.h" />
-							<file name="FreeRTOS_IP.h" />
-							<file name="FreeRTOS_IP_Private.h" />
-							<file name="FreeRTOS_Sockets.h" />
-							<file name="FreeRTOS_Stream_Buffer.h" />
-							<file name="FreeRTOS_TCP_IP.h" />
-							<file name="FreeRTOS_TCP_WIN.h" />
-							<file name="FreeRTOS_UDP_IP.h" />
-							<file name="IPTraceMacroDefaults.h" />
-							<file name="NetworkBufferManagement.h" />
-							<file name="NetworkInterface.h" />
-						</dir>
-						<dir name="source">
-							<file name="FreeRTOS_ARP.c" />
-							<file name="FreeRTOS_DHCP.c" />
-							<file name="FreeRTOS_DNS.c" />
-							<file name="FreeRTOS_IP.c" />
-							<file name="FreeRTOS_Sockets.c" />
-							<file name="FreeRTOS_Stream_Buffer.c" />
-							<file name="FreeRTOS_TCP_IP.c" />
-							<file name="FreeRTOS_TCP_WIN.c" />
-							<file name="FreeRTOS_UDP_IP.c" />
-			 </dir>
             <dir name="test">
             <file name="iot_freertos_tcp_test_access_declare.h" />
             <file name="iot_freertos_tcp_test_access_dns_define.h" />
