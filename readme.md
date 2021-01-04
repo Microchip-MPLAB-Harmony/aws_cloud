@@ -49,17 +49,13 @@ Note: If you download the ZIP file provided by GitHub UI or using content-manage
 
 To clone:
 ```
-git clone https://github.com/MicrochipTech/amazon-freertos --recurse-submodules
+git clone https://github.com/MicrochipTech/amazon-freertos
 ```
 
-If you have downloaded the repo without using the `--recurse-submodules` argument, you need to run:
-```
-git submodule update --init --recursive
-```
 
 # Getting Started
 
-For more information on FreeRTOS, refer to the [Getting Started guide of different boards](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev/vendors/microchip/boards).
+For more information on FreeRTOS and provisoning of secure element, refer to the [Getting Started guide of different boards](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev/vendors/microchip/boards).
 
 ## Introduction
 
@@ -71,9 +67,10 @@ existing H3 FreeRTOS (kernel) Component.
 
 FreeRTOS is supported in the following products.
 
-- SAM E70/S70/V70/V71 Family + ECC608 (Optional)
+- SAM E70/S70/V70/V71 Family + + ECC608 (Optional) + WINC1500/WINC3400 (Optional)
 - SAM D5x/E5x Family + ECC608 (Optional) + WINC1500/WINC3400 (Optional)
-- PIC32MZ Embedded Connectivity with Floating Point Unit (EF) Family + ECC608 (Optional)
+- PIC32MZ Embedded Connectivity with Floating Point Unit (EF) Family + ECC608 (Optional) + WINC1500/WINC3400 (Optional)
+- SAM G55 Family + ECC608 + WINC1500/WINC3400.
 
 This repository contains following three components for configuration and code generation.
 
@@ -95,17 +92,17 @@ There are three configurations supported by this component
 
 ![Things Screen](doc/images/image0.png)
 
-This solution is available in all platforms.
+This solution is available in all platforms which supports wired connectvity (except SAMG55).
 2. Wired + ECC608 Solution 
 
 ![Things Screen](doc/images/image1.png)
 
-This solution is available in all platforms.
+This solution is available in all platforms which supports wired connectvity (except SAMG55).
 3. WIFI Solution (WINC based solution can be WINC1500/WINC3400) 
 
 ![Things Screen](doc/images/image2.png)
 
-This solution is available in SAMD5x/E5x platform only.
+This solution is available in all platforms supported..
 
 ## AmazonDeviceTester component 
 
@@ -125,7 +122,7 @@ The following applications are provided to demonstrate the AWS Cloud H3 Componen
 | Name                                                                  | Description                                                        |
 | --------                                                              | -----------                                                        |
 | [LED Shadow Client](apps/led_shadow_client_ecc/readme.md)             | This example application shows how to use the Shadow client feature to set/clear device status using LED(s) using ECC608 |
-
+| [OTA Update Demo](apps/ota_update_demo/readme.md)             		| This example application demonstrates the usage of OTA feature to update a new image on SAME54 XPRO + WINC1500. |
 
 
 
