@@ -4933,7 +4933,7 @@ files:
   physicalPath: driver\winc\include\drv\common
   security: NON_SECURE
   type: HEADER
-  userChecksum: 27D97040B981E56D9701E4244B9BC9FB
+  userChecksum: 9FB5924949388BCCF95C7175705C8FCE
 - generatedChecksum: DEAF553319F3A0855D006D0F5455E1BB
   logicalPath: config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver
   name: nmasic.h

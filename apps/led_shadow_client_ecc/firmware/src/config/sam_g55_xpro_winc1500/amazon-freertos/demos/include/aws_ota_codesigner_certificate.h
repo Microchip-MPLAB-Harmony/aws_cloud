@@ -34,15 +34,6 @@
  * "...base64 data...\n"
  * "-----END CERTIFICATE-----\n";
  */
-static const char signingcredentialSIGNING_CERTIFICATE_PEM[] = "-----BEGIN CERTIFICATE-----\n"\
-"MIIBjzCCATagAwIBAgIUfYscQUFZw3G3zOepjEQAU6ubYbIwCgYIKoZIzj0EAwIw\n"\
-"NTEzMDEGA1UEAwwqc2hhbm11Z2FzdW5kYXJhbS52aXN3YW5hdGhhbkBtaWNyb2No\n"\
-"aXAuY29tMB4XDTIwMDUwNTExMjAxMFoXDTIxMDUwNTExMjAxMFowNTEzMDEGA1UE\n"\
-"Awwqc2hhbm11Z2FzdW5kYXJhbS52aXN3YW5hdGhhbkBtaWNyb2NoaXAuY29tMFkw\n"\
-"EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQCzIoejSThtgiRx4+vnBnnLmLk+H/KB1\n"\
-"+zSDwnFk3wm2mus6iu0tOJ7G3DoXHh6Gvs5C4rAM1qbpf/UQaPuO/6MkMCIwCwYD\n"\
-"VR0PBAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMAoGCCqGSM49BAMCA0cAMEQC\n"\
-"IBlcM7ME9WzeHpLgADzynqT0+bwOqxVlXTz5hSJGFcdHAiB42n5bCbEZBzWx6y21\n"\
-"Jbae3R0WWtTruHdUd8ydapq/8w==\n"\
-"-----END CERTIFICATE-----";
+static const char signingcredentialSIGNING_CERTIFICATE_PEM[] = "Paste code signing certificate here.";
+
 #endif
