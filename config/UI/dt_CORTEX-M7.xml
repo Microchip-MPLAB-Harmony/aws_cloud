@@ -1,0 +1,232 @@
+<structure>
+
+<!--Start of Vendors Configuration -->
+
+<!--BUFFER POOL CONFIG Details -->
+<components config_name="AWS_CLOUD_BP" config_type="menu" config_label="Amazon FreeRTOS Buffer Pool" config_visible="True" config_descr="Buffer pool Configuration" config_default="">
+<component config_name="AWS_CLOUD_BP_NUM" config_type="integer" config_label="Buffer Pool Count" config_visible="True" config_descr="Buffer Pool Count" config_default="8"/>
+<component config_name="AWS_CLOUD_BP_SIZE" config_type="integer" config_label="Buffer Pool Size" config_visible="True" config_descr="Buffer Pool Size" config_default="2176"/>
+</components>
+
+<!--IOT DEMO Config -->
+<components config_name="AWS_CLOUD_DEMO_MENU" config_type="menu" config_label="Amazon FreeRTOS Demo Configuration" config_visible="True" config_descr="Tested Demos Configuration" config_default="">
+<component config_name="AWS_DEMO_RUN" config_type="combo" config_label="Amazon FreeRTOS Demo Name" config_visible="True" config_descr="Demo Selection" config_default="MQTT SHADOW"/>
+<component config_name="AWS_CLOUD_DEMO_PRIORITY" config_type="integer" config_label="Demo Priority" config_visible="True" config_descr="Demo Priority" config_default="5"/>
+<component config_name="AWS_CLOUD_DEMO_MQTT_TO" config_type="integer" config_label="Demo MQTT Timeout" config_visible="True" config_descr="Demo MQTT Timeout" config_default="3000"/>
+<component config_name="AWS_CLOUD_DEMO_ECHO_TLS_TO" config_type="integer" config_label="Demo MQTT ECHO TLS Timeout" config_visible="True" config_descr="Demo MQTT Echo TLS Timeout" config_default="12000"/>
+<component config_name="AWS_CLOUD_DEMO_ECHO_TASK_PRI" config_type="integer" config_label="Demo MQTT ECHO Priority" config_visible="True" config_descr="Demo MQTT Echo Priority" config_default="0"/>
+</components>
+
+<!--GreenGrass Config -->
+<components config_name="AWS_CLOUD_GG_MENU" config_type="menu" config_label="Amazon FreeRTOS GreenGrass Configuration" config_visible="True" config_descr="GreenGrass Configuration" config_default="">
+<component config_name="AWS_GG_JSON_NW_INTERFACE" config_type="integer" config_label="GreenGrass Json Network Interface" config_visible="True" config_descr="GreenGrass Json Network Interface" config_default="0"/>
+<component config_name="AWS_GG_JSON_TOKEN" config_type="integer" config_label="GreenGrass JSON Token" config_visible="True" config_descr="Green Grass Json Token" config_default="128"/>
+</components>
+
+<!--IOT LOG Config -->
+<components config_name="AWS_CLOUD_LOG_MENU" config_type="menu" config_label="Amazon Log Level Config" config_visible="True" config_descr="LOG Level Configuration" config_default="">
+<component config_name="AWS_CLOUD_LOG_GLOBAL" config_type="combo" config_label="Global Log Level" config_visible="True" config_descr="Log Level Global Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_DEMO" config_type="combo" config_label="Demo Log Level" config_visible="True" config_descr="Log Level Demo Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_PLATFORM" config_type="combo" config_label="Platform Log Level" config_visible="True" config_descr="Log Level Platform Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_NETWORK" config_type="combo" config_label="Network Log Level" config_visible="True" config_descr="Log Level Network Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_TASKPOOL" config_type="combo" config_label="Taskpool Log Level" config_visible="True" config_descr="Log Level Taskpool Configurationn" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_MQTT" config_type="combo" config_label="MQTT Log Level" config_visible="True" config_descr="Log Level MQTT Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_SHADOW" config_type="combo" config_label="Shadow Log Level" config_visible="True" config_descr="Log Level SHADOW Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+<component config_name="AWS_CLOUD_LOG_DEFENDER" config_type="combo" config_label="Defender Log Level" config_visible="True" config_descr="Log Level Defender Configuration" config_default="IOT_LOG_INFO IOT_LOG_NONE IOT_LOG_WARN IOT_LOG_DEBUG"/>
+</components>
+
+<!--MQTT CONFIG Details -->
+<components config_name="AWS_CLOUD_MQTT" config_type="menu" config_label="Amazon FreeRTOS Buffer Pool" config_visible="True" config_descr="MQTT Configuration" config_default="">
+<component config_name="AWS_CLOUD_MQTT_SUBSCRIPTION" config_type="bool" config_label="MQTT SUBSCRIBE TOPIC" config_visible="True" config_descr="MQTT Subscription Topic" config_default="True"/>
+<component config_name="AWS_CLOUD_MQTT_SUBSCR_TOPIC_LEN_MAX" config_type="integer" config_label="TOPIC MAXIMUM LENGTH" config_visible="True" config_descr="Maximum length of the topic" config_default="128"/>
+<component config_name="AWS_CLOUD_MQTT_SUBSCR_MAX_COUNT" config_type="integer" config_label="MQTT SUBSCRIBER MAX COUNT" config_visible="True" config_descr="Maximum number of subscribers" config_default="8"/>
+<component config_name="AWS_CLOUD_DEBUG_MQTT" config_type="integer" config_label="Enable Debug MQTT" config_visible="True" config_descr="Enable MQTT Debug logs" config_default="0"/>
+
+<component config_name="AWS_CLOUD_MQTT_RESP" config_type="integer" config_label="MQTT Response Time" config_visible="True" config_descr="MQTT Response Time " config_default="10000"/>
+<component config_name="AWS_CLOUD_SOCKET_POLL" config_type="integer" config_label="Network Socket Poll Time" config_visible="True" config_descr="Network Socket Poll Time " config_default="2000"/>
+
+<component config_name="AWS_CLOUD_MQTT_BC" config_type="integer" config_label="MQTT Burst Count" config_visible="True" config_descr="MQTT Burst Count " config_default="10"/>
+<component config_name="AWS_CLOUD_MQTT_BS" config_type="integer" config_label="MQTT Burst Size" config_visible="True" config_descr="MQTT Burst Size" config_default="2"/>
+<component config_name="AWS_CLOUD_SHADOW_UC" config_type="integer" config_label="Shadow Update Count" config_visible="True" config_descr="Shadow Update Count" config_default="20"/>
+<component config_name="AWS_CLOUD_SHADOW_UPS" config_type="integer" config_label="Shadow Update Periodic Size" config_visible="True" config_descr="Shadow Update Periodic Size" config_default="3000"/>
+<component config_name="AWS_CLOUD_THREAD_STACK_SZ" config_type="integer" config_label="Taskpool Thread Stack Size" config_visible="True" config_descr="Taskpool Thread Stack Size" config_default="2048"/>
+<component config_name="AWS_CLOUD_THREAD_PRIORITY" config_type="integer" config_label="Taskpool Thread Priority" config_visible="True" config_descr="Taskpool Thread Priority" config_default="5"/>
+
+<component config_name="AWS_CLOUD_MQTT_ENABLE_METRICS" config_type="bool" config_label="Enable Metrics" config_visible="True" config_descr="Enable Metrics" config_default="True"/>
+<component config_name="AWS_CLOUD_MQTT_KEEP_ALIVE_INTERVAL" config_type="integer" config_label="MQTT Keep Alive Interval" config_visible="True" config_descr="MQTT Keep Alive Interval" config_default="1200"/>
+<component config_name="AWS_CLOUD_MQTT_KEEP_ALIVE_INTERVAL_TICKS" config_type="integer" config_label="MQTT Keep Alive Interval Ticks" config_visible="True" config_descr="MQTT Keep Alive Interval Ticks" config_default="300000"/>
+<component config_name="AWS_CLOUD_MQTT_KEEP_ALIVE_TIMEOUT" config_type="integer" config_label="MQTT Keep Alive Timeout" config_visible="True" config_descr="MQTT Keep Alive Timeout" config_default="5000"/>
+<component config_name="AWS_CLOUD_MQTT_TASK_BLOCK_TICKS" config_type="integer" config_label="MQTT Task Block Ticks" config_visible="True" config_descr="MQTT Task Block Ticks" config_default="100"/>
+<component config_name="AWS_CLOUD_MQTT_MAX_BROKERS" config_type="integer" config_label="Maximum Brokers Count" config_visible="True" config_descr="Maximum Brokers Count" config_default="10"/>
+<component config_name="AWS_CLOUD_MQTT_PARALLEL_OPS" config_type="integer" config_label="Maximum Parallel Operations" config_visible="True" config_descr="Maximum Parallel Operations" config_default="5"/>
+<component config_name="AWS_CLOUD_MQTT_TCP_TIMEOUT" config_type="integer" config_label="MQTT TCP Timeout" config_visible="True" config_descr="MQTT TCP Timeout" config_default="2000"/>
+</components>
+
+<!--Security Sockets CONFIG Details -->
+<components config_name="AWS_CLOUD_NETWORK" config_type="menu" config_label="Network Configuration Details" config_visible="True" config_descr="IOT THING Configuration" config_default="">
+<component config_name="AWS_CLOUD_NETWORK_BYTE_ORDER" config_type="bool" config_label="Enable Little Endian Byte Order" config_visible="True" config_descr="NetworkByteOrder" config_default="True"/>
+<component config_name="AWS_CLOUD_NETWORK_SEND_TIMEOUT" config_type="integer" config_label="Network Send Timeout" config_visible="True" config_descr="Send Timeout" config_default="10000"/>
+<component config_name="AWS_CLOUD_NETWORK_RECV_TIMEOUT" config_type="integer" config_label="Network Receive Timeout" config_visible="True" config_descr="Receive Timeout" config_default="10000"/>
+<component config_name="AWS_CLOUD_NETWORK_METRICS_ENABLE" config_type="integer" config_label="Network Metrics Enable" config_visible="True" config_descr="Enable Metrics" config_default="1"/>
+</components>
+
+<!--SHADOW CONFIG Details -->
+<components config_name="AWS_CLOUD_SHADOW" config_type="menu" config_label="Shadow Configuration" config_visible="True" config_descr="Shadow Library Configuration" config_default="">
+<component config_name="AWS_CLOUD_SHADOW_TOKENS" config_type="integer" config_label="Shadow Tocken Count" config_visible="True" config_descr="SHADOW TOKEN COUNT" config_default="64"/>
+<component config_name="AWS_CLOUD_SHADOW_MAX_CLIENTS" config_type="integer" config_label="Shadow Max Clients" config_visible="True" config_descr="Shadow Max Clients" config_default="4"/>
+<component config_name="AWS_CLOUD_SHADOW_DEBUG_LOG" config_type="integer" config_label="Enable Shadow Debug Log" config_visible="True" config_descr="Enable Shadow Debug Log" config_default="0"/>
+<component config_name="AWS_CLOUD_SHADOW_MAX_CALLBACK" config_type="integer" config_label="Shadow Maximum Callback Count" config_visible="True" config_descr="Shadow Maximum Callback Count" config_default="4"/>
+<component config_name="AWS_CLOUD_SHADOW_CLEANUP_TIMEOUT" config_type="integer" config_label="Shadow Cleanup Timeout" config_visible="True" config_descr="Shadow Cleanup Timeout" config_default="5000"/>
+</components>
+
+
+<!--PKCS11 CONFIG Details -->
+<components config_name="AWS_CLOUD_PKCS11" config_type="menu" config_label="PKCS11 Configuration Details" config_visible="True" config_descr="Security Configuration" config_default="">
+<component config_name="AWS_CLOUD_PKCS11_USERID" config_type="string" config_label="USER ID" config_visible="True" config_descr="USER ID" config_default="0000"/>
+<component config_name="AWS_CLOUD_PKCS11_LABEL_LEN" config_type="integer" config_label="MAXIMUM LABEL LENGTH" config_visible="True" config_descr="MAXIMUM LABEL LENGTH" config_default="32"/>
+<component config_name="AWS_CLOUD_PKCS11_MAX_OBJECTS" config_type="integer" config_label="MAXIMUM OBJECTS COUNT" config_visible="True" config_descr="MAXIMUM OBJECTS COUNT" config_default="6"/>
+<component config_name="AWS_CLOUD_PKCS11_DEV_PRIVATE_KEY_LBL" config_type="string" config_label="DEVICE PRIVATE KEY LABEL" config_visible="True" config_descr="DEVICE PRIVATE KEY LABEL" config_default="Device Priv TLS Key"/>
+<component config_name="AWS_CLOUD_PKCS11_DEV_PUBIC_KEY_LBL" config_type="string" config_label="DEVICE PUBLIC KEY LABEL" config_visible="True" config_descr="DEVICE PUBLIC KEY LABEL" config_default="Device Pub TLS Key"/>
+<component config_name="AWS_CLOUD_PKCS11_CERT_DEV_LBL" config_type="string" config_label="DEVICE CERTIFICATE LABEL" config_visible="True" config_descr="DEVICE CERTIFICATE LABEL" config_default="Device Cert"/>
+<component config_name="AWS_CLOUD_PKCS11_VERFFY_LBL" config_type="string" config_label="DEVICE VERIFY LABEL" config_visible="True" config_descr="Just in Time Registration PEM CERTFICATE" config_default="Code Verify Key"/>
+<component config_name="AWS_CLOUD_PKCS11_JITP_LBL" config_type="string" config_label="JUST IN TIME PROGRAMMING LABEL" config_visible="True" config_descr="DEVICE VERIFY LABEL" config_default="JITP Cert"/>
+<component config_name="AWS_CLOUD_PKCS11_CERT_ROOL_LBL" config_type="string" config_label="ROOT CERTIFICATE LABEL" config_visible="True" config_descr="ROOT CERTIFICATE LABEL" config_default="Root Cert"/>
+</components>
+
+
+
+<components config_name="AWS_CLOUD_HWIF_ETH" config_type="menu" config_label="Ethernet Hardware Interface Configuration Details" config_visible="True" config_descr="Ethernet Hardware Configuration" config_default="">
+<component config_name="AWS_CLOUD_HWIF_ETH_INIT_TIMEOUT" config_type="integer" config_label="MAXIMUM INITIALIZATION DELAY" config_visible="True" config_descr="Maximum Ethernet Initialization Delay" config_default="10000"/>
+<component config_name="AWS_CLOUD_HWIF_ETH_TIMER_CHECK_DELAY" config_type="integer" config_label="SLEEP DELAY TILL INITIALIZATION COMPLETE" config_visible="True" config_descr="Tasks sleep delay count till Initialization is completed" config_default="10"/>
+<component config_name="AWS_CLOUD_HWIF_ETH_NW_AVBL_CHECK_DELAY" config_type="integer" config_label="PERIODIC NETWORK CHECK DELAY" config_visible="True" config_descr="Periodic Network Check Delay for events" config_default="50"/>
+<component config_name="AWS_CLOUD_HWIF_ENABLE_CMDS" config_type="bool" config_label="ENABLE DEBUG COMMANDS" config_visible="True" config_descr="Enable Debug Commands" config_default=""/>
+<component config_name="AWS_CLOUD_HWIF_ENABLE_MSGS" config_type="bool" config_label="ENABLE DEBUG MESSAGES" config_visible="True" config_descr="Enable Debug Messages" config_default="True"/>
+</components>
+
+<!--OTA Configuration Details -->
+<components config_name="AWS_CLOUD_OTA_CONFIG" config_type="menu" config_label="OTA Configuration Details" config_visible="True" config_descr="OTA  Configuration" config_default="">
+<component config_name="AWS_CLOUD_OTA_SELFTEST_RESP_TIME" config_type="integer" config_label="OTA Self Test Response Time" config_visible="True" config_descr="OTA Self Test Response Time" config_default="16000"/>
+<component config_name="AWS_CLOUD_OTA_DELAY_DATA_BLOCKS" config_type="integer" config_label="Delay between OTA Data Blocks" config_visible="True" config_descr="Delay between OTA Data Blocks" config_default="2500"/>
+</components>
+<!--FREERTOS CONFIG Details -->
+<components config_name="AWS_CLOUD_FREERTOS" config_type="menu" config_label="Amazon FreeRTOS Configuration" config_visible="True" config_descr="Amazon FreeRTOS Configuration" config_default="">
+<component config_name="AWS_CLOUD_FREERTOS_USE_PREEMPTION" config_type="bool" config_label="Enable Preemption" config_visible="True" config_descr="Enable Preemption" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_PORT_OPTIMIZED" config_type="bool" config_label="Enable Port Optimization based Task Selection" config_visible="True" config_descr="Enable Port Optimization" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_TICLESS_IDLE" config_type="bool" config_label="Enable Tickless IDLE" config_visible="True" config_descr="Enable Tickless IDLE" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_CPU_CLOCK" config_type="integer" config_label="MCU Clock Speed in Hz" config_visible="True" config_descr="MCU Clock Speed in Hz" config_default="300000000"/>
+<component config_name="AWS_CLOUD_FREERTOS_TICK_RATE" config_type="integer" config_label="Tick Rate in HZ" config_visible="True" config_descr="Tick Rate in HZ" config_default="1000"/>
+<component config_name="AWS_CLOUD_FREERTOS_MAX_PRI" config_type="integer" config_label="Maximum Priority" config_visible="True" config_descr="Maximum Priority" config_default="10"/>
+<component config_name="AWS_CLOUD_FREERTOS_MIN_STACK_SIZE" config_type="integer" config_label="Minimal Stack Size" config_visible="True" config_descr="Minimal Stack Size" config_default="512"/>
+<component config_name="AWS_CLOUD_FREERTOS_ISR_STACK_SIZE" config_type="integer" config_label="ISR Stack Size" config_visible="True" config_descr="ISR Stack Size" config_default="512"/>
+<component config_name="AWS_CLOUD_FREERTOS_SUPP_DYNAMIC" config_type="bool" config_label="Enable Dynamic Allocation" config_visible="True" config_descr="Enable Dynamic Allocation" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_SUPP_STATIC" config_type="bool" config_label="Enable Static Allocation" config_visible="True" config_descr="Enable Static Allocation" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_HEAP_SIZE" config_type="integer" config_label="Maximum Heap Size" config_visible="True" config_descr="Maximum Heap Size" config_default="280000"/>
+<component config_name="AWS_CLOUD_FREERTOS_MAX_TASK_LEN" config_type="integer" config_label="Maximum Task Length" config_visible="True" config_descr="Maximum Task Length" config_default="16"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_16B_TICKS" config_type="bool" config_label="Enable 16 Bit Ticks" config_visible="True" config_descr="Enable 16 Bit Ticks" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_IDLE_YIELD" config_type="bool" config_label="Enable IDLE Task to Yield" config_visible="True" config_descr="Enable IDLE Task to Yield" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_MUTEX" config_type="bool" config_label="Enable Mutex" config_visible="True" config_descr="Enable Mutex" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_RECURSIVE_MUTEX" config_type="bool" config_label="Enable Recurisve Mutex" config_visible="True" config_descr="Enable Recurisve Mutex" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_COUNT_SEMAPHORE" config_type="bool" config_label="Enable Counting Semaphore" config_visible="True" config_descr="Enable Counting Semaphore" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TASK_NOTIFY" config_type="bool" config_label="Enable Task Notify" config_visible="True" config_descr="Enable Task Notify" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_QUEUE_REG_SIZE" config_type="integer" config_label="Queue Registry Set Size" config_visible="True" config_descr="Queue Registry Set Size" config_default="0"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_QUEUE_SETS" config_type="bool" config_label="Enable Queue Sets" config_visible="True" config_descr="Enable Queue Sets" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TIME_SLICING" config_type="bool" config_label="Enable Time Slicing" config_visible="True" config_descr="Enable Time Slicing" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_NEWLIB_REENTRANT" config_type="bool" config_label="Enable New Lib Reentrant" config_visible="True" config_descr="Enable New Lib Reentrant" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_ENABLE_BW_COMPATIBILITY" config_type="bool" config_label="Enable Backward Compatitibility" config_visible="True" config_descr="Enable Backward Compatitibility" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_FPU_SUPPORT" config_type="bool" config_label="Enable Task FPU Support" config_visible="True" config_descr="Enable Task FPU Support" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_POSIX_ERR" config_type="bool" config_label="Enable POSIX ERRNO" config_visible="True" config_descr="Enable POSIX ERRNO" config_default="True"/>
+
+<component config_name="AWS_CLOUD_FREERTOS_USE_IDLE_HOOK" config_type="bool" config_label="Enable Idle Hook" config_visible="True" config_descr="Enable Idle Hook" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TICK_HOOK" config_type="bool" config_label="Enable Tick Hook" config_visible="True" config_descr="Enable Tick Hook" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_CHECK_STACK_OVRL_FLOW" config_type="integer" config_label="Enable Stack Overflow" config_visible="True" config_descr="Enable Stack Overflow" config_default="2"/>
+<component config_name="AWS_CLOUD_FREERTOS_MALLOC_FAILED_HOOK" config_type="bool" config_label="Enable Malloc Failed Hook" config_visible="True" config_descr="Enable Malloc Failed Hook" config_default="True"/>
+
+<component config_name="AWS_CLOUD_FREERTOS_GEN_RUNTIME_STATS" config_type="bool" config_label="Generate RunTime Stats" config_visible="True" config_descr="Generate RunTime Stats" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TRACE_FACILITY" config_type="bool" config_label="Enable Trace" config_visible="True" config_descr="Include TaskSuspend" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_CO_ROUTINES" config_type="bool" config_label="Enable CoRoutines" config_visible="True" config_descr="Enable CoRoutines" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_CO_ROUTINES_PRI" config_type="integer" config_label="CoRoutines Priority" config_visible="True" config_descr="CoRoutines Priority" config_default="2"/>
+
+<component config_name="AWS_CLOUD_FREERTOS_USE_TIMERS" config_type="bool" config_label="Enable FreeRTOS Timers" config_visible="True" config_descr="Enable FreeRTOS Timers" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TIMER_TASK_PRIORITY" config_type="integer" config_label="Timer Task Priority" config_visible="True" config_descr="Timer Task Priority" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_TIMER_QUEUE_LENGTH" config_type="integer" config_label="Timer Queue Length" config_visible="True" config_descr="Timer Queue Length" config_default="2"/>
+<component config_name="AWS_CLOUD_FREERTOS_TIMER_TASK_STACK_DEPTH" config_type="integer" config_label="Timer Task Stack" config_visible="True" config_descr="Timer Task Stack" config_default="512"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_DAEMON_STARTUP_HOOK" config_type="bool" config_label="Enable Daemon Startup Hook" config_visible="True" config_descr="Enable Daemon Startup Hook" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_APPLN_TAG" config_type="bool" config_label="Enable Application Tag" config_visible="True" config_descr="Enable Application Tag" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_PRIORITY_SET" config_type="bool" config_label="Include TaskPrioritySet" config_visible="True" config_descr="Include TaskPrioritySet" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_PRIORITY_GET" config_type="bool" config_label="Include TaskPriorityGet" config_visible="True" config_descr="Include TaskPriorityGet" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_DELETE" config_type="bool" config_label="Include TaskDelete" config_visible="True" config_descr="Include TaskDelete" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_SUSPEND" config_type="bool" config_label="Include TaskSuspend" config_visible="True" config_descr="Include TaskSuspend" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_DELAY_UNTIL" config_type="bool" config_label="Include TaskDelay" config_visible="True" config_descr="Include TaskDelayUntil" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_DELAY" config_type="bool" config_label="Include TaskDelay" config_visible="True" config_descr="Include TaskDelay" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_GET_SCHDL_STATE" config_type="bool" config_label="Include Task Scheduler State" config_visible="True" config_descr="Include Task Scheduler State" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_CURRENT_HANDLE" config_type="bool" config_label="Include Task Current Handle" config_visible="True" config_descr="Include Task Current Handle" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_STACK_HWM_GET" config_type="bool" config_label="Include Task Stack High Water Mark" config_visible="True" config_descr="Include Task Stack High Water Mark" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_IDLE_TASK_HANDLE" config_type="bool" config_label="Include Idle Task Handle" config_visible="True" config_descr="Include Idle Task Handle" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_GET_STATE" config_type="bool" config_label="Enable Task Get State" config_visible="True" config_descr="Enable Task Get State" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_EVENT_GRP_SET_BIT_ISR" config_type="bool" config_label="Enable Event Group Set Bit ISR" config_visible="True" config_descr="Enable Event Group Set Bit ISR" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_TIMER_PENDING_FN_CALL" config_type="bool" config_label="Enable Task Timer Pending Method" config_visible="True" config_descr="Enable Task Timer Pending Method" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_GET_HANDLE" config_type="bool" config_label="Enable Task Get Handle Method" config_visible="True" config_descr="Enable Task Get Handle Method" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_INC_TASK_ABORT_DELAY" config_type="bool" config_label="Enable Task AbortDelay Method" config_visible="True" config_descr="Enable Task AbortDelay Method" config_default=""/>
+
+<component config_name="AWS_CLOUD_FREERTOS_LOGGING_USE_STATS_FORMATTING" config_type="integer" config_label="Enable Stats Formatting" config_visible="True" config_descr="Enable Stats Formatting" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_LOGGING_MAX_MSG_LEN" config_type="integer" config_label="Maximum Length of FreeRTOS Logging Utility" config_visible="True" config_descr="Maximum Length of FreeRTOS Logging Utility" config_default="512"/>
+
+<component config_name="AWS_CLOUD_FREERTOS_LOGGING_TASK_TIME" config_type="bool" config_label="Enable Logging to include Task and Time" config_visible="True" config_descr="Enable Logging to include Task and Time" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_DEMO_STATS_ENABLE" config_type="bool" config_label="Enable Demo Debug stats" config_visible="True" config_descr="Enable Demo Debug stats" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_NETWORK_INTERFACE_ID" config_type="integer" config_label="Network Interface ID" config_visible="True" config_descr="Network Interface ID" config_default="6"/>
+<component config_name="AWS_CLOUD_FREERTOS_PLAT_NAME" config_type="string" config_label="Amazon FreeRTOS Platform Name" config_visible="True" config_descr="Amazon FreeRTOS Platform Name" config_default="MicrochipSAME70"/>
+
+</components>
+
+<!--Change Range in Python Code -->
+
+
+<components config_name="AWS_CLOUD_FREERTOS_IP" config_type="menu" config_label="Amazon FreeRTOS IP Configuration" config_visible="True" config_descr="Shadow Library Configuration" config_default="">
+
+<component config_name="AWS_CLOUD_FREERTOS_IP_DEBUG_PRINT" config_type="bool" config_label="Enable FreeRTOS IP Debug Info" config_visible="True" config_descr="Enable FreeRTOS IP Debug Info" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_IP_PRINT" config_type="bool" config_label="Enable FreeRTOS IP Log" config_visible="True" config_descr="Enable FreeRTOS IP Log" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_LITTLE_ENDIAN_BYTE_ORDER" config_type="bool" config_label="Enable Little Endian Byte Order" config_visible="True" config_descr="Enable Little Endian Byte Order" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_RX_CHECKSUM_ENABLE" config_type="bool" config_label="Enable Rx Checksum" config_visible="True" config_descr="Enable Rx Checksum" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_SOCK_RCV_TIME" config_type="integer" config_label="Socket Recv Time Out in  ms" config_visible="True" config_descr="Socket Recv Time Out in  ms" config_default="10000"/>
+<component config_name="AWS_CLOUD_FREERTOS_SOCK_SEND_TIME" config_type="integer" config_label="Socket Send Time Out in  ms" config_visible="True" config_descr="Socket Send Time Out in  ms" config_default="10000"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_DNS_CACHE" config_type="bool" config_label="Enable DNS Cache" config_visible="True" config_descr="Enable DNS Cache" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_DNS_REQ_ATTEMPT" config_type="integer" config_label="DNS Request Attempt Retries" config_visible="True" config_descr="DNS Request Attempt Retries" config_default="2"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_NW_EVENT_HOOK" config_type="bool" config_label="Enable Network Event Hook" config_visible="True" config_descr="Enable Network Event Hook" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_UDP_MAX_SEND_BLOCK_TICKS" config_type="integer" config_label="UDP Maximum Send Block Ticks" config_visible="True" config_descr="UDP Maximum Send Block Ticks" config_default="5000"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_DHCP" config_type="bool" config_label="Enable DHCP" config_visible="True" config_descr="Enable DHCP" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_DHCP_REG_HOSTNAME" config_type="bool" config_label="Enable DHCP Register HostName" config_visible="True" config_descr="EEnable DHCP Register HostName" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_DHCP_USE_UNICAST" config_type="bool" config_label="Enable DHCP Unicast" config_visible="True" config_descr="Enable DHCP Unicast" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_DHCP_TIMEOUT" config_type="integer" config_label="DHCP Discover Timeout" config_visible="True" config_descr="DHCP Discover Timeout" config_default="120000"/>
+<component config_name="AWS_CLOUD_FREERTOS_ARP_CACHE_ENTRIES" config_type="integer" config_label="ARP Cache Entries" config_visible="True" config_descr="ARP Cache Entries" config_default="6"/>
+<component config_name="AWS_CLOUD_FREERTOS_MAX_ARP_RETRANSMISSIONS" config_type="integer" config_label="Maximum ARP ReTransmissions" config_visible="True" config_descr="Maximum ARP ReTransmissions" config_default="5"/>
+<component config_name="AWS_CLOUD_FREERTOS_MAX_ARP_AGE" config_type="integer" config_label="Maximum ARP Age" config_visible="True" config_descr="Maximum ARP Age" config_default="150"/>
+<component config_name="AWS_CLOUD_FREERTOS_INCL_FULL_INET_ADDR" config_type="bool" config_label="Include Full Inet Address" config_visible="True" config_descr="Include Full Inet Address" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_NW_BUFF_DESCRP" config_type="integer" config_label="Network Buffer Descriptor" config_visible="True" config_descr="Network Buffer Descriptor" config_default="60"/>
+<component config_name="AWS_CLOUD_FREERTOS_ALLOW_SOCK_SEND_WO_BIND" config_type="bool" config_label="Allow Socket Send Without Bind" config_visible="True" config_descr="Allow Socket Send Without Bind" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_UDP_TTL" config_type="integer" config_label="UDP TTL" config_visible="True" config_descr="UDP TTL" config_default="128"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_TTL" config_type="integer" config_label="TCP TTL" config_visible="True" config_descr="TCP TTL" config_default="128"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP" config_type="bool" config_label="Enable TCP" config_visible="True" config_descr="Enable TCP" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_WIN" config_type="bool" config_label="TCP Window Size" config_visible="True" config_descr="TCP Window Size" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_NW_MTU" config_type="integer" config_label="Network MTU" config_visible="True" config_descr="Network MTU" config_default="1500"/>
+<component config_name="AWS_CLOUD_FREERTOS_USE_DNS" config_type="bool" config_label="Enable DNS" config_visible="True" config_descr="Enable DNS" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_REPLY_INCOMING_PINGS" config_type="bool" config_label="Support Incoming PING" config_visible="True" config_descr="Support Incoming PING" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_SUPP_OUTGOING_PINGS" config_type="bool" config_label="Support Outgoing PING" config_visible="True" config_descr="Support Outgoing PING" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_SUPP_SELECT_FUNC" config_type="bool" config_label="Enable Select Function" config_visible="True" config_descr="Enable Select Function" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_FILTER_NON_ETH_FRAMES" config_type="bool" config_label="Filter Non Ethernet Frames" config_visible="True" config_descr="Filter Non Ethernet Frames" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_FILTER_ETH_DRV_FILTER_FRAMES" config_type="bool" config_label="Ethernet Driver Filter Frames" config_visible="True" config_descr="Ethernet Driver Filter Frames" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_WIN_SEG" config_type="integer" config_label="TCP Windows Segment" config_visible="True" config_descr="TCP Windows Segment" config_default="240"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_RX_BUFF_LEN" config_type="integer" config_label="TCP Rx Buffer Length" config_visible="True" config_descr="TCP Rx Buffer Length" config_default="3000"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_TX_BUFF_LEN" config_type="integer" config_label="TCP Tx Buffer Length" config_visible="True" config_descr="TCP Tx Buffer Length" config_default="3000"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_KEEP_ALIVE" config_type="bool" config_label="Enable TCP Keep Alive" config_visible="True" config_descr="Enable TCP Keep Alive" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_KEEP_ALIVE_INTERVAL" config_type="integer" config_label="TCP Keep Alive Interval" config_visible="True" config_descr="TCP Keep Alive Interval" config_default="20"/>
+<component config_name="AWS_CLOUD_FREERTOS_TCP_SOCK_SEMAPHORE" config_type="bool" config_label="Enable TCP Socket Semaphore" config_visible="True" config_descr="Enable TCP Socket Semaphore" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_SOCK_USER_WAKE_CALLBACK" config_type="bool" config_label="Enable Sock User Wake Callback" config_visible="True" config_descr="Enable Sock User Wake Callback" config_default="1"/>
+<component config_name="AWS_CLOUD_FREERTOS_SOCK_USE_CALLBACK" config_type="bool" config_label="Enable Sock Use Callback" config_visible="True" config_descr="Enable Sock Use Callback" config_default=""/>
+<component config_name="AWS_CLOUD_FREERTOS_ZERO_COPY_TX_DRIVER" config_type="bool" config_label="Enable Zero Copy Tx Driver" config_visible="True" config_descr="Enable Zero Copy Tx Driver" config_default="True"/>
+<component config_name="AWS_CLOUD_FREERTOS_ZERO_COPY_RX_DRIVER" config_type="bool" config_label="Enable Zero Copy Rx Driver" config_visible="True" config_descr="Enable Zero Copy Rx Driver" config_default="True"/>
+</components>
+
+
+</structure>
+
+
