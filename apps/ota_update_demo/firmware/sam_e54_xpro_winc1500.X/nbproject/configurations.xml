@@ -8,15 +8,15 @@
         <logicalFolder name="f1"
                        displayName="sam_e54_xpro_winc1500"
                        projectFiles="true">
-          <logicalFolder name="f6" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="spi" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
+            <logicalFolder name="f1" displayName="spi" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/driver/spi/drv_spi.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/driver/spi/drv_spi_definitions.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="winc" projectFiles="true">
+            <logicalFolder name="f2" displayName="winc" projectFiles="true">
               <logicalFolder name="f1" displayName="include" projectFiles="true">
                 <logicalFolder name="f1" displayName="dev" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/dev/wdrv_winc_gpio.h</itemPath>
@@ -43,12 +43,12 @@
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/driver/ecc_types.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f5" displayName="socket" projectFiles="true">
+                  <logicalFolder name="f4" displayName="socket" projectFiles="true">
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/socket/m2m_socket_host_if.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/socket/socket.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/socket/netinet_in.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f4" displayName="spi_flash" projectFiles="true">
+                  <logicalFolder name="f5" displayName="spi_flash" projectFiles="true">
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/spi_flash/spi_flash.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/spi_flash/spi_flash_map.h</itemPath>
                     <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/include/drv/spi_flash/flexible_flash.h</itemPath>
@@ -79,7 +79,7 @@
             <itemPath>../src/config/sam_e54_xpro_winc1500/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro_winc1500/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="library" projectFiles="true">
+          <logicalFolder name="f3" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
               <logicalFolder name="f1" displayName="pkcs11" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/pkcs11/cryptoki.h</itemPath>
@@ -108,85 +108,85 @@
               <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atca_config.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="osal" projectFiles="true">
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/osal/osal.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro_winc1500/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro_winc1500/osal/osal_freertos.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f7" displayName="clock" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f2" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f11" displayName="eic" projectFiles="true">
+            <logicalFolder name="f3" displayName="eic" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="evsys" projectFiles="true">
+            <logicalFolder name="f4" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/evsys/plib_evsys.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f6" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="port" projectFiles="true">
+            <logicalFolder name="f7" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
+            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
+              <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/i2c_master/plib_sercom7_i2c_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
+              <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/usart/plib_sercom2_usart.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/usart/plib_sercom6_usart.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="tc" projectFiles="true">
+            <logicalFolder name="f9" displayName="tc" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/tc/plib_tc_common.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/tc/plib_tc3.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="trng" projectFiles="true">
+            <logicalFolder name="f10" displayName="trng" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/trng/plib_trng.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f10" displayName="wdt" projectFiles="true">
+            <logicalFolder name="f11" displayName="wdt" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/wdt/plib_wdt.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="system" projectFiles="true">
-            <logicalFolder name="f4" displayName="cache" projectFiles="true">
+          <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="command" projectFiles="true">
+            <logicalFolder name="f2" displayName="command" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/command/sys_command.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="console" projectFiles="true">
+            <logicalFolder name="f3" displayName="console" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/sys_console.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="debug" projectFiles="true">
+            <logicalFolder name="f4" displayName="debug" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="dma" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/dma/sys_dma.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/dma/sys_dma_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="int" projectFiles="true">
+            <logicalFolder name="f6" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="ports" projectFiles="true">
+            <logicalFolder name="f7" displayName="ports" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/ports/sys_ports.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/ports/sys_ports_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="time" projectFiles="true">
+            <logicalFolder name="f8" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/time/sys_time.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/time/sys_time_definitions.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/time/src/sys_time_local.h</itemPath>
@@ -272,6 +272,75 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_e54_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/AmazonFreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/AmazonHWInterface.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cryptoauthlib_pkcs11.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvExtPhyKsz8091.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvGmac.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvMiim.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom0.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom7.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/trng.yml</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="sam_e54_xpro_winc1500.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/AmazonFreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/AmazonHWInterface.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/atecc608.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cryptoauthlib.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cryptoauthlib_pkcs11.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/drvWifiWinc.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom7.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/tc3.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/trng.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e54_xpro_winc1500/harmony-manifest-success.yml</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -286,7 +355,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f2" displayName="amazon-freertos" projectFiles="true">
+      <logicalFolder name="f1" displayName="amazon-freertos" projectFiles="true">
         <logicalFolder name="f4" displayName="demos" projectFiles="true">
           <logicalFolder name="f1" displayName="defender" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/amazon-freertos/demos/defender/aws_iot_demo_defender.c</itemPath>
@@ -668,7 +737,7 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/amazon-freertos/libraries/abstractions/common_io/include/iot_watchdog.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="pkcs11" projectFiles="true">
+            <logicalFolder name="f1" displayName="pkcs11" projectFiles="true">
               <logicalFolder name="f1" displayName="include" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/amazon-freertos/libraries/abstractions/pkcs11/include/iot_pkcs11_pal.h</itemPath>
               </logicalFolder>
@@ -728,7 +797,7 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/amazon-freertos/libraries/abstractions/secure_sockets/include/iot_secure_sockets_wrapper_metrics.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="wifi" projectFiles="true">
+            <logicalFolder name="f2" displayName="wifi" projectFiles="true">
               <logicalFolder name="f1" displayName="include" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/amazon-freertos/libraries/abstractions/wifi/include/iot_wifi.h</itemPath>
               </logicalFolder>
@@ -1021,14 +1090,14 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
+      <logicalFolder name="f2" displayName="config" projectFiles="true">
         <logicalFolder name="f1"
                        displayName="sam_e54_xpro_winc1500"
                        projectFiles="true">
-          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="driver" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="spi" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/driver/spi/src/drv_spi.c</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/driver/spi/src/drv_spi_local.h</itemPath>
@@ -1043,7 +1112,7 @@
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/dev/spi/wdrv_winc_spi.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="drv" projectFiles="true">
+              <logicalFolder name="f2" displayName="drv" projectFiles="true">
                 <logicalFolder name="f1" displayName="common" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/common/nm_common.c</itemPath>
                 </logicalFolder>
@@ -1058,17 +1127,17 @@
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/driver/m2m_ota.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/driver/m2m_ssl.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f4" displayName="socket" projectFiles="true">
+                <logicalFolder name="f3" displayName="socket" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/socket/socket.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/socket/inet_ntop.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/socket/inet_addr.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f3" displayName="spi_flash" projectFiles="true">
+                <logicalFolder name="f4" displayName="spi_flash" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/spi_flash/spi_flash.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/drv/spi_flash/flexible_flash.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="osal" projectFiles="true">
+              <logicalFolder name="f3" displayName="osal" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/osal/wdrv_winc_osal.c</itemPath>
               </logicalFolder>
               <itemPath>../src/config/sam_e54_xpro_winc1500/driver/winc/wdrv_winc.c</itemPath>
@@ -1091,12 +1160,12 @@
           </logicalFolder>
           <logicalFolder name="f3" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="cryptoauthlib" projectFiles="true">
-              <logicalFolder name="f8" displayName="app" projectFiles="true">
+              <logicalFolder name="f1" displayName="app" projectFiles="true">
                 <logicalFolder name="f1" displayName="pkcs11" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/app/pkcs11/trust_pkcs11_config.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f4" displayName="atcacert" projectFiles="true">
+              <logicalFolder name="f2" displayName="atcacert" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atcacert/atcacert.h</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atcacert/atcacert_client.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atcacert/atcacert_client.h</itemPath>
@@ -1113,7 +1182,7 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atcacert/atcacert_pem.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atcacert/atcacert_pem.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f5" displayName="calib" projectFiles="true">
+              <logicalFolder name="f3" displayName="calib" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/calib/calib_aes.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/calib/calib_aes_gcm.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/calib/calib_aes_gcm.h</itemPath>
@@ -1146,7 +1215,7 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/calib/calib_verify.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/calib/calib_write.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="crypto" projectFiles="true">
+              <logicalFolder name="f4" displayName="crypto" projectFiles="true">
                 <logicalFolder name="f1" displayName="hashes" projectFiles="true">
                   <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/crypto/hashes/sha1_routines.c</itemPath>
                   <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/crypto/hashes/sha1_routines.h</itemPath>
@@ -1169,7 +1238,7 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="hal" projectFiles="true">
+              <logicalFolder name="f5" displayName="hal" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/hal/atca_hal.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/hal/atca_hal.h</itemPath>
@@ -1184,11 +1253,11 @@
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/host/atca_host.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/host/atca_host.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="jwt" projectFiles="true">
+              <logicalFolder name="f7" displayName="jwt" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/jwt/atca_jwt.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f7" displayName="pkcs11" projectFiles="true">
+              <logicalFolder name="f8" displayName="pkcs11" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/pkcs11/pkcs11_attrib.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/pkcs11/pkcs11_cert.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/pkcs11/pkcs11_config.c</itemPath>
@@ -1231,81 +1300,81 @@
               <itemPath>../src/config/sam_e54_xpro_winc1500/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/osal/osal_freertos.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f7" displayName="clock" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f2" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f11" displayName="eic" projectFiles="true">
+            <logicalFolder name="f3" displayName="eic" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="evsys" projectFiles="true">
+            <logicalFolder name="f4" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/evsys/plib_evsys.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
+            <logicalFolder name="f6" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="port" projectFiles="true">
+            <logicalFolder name="f7" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="i2c_master" projectFiles="true">
+            <logicalFolder name="f8" displayName="sercom" projectFiles="true">
+              <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/i2c_master/plib_sercom7_i2c_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="spi_master" projectFiles="true">
+              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
+              <logicalFolder name="f3" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/usart/plib_sercom2_usart.c</itemPath>
                 <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/sercom/usart/plib_sercom6_usart.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="tc" projectFiles="true">
+            <logicalFolder name="f9" displayName="tc" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/tc/plib_tc3.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="trng" projectFiles="true">
+            <logicalFolder name="f10" displayName="trng" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/trng/plib_trng.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f10" displayName="wdt" projectFiles="true">
+            <logicalFolder name="f11" displayName="wdt" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/peripheral/wdt/plib_wdt.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f6" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro_winc1500/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="system" projectFiles="true">
-            <logicalFolder name="f4" displayName="cache" projectFiles="true">
+          <logicalFolder name="f7" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/cache/sys_cache.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="command" projectFiles="true">
+            <logicalFolder name="f2" displayName="command" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/command/src/sys_command.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="console" projectFiles="true">
+            <logicalFolder name="f3" displayName="console" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/src/sys_console_uart.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/src/sys_console_uart.c</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/console/src/sys_console_local.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="debug" projectFiles="true">
+            <logicalFolder name="f4" displayName="debug" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/debug/src/sys_debug_local.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/debug/src/sys_debug.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="dma" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/dma/sys_dma.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="int" projectFiles="true">
+            <logicalFolder name="f6" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="time" projectFiles="true">
+            <logicalFolder name="f7" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc1500/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -1319,75 +1388,6 @@
       </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1" displayName="sam_e54_xpro.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/AmazonFreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/AmazonHWInterface.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/cryptoauthlib_pkcs11.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvExtPhyKsz8091.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvGmac.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/drvMiim.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom0.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sercom7.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.mhc/trng.yml</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2"
-                     displayName="sam_e54_xpro_winc1500.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/AmazonFreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/AmazonHWInterface.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/atecc608.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cryptoauthlib.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/cryptoauthlib_pkcs11.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sercom7.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/tc3.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc1500/sam_e54_xpro_winc1500.mhc/trng.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_xpro_winc1500/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -1411,8 +1411,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.4.70"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.4.70"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1424,24 +1424,9 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../../../amazon-freertos/projects/microchip/same54_xpro/mplab/bootloader/firmware/bootloader.X"
-                        CT="1"
-                        CN="same54_xpro"
-                        AC="true"
-                        BL="true"
-                        WD="../../../../../amazon-freertos/projects/microchip/same54_xpro/mplab/bootloader/firmware/bootloader.X"
-                        BC="${MAKE}  -f Makefile CONF=same54_xpro"
-                        DBC="${MAKE}  -f Makefile CONF=same54_xpro TYPE_IMAGE=DEBUG_RUN"
-                        CC="rm -rf &quot;build/same54_xpro&quot; &quot;dist/same54_xpro&quot;"
-                        OP="dist/same54_xpro/production/bootloader.X.production.hex"
-                        DOP="dist/same54_xpro/debug/bootloader.X.debug.elf"
-                        FL="dist/same54_xpro/production/bootloader.X.production.hex"
-                        PD="dist/same54_xpro/production/bootloader.X.production.elf"
-                        DD="dist/same54_xpro/debug/bootloader.X.debug.elf">
-          </makeArtifact>
-          <useAlternateLoadableFile>true</useAlternateLoadableFile>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile>dist/sam_e54_xpro_winc1500/production/sam_e54_xpro_winc1500.X.production.factory.unified.hex</alternateLoadableFile>
+          <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
         </subordinates>
@@ -1451,7 +1436,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>${MP_CC_DIR}\xc32-objcopy -O ihex "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.elf" "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex" &amp;&amp; ${MP_CC_DIR}\xc32-objcopy -p -I ihex -O binary "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex" "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin" &amp;&amp; python ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/factory_image_generator.py -b "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin" -p MCHP-Curiosity-PIC32MZEF -k ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/codesigner_cert_utility/ecdsasigner.key -x  ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/bootloader.X.production.hex</makeCustomizationPostStep>
+        <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -p -I ihex -O binary "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex" "${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin"</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -1564,8 +1549,8 @@
         <property key="oXC32ld-extra-opts" value="-mno-newlib-nano"/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value=";ROM_LENGTH=0xf0000;ROM_ORIGIN=0x10000"/>
-        <property key="remove-unused-sections" value="false"/>
+                  value="ROM_ORIGIN=0x10000;ROM_LENGTH=0xf0000"/>
+        <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
         <property key="serial-origin" value=""/>
