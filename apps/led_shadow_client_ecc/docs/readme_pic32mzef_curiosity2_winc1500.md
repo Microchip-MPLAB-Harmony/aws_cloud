@@ -1,14 +1,14 @@
 ---
 grand_parent: AWS Cloud Component and Applications
 parent: LED Shadow Client Application
-title: Building and Running on PIC32MZ EF Curiosity 2.0 board.
+title: Building and Running on PIC32MZ EF Curiosity 2.0 board + WINC1500.
 has_toc: false
 ---
 
 
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# Building and Running on PIC32MZEF Curiosity 2.0 (Wired)
+# Building and Running on PIC32MZEF Curiosity 2.0 + WINC1500
 
 ## Downloading and building the application
 
@@ -22,7 +22,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| firmware/pic32mz_ef_curiosity_v2.X    | MPLABX Project for [PIC32MZEF Curiosity 2.0 board](https://www.microchip.com/developmenttools/ProductDetails/DM320209)|
+| firmware/pic32mz_ef_curiosity_v2_winc1500.X    | MPLABX Project for [PIC32MZEF Curiosity 2.0 board](https://www.microchip.com/developmenttools/ProductDetails/DM320209)|
 
 
 ## Provisoning the device for AWS account access.
@@ -36,17 +36,18 @@ To build the application, refer to the following table and open the project usin
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - Connect the ATECC608A Trust in XC32 Header (2) / mikro Bus slot 2.
 - Connect the LAN8720PHY daughter card in the PHY slot.
+- Connect the WINC1500 Xplained Pro in J501 extension.
 
 
 ## Building the Application
 
-1. Open the application project *firmware/pic32mz_ef_curiosity_v2.X* in the IDE
+1. Open the application project *firmware/pic32mz_ef_curiosity_v2_winc1500.X* in the IDE
 2. Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account.
-3. Build and program the application using the IDE
-
+3. Enter the WIFI credentials in aws_clientcredential.h if not entered already.
+4. Build and program the application using the IDE
 
 ## Running the Application
-1. Connect an ethernet cable from an internet router to the PHY slot in PIC32MZEF Curiosity 2.0 board.
+1. Ensure Wifi router is connected to internet before turning on the board. 
 2. If above step is successful then the **LED0** on the board would turn ON/OFF once.
 3. Open the Terminal application (Ex.:Tera Term) on the computer
 4. Configure the serial port settings as follows:

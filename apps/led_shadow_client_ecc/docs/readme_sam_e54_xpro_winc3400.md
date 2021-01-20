@@ -43,7 +43,8 @@ To build the application, refer to the following table and open the project usin
 
 1. Open the application project *firmware/sam_e54_xpro_winc3400.X* in the IDE
 2. Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account.
-3. Build and program the application using the IDE
+3. Enter the WIFI credentials in aws_clientcredential.h if not entered already.
+4. Build and program the application using the IDE
 
 ## Running the Application
 1. Ensure Wifi router is connected to internet before turning on the board. 

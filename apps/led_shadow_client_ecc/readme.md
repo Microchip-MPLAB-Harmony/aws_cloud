@@ -20,8 +20,11 @@ The following table provides links to documentation on how to build and run LED 
 | Development Kit |
 |:---------|
 |[PIC32MZEF Curisoity Board 2.0](docs/readme_pic32mzef_curiosity2.md) |
+|[PIC32MZEF Curisoity Board 2.0 + WINC1500](docs/readme_pic32mzef_curiosity2_winc1500.md) |
 |[SAM E70 Xplained Ultra Evaluation Kit](docs/readme_sam_e70_xult.md) |
+|[SAM E70 Xplained Ultra Evaluation Kit + WINC1500](docs/readme_sam_e70_xult_winc1500.md) |
 |[SAM E54 Xplained Pro Evaluation Kit](docs/readme_sam_e54_xpro.md) |
 |[SAM E54 Xplained Pro Evaluation Kit + WINC1500](docs/readme_sam_e54_xpro_winc1500.md) |
 |[SAM E54 Xplained Pro Evaluation Kit + WINC3400](docs/readme_sam_e54_xpro_winc3400.md) |
+|[SAM G55 Xplained Pro Evaluation Kit + WINC1500](docs/readme_sam_g55_xpro_winc1500.md) |
 

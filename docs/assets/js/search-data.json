@@ -186,245 +186,269 @@
     "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#downloading-and-building-the-application"
   },"31": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
-    "title": "Provisoning the device for AWS account access.",
-    "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
-    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access",
-    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access"
+    "title": "Brief Introduction on OTA Update",
+    "content": "Note: OTA Guide on FreeRTOS can be found here for setting up and running the demo . The FreeRTOS OTA Solution requires a code-signing certificate with an ECDSA P-256 key and SHA-256 hash to perform OTA updates. Any image, which needs to be programmed needs to be signed by the private key generated using above step. The signed image is verified by the code signing certficate present in the hardware. FreeRTOS OTA also requires dual bank support of storing the running image and the new image to be flashed in different banks, so that at any point of time there is one valid image available. As part of the above step, we import the code-signing certificate, private key, and certificate chain into AWS Certificate Manager. This ensures the FreeRTOS OTA Job to sign the firmware image used in Amazon S3 buckets with the private key. | The bootloader is a Fail-Safe secure bootloader, which verfies the Application image stored in the each bank with the ECDSA/SHA-256 signature stored in the bank’s descriptor. The bootloader uses the code signing certficate generated earlier and stored in th flash. | The Application image is a FreeRTOS based application which uses FreeRTOS OTA to perform a live firmware update into the higher bank. | The Descriptor maintains the status of the Application image stored (i.e. image flags, image signature, size,etc). | . Note: The initial image that needs to be programmed is a factory image. The factory Application image needs to be signed by the OEM for the first time, following which users needs to upload unsigned firmware image into Amazon S3 buckets and follow the FreeRTOS OTA guide to perform OTA Update. ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#brief-introduction-on-ota-update",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#brief-introduction-on-ota-update"
   },"32": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
-    "title": "Setting up SAM E54 Xplained Pro Evaluation Kit",
-    "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the WINC1500 Xplained Pro in EXT1 | Refer to OTA guide for completing the pre-requisites for running OTA Demo. | . ",
-    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit",
-    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit"
+    "title": "Provisoning the device for AWS account access.",
+    "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this would be used for running the demos. | Place the code signer certificate in PEM format under demos\\include\\aws_ota_codesigner_certificate.h (You can use the utility in amazon-freertos\\tools\\certificate_configuration\\PEMfileToCString.html). | . ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access"
   },"33": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
-    "title": "Building the Application",
-    "content": ". | Verify the project has the bootloader project available as a loadable project from here. | Open the application project firmware/sam_e54_xpro_winc1500.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Build and program the application using the IDE | . ",
-    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#building-the-application",
-    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#building-the-application"
+    "title": "Pre-Requisite for running this demo",
+    "content": " ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#pre-requisite-for-running-this-demo",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#pre-requisite-for-running-this-demo"
   },"34": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
+    "title": "Setting up SAM E54 Xplained Pro Evaluation Kit",
+    "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the WINC1500 Xplained Pro in EXT1 | Refer to OTA guide for setting up OTA accounts if not done already. | . ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit"
+  },"35": {
+    "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
+    "title": "Install the initial version of ﬁrmware on the Microchip SAME54-XPRO",
+    "content": " ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#install-the-initial-version-of-firmware-on-the-microchip-same54-xpro",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#install-the-initial-version-of-ﬁrmware-on-the-microchip-same54-xpro"
+  },"36": {
+    "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
+    "title": "Building the Application",
+    "content": ". | Add the bootloader project available as a loadable project from here. | Open the application project firmware/sam_e54_xpro_winc1500.X in the IDE | Use the aws_clientcredential.h, aws_clientcredentialkeys.h and aws_ota_codesigner_certificate.h obtained from provisoning the device to aws account. | Building the application would generate an unsigned unified image of Bootloader/Application. | The Bootloader would generate aws_boot_codesigner_public_key.h as pre-built setup,ensure your code signer certificate had been placed . | . ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#building-the-application",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#building-the-application"
+  },"37": {
+    "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
+    "title": "Programming the Signed Factory Image",
+    "content": ". | Make sure you have the SRecord tools installed from Source Forge. Verify that the directory that contains the srec_cat and srec_info programs is in your system path. | Make sure you have python3 installed and verify python3 path is set in system path. | Run the below command from ota_update_demo\\firmware\\sam_e54_xpro_winc1500.X folder “python ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/factory_image_generator.py -b “dist/sam_e54_xpro_winc1500/production/sam_e54_xpro_winc1500.X.production.bin” -p MCHP-Curiosity-PIC32MZEF -k ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/codesigner_cert_utility/ecdsasigner.key -x ../../../../../amazon-freertos/vendors/microchip/boards/same54_xpro/bootloader/bootloader/utility/bootloader.X.production.hex” | This will create a signed unified hex file “sam_e54_xpro_winc1500.X.production.factory.unified.hex” . | Add this signed image as the image to be programmed from MPLAB IDE | . ",
+    "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#programming-the-signed-factory-image",
+    "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#programming-the-signed-factory-image"
+  },"38": {
+    "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
     "title": "Running the Application",
-    "content": ". | Ensure Wifi router is connected to internet before turning on the board. | If above step is successful then the LED0 on IO1 Xplained would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Follow the steps mentioned here to update the application version with an increased build number (say 3) in this project Version Update | Follow the steps mentioned here to perform an OTA update OTA Update | The below steps will perform an OTA update and the new application will be loaded, this would cause an LED update. | . ",
+    "content": ". | Ensure Wifi router is connected to internet before turning on the board. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Follow the steps mentioned here to update the application version with an increased build number (say 3) in this project Version Update. | Follow the steps mentioned here to perform an OTA Update. | The steps mentioned above will perform an OTA update and the new application will be programmed, this would cause an LED update. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#running-the-application",
     "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html#running-the-application"
-  },"35": {
+  },"39": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
     "title": "Building and Running on SAM E54 Xplained Pro Evaluation Kit",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html",
     "relUrl": "/apps/ota_update_demo/docs/readme_sam_e54_xpro_winc1500.html"
-  },"36": {
+  },"40": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "content": " ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#building-and-running-on-sam-e54-xplained-pro-evaluation-kit--winc1500",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#building-and-running-on-sam-e54-xplained-pro-evaluation-kit--winc1500"
-  },"37": {
+  },"41": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions . Path of the application within the repository is apps/led_shadow_client_ecc/ . To build the application, refer to the following table and open the project using its IDE. LED Shadow Client Demo Application . | Project Name | Description | . | firmware/sam_e54_xpro_winc1500.X | MPLABX Project for SAM E54 Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#downloading-and-building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#downloading-and-building-the-application"
-  },"38": {
+  },"42": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Provisoning the device for AWS account access.",
     "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#provisoning-the-device-for-aws-account-access"
-  },"39": {
+  },"43": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Setting up SAM E54 Xplained Pro Evaluation Kit",
     "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the IO1 Xplained Pro in EXT3. | Connect the WINC1500 Xplained Pro in EXT1 | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#setting-up-sam-e54-xplained-pro-evaluation-kit"
-  },"40": {
+  },"44": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Building the Application",
     "content": ". | Open the application project firmware/sam_e54_xpro_winc1500.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Enter the WIFI credentials in aws_clientcredential.h if not entered already. | Build and program the application using the IDE | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#building-the-application"
-  },"41": {
+  },"45": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Running the Application",
     "content": ". | Ensure Wifi router is connected to internet before turning on the board. | If above step is successful then the LED0 on IO1 Xplained would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Login to your AWS amazon account From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below. | From the menu on the left, Click “Manage” and then Click “Things”. This will display all the things managed by your AWS account in the right pane. In the right pane, click the “Things” item, which represents your device. | The THING Name and Shadow ARN are masked for security reasons. Click on the “Shadow” item in the right pane. This will display the device shadow page. | Build and Program the application using the MPLAB X IDE. The device will toggle one LED and now a shadow document will be created in the Device’s Shadow page. The Shadow state document is JSON formatted file representing the device’s state, in this example the LED status is depicated as device’s status. | The JSON variable “powerOn” indicates the LED state of the board and Shadow state depicts the current state of the device. | The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document and changing the “powerOn” state. | Change the power On value to ‘1’ and click on the Save Button, this will turn LED on the EXT3, Changing the value to 0 will turn LED off. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#running-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html#running-the-application"
-  },"42": {
+  },"46": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "title": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC1500",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc1500.html"
-  },"43": {
+  },"47": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "content": " ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#building-and-running-on-sam-e54-xplained-pro-evaluation-kit--winc3400",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#building-and-running-on-sam-e54-xplained-pro-evaluation-kit--winc3400"
-  },"44": {
+  },"48": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions . Path of the application within the repository is apps/led_shadow_client_ecc/ . To build the application, refer to the following table and open the project using its IDE. LED Shadow Client Demo Application . | Project Name | Description | . | firmware/sam_e54_xpro_winc3400.X | MPLABX Project for SAM E54 Xplained Pro Evaluation Kit | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#downloading-and-building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#downloading-and-building-the-application"
-  },"45": {
+  },"49": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Provisoning the device for AWS account access.",
     "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#provisoning-the-device-for-aws-account-access",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#provisoning-the-device-for-aws-account-access"
-  },"46": {
+  },"50": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Setting up SAM E54 Xplained Pro Evaluation Kit",
     "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the IO1 Xplained Pro in EXT3. | Connect the WINC3400 Xplained Pro in EXT1 | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#setting-up-sam-e54-xplained-pro-evaluation-kit",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#setting-up-sam-e54-xplained-pro-evaluation-kit"
-  },"47": {
+  },"51": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Building the Application",
     "content": ". | Open the application project firmware/sam_e54_xpro_winc3400.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Enter the WIFI credentials in aws_clientcredential.h if not entered already. | Build and program the application using the IDE | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#building-the-application"
-  },"48": {
+  },"52": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Running the Application",
     "content": ". | Ensure Wifi router is connected to internet before turning on the board. | If above step is successful then the LED0 on IO1 Xplained would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Login to your AWS amazon account From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below. | From the menu on the left, Click “Manage” and then Click “Things”. This will display all the things managed by your AWS account in the right pane. In the right pane, click the “Things” item, which represents your device. | The THING Name and Shadow ARN are masked for security reasons. Click on the “Shadow” item in the right pane. This will display the device shadow page. | Build and Program the application using the MPLAB X IDE. The device will toggle one LED and now a shadow document will be created in the Device’s Shadow page. The Shadow state document is JSON formatted file representing the device’s state, in this example the LED status is depicated as device’s status. | The JSON variable “powerOn” indicates the LED state of the board and Shadow state depicts the current state of the device. | The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document and changing the “powerOn” state. | Change the power On value to ‘1’ and click on the Save Button, this will turn LED on the EXT3, Changing the value to 0 will turn LED off. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#running-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html#running-the-application"
-  },"49": {
+  },"53": {
     "doc": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "title": "Building and Running on SAM E54 Xplained Pro Evaluation Kit + WINC3400",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e54_xpro_winc3400.html"
-  },"50": {
+  },"54": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Building and Running on SAM E70 Xplained Ultra (Wired)",
     "content": " ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#building-and-running-on-sam-e70-xplained-ultra-wired",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#building-and-running-on-sam-e70-xplained-ultra-wired"
-  },"51": {
+  },"55": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions . Path of the application within the repository is apps/led_shadow_client_ecc/ . To build the application, refer to the following table and open the project using its IDE. LED Shadow Client Demo Application . | Project Name | Description | . | firmware/sam_e70_xult.X | MPLABX Project for SAM E70 Xplained Ultra | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#downloading-and-building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#downloading-and-building-the-application"
-  },"52": {
+  },"56": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Provisoning the device for AWS account access.",
     "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#provisoning-the-device-for-aws-account-access",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#provisoning-the-device-for-aws-account-access"
-  },"53": {
+  },"57": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Setting up SAM E70 Xplained Pro Ultra",
     "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the LAN8720PHY daughter card in the PHY slot. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#setting-up-sam-e70-xplained-pro-ultra",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#setting-up-sam-e70-xplained-pro-ultra"
-  },"54": {
+  },"58": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Building the Application",
     "content": ". | Open the application project firmware/sam_e70_xult.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Build and program the application using the IDE | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#building-the-application"
-  },"55": {
+  },"59": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Running the Application",
     "content": ". | Connect an ethernet cable from an internet router to the PHY slot in SAME70 Xplained Ultra. | If above step is successful then the LED0 on the board would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Login to your AWS amazon account From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below. | . | From the menu on the left, Click “Manage” and then Click “Things”. This will display all the things managed by your AWS account in the right pane. In the right pane, click the “Things” item, which represents your device. | . | The THING Name and Shadow ARN are masked for security reasons. Click on the “Shadow” item in the right pane. This will display the device shadow page. | Build and Program the application using the MPLAB X IDE. The device will toggle one LED and now a shadow document will be created in the Device’s Shadow page. The Shadow state document is JSON formatted file representing the device’s state, in this example the LED status is depicated as device’s status. | The JSON variable “powerOn” indicates the LED state of the board and Shadow state depicts the current state of the device. | The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document and changing the “powerOn” state. | Change the power On value to ‘1’ and click on the Save Button, this will turn LED0 “ON”. Changing the value to 0 will turn LED0 off. Similarly it follows below truth table. | . | S.No | LED1 | LED0 | powerOn (Value) | Remarks | . | 1 | OFF | OFF | 0 | All LED off. | . | 2. | OFF | ON | 1 | LED0 On. | . | 3. | ON | OFF | 2 | LED1 On | . | 4. | ON | ON | 3 | LED1 and LED0 On | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#running-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html#running-the-application"
-  },"56": {
+  },"60": {
     "doc": "Building and Running on SAM E70 Xplained Ultra",
     "title": "Building and Running on SAM E70 Xplained Ultra",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult.html"
-  },"57": {
+  },"61": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "content": " ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#building-and-running-on-sam-e70-xplained-ultra--winc1500",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#building-and-running-on-sam-e70-xplained-ultra--winc1500"
-  },"58": {
+  },"62": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions . Path of the application within the repository is apps/led_shadow_client_ecc/ . To build the application, refer to the following table and open the project using its IDE. LED Shadow Client Demo Application . | Project Name | Description | . | firmware/sam_e70_xult_winc1500.X | MPLABX Project for SAM E70 Xplained Ultra | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#downloading-and-building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#downloading-and-building-the-application"
-  },"59": {
+  },"63": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Provisoning the device for AWS account access.",
     "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#provisoning-the-device-for-aws-account-access",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#provisoning-the-device-for-aws-account-access"
-  },"60": {
+  },"64": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Setting up SAM E70 Xplained Pro Ultra",
     "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the WINC1500 Xplained Pro in EXT1 | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#setting-up-sam-e70-xplained-pro-ultra",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#setting-up-sam-e70-xplained-pro-ultra"
-  },"61": {
+  },"65": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Building the Application",
     "content": ". | Open the application project firmware/sam_e70_xult_winc1500.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Enter the WIFI credentials in aws_clientcredential.h if not entered already. | Build and program the application using the IDE | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#building-the-application"
-  },"62": {
+  },"66": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Running the Application",
     "content": ". | Ensure Wifi router is connected to internet before turning on the board. | If above step is successful then the LED0 on the board would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Login to your AWS amazon account From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below. | . | From the menu on the left, Click “Manage” and then Click “Things”. This will display all the things managed by your AWS account in the right pane. In the right pane, click the “Things” item, which represents your device. | . | The THING Name and Shadow ARN are masked for security reasons. Click on the “Shadow” item in the right pane. This will display the device shadow page. | Build and Program the application using the MPLAB X IDE. The device will toggle one LED and now a shadow document will be created in the Device’s Shadow page. The Shadow state document is JSON formatted file representing the device’s state, in this example the LED status is depicated as device’s status. | The JSON variable “powerOn” indicates the LED state of the board and Shadow state depicts the current state of the device. | The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document and changing the “powerOn” state. | Change the power On value to ‘1’ and click on the Save Button, this will turn LED0 “ON”. Changing the value to 0 will turn LED0 off. Similarly it follows below truth table. | . | S.No | LED1 | LED0 | powerOn (Value) | Remarks | . | 1 | OFF | OFF | 0 | All LED off. | . | 2. | OFF | ON | 1 | LED0 On. | . | 3. | ON | OFF | 2 | LED1 On | . | 4. | ON | ON | 3 | LED1 and LED0 On | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#running-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html#running-the-application"
-  },"63": {
+  },"67": {
     "doc": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "title": "Building and Running on SAM E70 Xplained Ultra + WINC1500",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_e70_xult_winc1500.html"
-  },"64": {
+  },"68": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "content": " ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#building-and-running-on-sam-g55-xplained-pro--winc1500",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#building-and-running-on-sam-g55-xplained-pro--winc1500"
-  },"65": {
+  },"69": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions . Path of the application within the repository is apps/led_shadow_client_ecc/ . To build the application, refer to the following table and open the project using its IDE. LED Shadow Client Demo Application . | Project Name | Description | . | firmware/sam_g55_xpro_winc1500.X | MPLABX Project for SAM G55 Xplained Pro | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#downloading-and-building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#downloading-and-building-the-application"
-  },"66": {
+  },"70": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Provisoning the device for AWS account access.",
     "content": ". | Refer to Getting Started guide for setting up the AWS account based on your hardware configuration. | With the completion of the above steps, the user would have got aws_clientcredential.h and aws_clientcredentialkeys.h, this may be used for running the demos. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#provisoning-the-device-for-aws-account-access",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#provisoning-the-device-for-aws-account-access"
-  },"67": {
+  },"71": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Setting up SAM G55 Xplained Pro",
     "content": ". | Connect the Debug USB port on the board to the computer using a micro USB cable | Connect the ATECC608A Trust on the mikroBUS Xplained Pro adapter in EXT2. | Connect the WINC1500 Xplained Pro in EXT1 | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#setting-up-sam-g55-xplained-pro",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#setting-up-sam-g55-xplained-pro"
-  },"68": {
+  },"72": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Building the Application",
     "content": ". | Open the application project firmware/sam_g55_xpro_winc1500.X in the IDE | Use the aws_clientcredential.h and aws_clientcredentialkeys.h obtained from provisoning the device to aws account. | Enter the WIFI credentials in aws_clientcredential.h if not entered already. | Build and program the application using the IDE | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#building-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#building-the-application"
-  },"69": {
+  },"73": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Running the Application",
     "content": ". | Ensure Wifi router is connected to internet before turning on the board. | If above step is successful then the LED0 on the board would turn ON/OFF once. | Open the Terminal application (Ex.:Tera Term) on the computer | Configure the serial port settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Login to your AWS amazon account From the Services menu (upper left), click (or search for) IoT Core and open it. This will open the Aws IoT page as shown below. | From the menu on the left, Click “Manage” and then Click “Things”. This will display all the things managed by your AWS account in the right pane. In the right pane, click the “Things” item, which represents your device. | The THING Name and Shadow ARN are masked for security reasons. Click on the “Shadow” item in the right pane. This will display the device shadow page. | Build and Program the application using the MPLAB X IDE. The device will toggle one LED and now a shadow document will be created in the Device’s Shadow page. The Shadow state document is JSON formatted file representing the device’s state, in this example the LED status is depicated as device’s status. | The JSON variable “powerOn” indicates the LED state of the board and Shadow state depicts the current state of the device. | The user can modify the Shadow state till the connection is alive by click on the Edit button in the Shadow Document and changing the “powerOn” state. | Change the power On value to ‘1’ and click on the Save Button, this will turn LED on the EXT3, Changing the value to 0 will turn LED off. | . ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#running-the-application",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html#running-the-application"
-  },"70": {
+  },"74": {
     "doc": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "title": "Building and Running on SAM G55 Xplained Pro + WINC1500",
     "content": ". ",
     "url": "http://localhost:4000/aws_cloud/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html",
     "relUrl": "/apps/led_shadow_client_ecc/docs/readme_sam_g55_xpro_winc1500.html"
-  },"71": {
+  },"75": {
     "doc": "AWS Cloud Component and Applications",
     "title": "AWS Cloud Component and Applications",
     "content": "![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png) ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png) # MPLAB® Harmony 3 Configurations and Applications to securely connect IoT devices to the AWS cloud using FreeRTOS. MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 AWS Cloud application examples - [Release Notes](/aws_cloud/release_notes.html) - [MPLAB® Harmony License](/aws_cloud/mplab_harmony_license.html) # Contents Summary | Folder | Description |-----------|------------------------------------------------------------| apps | Example applications for FreeRTOS | config | FreeRTOS module configuration scripts | doc | Image files | docs | FreeRTOS help documentation | templates | Configurations file templates | ## Cloning AWS_Cloud repo To clone or download the repo from Github,go to the main page of this repository and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following these instructions This repo contains scripts needed to represent [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos) as Harmony 3 component. It requires [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos) repository to be cloned for code generation. ## Cloning FreeRTOS. This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to bring in dependent components. Note: If you download the ZIP file provided by GitHub UI or using content-manager, you will not get the contents of the submodules. (The ZIP file is also not a valid git repository) To clone: ``` git clone https://github.com/MicrochipTech/amazon-freertos ``` # Getting Started For more information on FreeRTOS and provisoning of secure element, refer to the [Getting Started guide of different boards](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev/vendors/microchip/boards). ## Introduction The FreeRTOS is abstracted as Harmony 3 component to easily configure and generate code to develop cloud connected applications using Harmony 3 framework. It uses updated version of FreeRTOS 202002.00 to support Microchip products for code generation. Amazon FreeRTOS is now termed as FreeRTOS, but we still use the term Amazon FreeRTOS as the H3 component name to avoid confusion with existing H3 FreeRTOS (kernel) Component. FreeRTOS is supported in the following products. - SAM E70/S70/V70/V71 Family + + ECC608 (Optional) + WINC1500/WINC3400 (Optional) - SAM D5x/E5x Family + ECC608 (Optional) + WINC1500/WINC3400 (Optional) - PIC32MZ Embedded Connectivity with Floating Point Unit (EF) Family + ECC608 (Optional) + WINC1500/WINC3400 (Optional) - SAM G55 Family + ECC608 + WINC1500/WINC3400. This repository contains following three components for configuration and code generation. ## AmazonFreeRTOS Component Amazon FreeRTOS component is used to configure and generate FreeRTOS code, indepdent of any hardware configuration ![Things Screen](/aws_cloud/doc/images/H3_Component_1.png) ## AmazonHWInterface component The Hardware interface component is used to abstract device, interface and key storage configuration and code generation. ![Things Screen](/aws_cloud/doc/images/H3_Component_2.png) There are three configurations supported by this component 1. Wired Solution Only. ![Things Screen](/aws_cloud/doc/images/image0.png) This solution is available in all platforms which supports wired connectvity (except SAMG55). 2. Wired + ECC608 Solution ![Things Screen](/aws_cloud/doc/images/image1.png) This solution is available in all platforms which supports wired connectvity (except SAMG55). 3. WIFI Solution (WINC based solution can be WINC1500/WINC3400) ![Things Screen](/aws_cloud/doc/images/image2.png) This solution is available in all platforms supported.. ## AmazonDeviceTester component Amazon DeviceTester component is used to configure and generate code for qualification testing. It adds required dependencies for testing the Amazon FreeRTOS solution using Amazon IDT (refer: https://docs.aws.amazon.com/freertos/latest/userguide/device-tester-for-freertos-ug.html). ![Things Screen](/aws_cloud/doc/images/H3_Component_3.png) Important Licensing Information: For FreeRTOS License, please refer to the license file in the [FreeRTOS](https://github.com/MicrochipTech/amazon-freertos/tree/mchpdev) repository. ## AWS Cloud Examples The following applications are provided to demonstrate the AWS Cloud H3 Component | Name | Description | -------- | ----------- | [LED Shadow Client](/aws_cloud/apps/led_shadow_client_ecc/readme.html) | This example application shows how to use the Shadow client feature to set/clear device status using LED(s) using ECC608 | [OTA Update Demo](/aws_cloud/apps/ota_update_demo/readme.html) | This example application demonstrates the usage of OTA feature to update a new image on SAME54 XPRO + WINC1500. | ____ [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/aws_cloud.svg)](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/aws_cloud.svg)](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/aws_cloud.svg)](https://github.com/Microchip-MPLAB-Harmony/aws_cloud/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/aws_cloud.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/aws_cloud.svg?style=social)]() [![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/aws_cloud.svg?style=social)]() ",
