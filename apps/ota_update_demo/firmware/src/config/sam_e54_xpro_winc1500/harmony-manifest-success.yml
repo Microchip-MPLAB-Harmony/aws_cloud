@@ -4,7 +4,7 @@
 
 
 project: ota_update_demo
-creation_date: 2021-01-19T23:01:47.291+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-01-20T19:20:35.596+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.6.5
