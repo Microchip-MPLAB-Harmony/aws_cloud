@@ -43,10 +43,6 @@ This repo contains scripts needed to represent [FreeRTOS](https://github.com/Mic
 
 ## Cloning FreeRTOS.
 
-This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to bring in dependent components.
-
-Note: If you download the ZIP file provided by GitHub UI or using content-manager, you will not get the contents of the submodules. (The ZIP file is also not a valid git repository)
-
 To clone:
 ```
 git clone https://github.com/MicrochipTech/amazon-freertos

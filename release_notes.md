@@ -5,6 +5,16 @@
 
 ## AWS Cloud Release Notes v3.2.0
 
+### FreeRTOS Qualfied Configurations
+
+|FreeRTOS Hardware Configuration                             | Wired (ECC608) | Wired (NVM) |  Wireless (WINC+ECC608) | Qualification (FreeRTOS 202002.00) |
+|-------------------------------------------------------------| --------------|-------------|-------------------------|--------------------------------------|
+| [SAME54 Xplained Pro](https://devices.amazonaws.com/detail/a3G0h0000077I6kEAE/SAM-E54-Xplained-Pro)                                        | Yes            |  Yes        | Yes      | FreeRTOS+OTA  |    
+| [SAME70 Xplained Ultra](https://devices.amazonaws.com/detail/a3G0h0000077I6TEAU/SAM-E70-Xplained-Ultra-Evaluation-Kit)                                      | Yes            |  Yes        | Yes      | FreeRTOS    |
+| [Curiosity PIC32MZ EF 2.0](https://devices.amazonaws.com/detail/a3G0h0000077I69EAE/Curiosity-PIC32MZ-EF-2.0-Development-Board)                                  | Yes            |  Yes        | Yes      | FreeRTOS      |
+| [SAMG55 Xplained Pro](https://devices.amazonaws.com/detail/a3G0h000007dnluEAA/SAMG55)                                        | NA             |  NA         | Yes      | FreeRTOS      |
+
+
 ### New Features
 - Additionally supports [ECC608](https://www.microchip.com/wwwproducts/en/ATECC608A) Integeration with FreeRTOS and Wi-Fi Support(WINC1500/WINC3400) for 
 [SAM S70](https://www.microchip.com/design-centers/32-bit/sam-32-bit-mcus/sam-s-mcus),
